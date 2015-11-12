@@ -61,7 +61,8 @@ module.exports = function(app) {
         //var parseBody = JSON.parse(req.body);
         console.log("req data is ", req.body);
         // Creates a new Event based on the Mongoose schema and the post bo.dy
-        var newevent = new Event(JSON.parse(req.body));
+        //var newevent = new Event(JSON.parse(req.body));
+        var newevent = new Event(req.body);
          //var newevent2 = new Event({
          //    eventname: req.body.eventname,
          //    eventtype: req.body.eventtype,
@@ -76,7 +77,7 @@ module.exports = function(app) {
                 res.send(err);
 
             // If no errors are found, it responds with a JSON of the new user
-            //res.json(req.body);
+            res.json(req.body);
         });
     });
 };

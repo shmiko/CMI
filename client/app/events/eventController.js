@@ -91,7 +91,7 @@
                     gservice.refresh(vm.formData.latitude, vm.formData.longitude);
                 })
                 .error(function (data) {
-                    console.log('Error: ' + data);
+                    console.log('DB Event Error: ' + data);
                 });
         };
 
