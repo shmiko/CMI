@@ -3,8 +3,8 @@
  */
 (function () {
 
-    var injectParams = ['$scope', '$http', 'geolocation','mapFactory'];
-    var userController = function ($scope, $http, geolocation, mapFactory) {
+    var injectParams = ['$scope', '$http', '$rootScope', 'geolocation','mapFactory'];
+    var userController = function ($scope, $http, $rootScope, geolocation, mapFactory) {
 
         var vm = this;
         // Initializes Variables
@@ -21,8 +21,19 @@
         vm.formData.latitude = 39.500;
         vm.formData.longitude = -98.350;
 
+
         // Functions
         // ----------------------------------------------------------------------------
+        // Get coordinates based on mouse click. When a click event is detected....
+        $rootScope.$on("clicked", function(){
+
+            // Run the mapFactory functions associated with identifying coordinates
+            $scope.$apply(function(){
+                vm.formData.latitude = parseFloat(mapFactory.clickLat).toFixed(3);
+                vm.formData.longitude = parseFloat(mapFactory.clickLong).toFixed(3);
+                vm.formData.htmlverified = "Nope (Thanks for spamming my map...)";
+            });
+        });
         // Creates a new user based on the form fields
         // Creates a new user based on the form fields
         //$scope.createUser = function() {
