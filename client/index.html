@@ -18,7 +18,7 @@
                 <div id="map"></div>
             </div>
             <div class="col-md-5">
-                <div data-ng-include="'app/core/layout/body.html'"></div>
+                <div data-ng-include="'app/events/events.html'"></div>
             </div>
             <!-- <div data-ng-view></div> -->
         </div>
@@ -40,7 +40,7 @@
     <!-- JQuery to invoke include files until angular is hooked up -->
     <!--<script>-->
         <!--$(function(){-->
-            <!--$("#view").load("app/core/layout/body.html");-->
+            <!--$("#view").load("app/core/layout/events.html");-->
             <!--$("#footer").load("app/core/layout/footer.html");-->
         <!--});-->
     <!--</script>-->
@@ -50,6 +50,7 @@
 
     <!-- App Modules JS -->
     <script data-require="navbarController.js" data-semver="1" src="app/core/layout/navbarController.js"></script>
-    <script data-require="userController.js" data-semver="1" src="app/core/users/userController.js"></script>
+    <!--<script data-require="userController.js" data-semver="1" src="app/core/users/userController.js"></script>-->
+    <script data-require="eventController.js" data-semver="1" src="app/events/eventController.js"></script>
     <script data-require="gservice.js" data-semver="1" src="app/services/gservice.js"></script>
 </html>
