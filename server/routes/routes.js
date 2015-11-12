@@ -58,25 +58,25 @@ module.exports = function(app) {
 
     // Provides method for saving new events in the db
     app.post('/events', function(req, res){
-        // var parseBody = JSON.parse(req.body);
+        //var parseBody = JSON.parse(req.body);
         console.log("req data is ", req.body);
         // Creates a new Event based on the Mongoose schema and the post bo.dy
-        var newevent = new Event(req.body);
-        // var newuser = new Event({
-        //     username: req.body.username,
-        //     gender: req.body.gender,
-        //     age: req.body.age,
-        //     favlang: req.body.favlang,
-        //     location: req.body.place
-        // });
-        // console.log("newuser parsed data is ", parseBody);
+        var newevent = new Event(JSON.parse(req.body));
+         //var newevent2 = new Event({
+         //    eventname: req.body.eventname,
+         //    eventtype: req.body.eventtype,
+         //    duration: req.body.duration,
+         //    mustdo: req.body.mustdo,
+         //    location: req.body.location
+         //});
+         console.log("newevent parsed data is ", newevent);
         // New Event is saved in the db.
         newevent.save(function(err){
             if(err)
                 res.send(err);
 
             // If no errors are found, it responds with a JSON of the new user
-            res.json(req.body);
+            //res.json(req.body);
         });
     });
 };
