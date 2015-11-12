@@ -7,7 +7,7 @@
     var app = angular.module('cmiApp', [
         'ngRoute',
         'geolocation',
-        'mapFactory'
+        'gservice'
     ]);
 
     //app.config(['$routeProvider', function ($routeProvider) {

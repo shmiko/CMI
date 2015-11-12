@@ -3,8 +3,8 @@
  */
 (function () {
 
-    var injectParams = ['$scope', '$http', '$rootScope', 'geolocation','mapFactory'];
-    var userController = function ($scope, $http, $rootScope, geolocation, mapFactory) {
+    var injectParams = ['$scope', '$http', '$rootScope', 'geolocation','gservice'];
+    var userController = function ($scope, $http, $rootScope, geolocation, gservice) {
 
         var vm = this;
         // Initializes Variables
@@ -21,16 +21,32 @@
         vm.formData.latitude = 39.500;
         vm.formData.longitude = -98.350;
 
+        // Get User's actual coordinates based on HTML5 at window load
+        geolocation.getLocation().then(function(data){
+
+            // Set the latitude and longitude equal to the HTML5 coordinates
+            coords = {lat:data.coords.latitude, long:data.coords.longitude};
+
+            // Display coordinates in location textboxes rounded to three decimal points
+            vm.formData.longitude = parseFloat(coords.long).toFixed(3);
+            vm.formData.latitude = parseFloat(coords.lat).toFixed(3);
+
+            // Display message confirming that the coordinates verified.
+            vm.formData.htmlverified = "Yep (Thanks for giving us real data!)";
+
+            gservice.refresh(vm.formData.latitude, vm.formData.longitude);
+
+        });
 
         // Functions
         // ----------------------------------------------------------------------------
         // Get coordinates based on mouse click. When a click event is detected....
         $rootScope.$on("clicked", function(){
 
-            // Run the mapFactory functions associated with identifying coordinates
+            // Run the gservice functions associated with identifying coordinates
             $scope.$apply(function(){
-                vm.formData.latitude = parseFloat(mapFactory.clickLat).toFixed(3);
-                vm.formData.longitude = parseFloat(mapFactory.clickLong).toFixed(3);
+                vm.formData.latitude = parseFloat(gservice.clickLat).toFixed(3);
+                vm.formData.longitude = parseFloat(gservice.clickLong).toFixed(3);
                 vm.formData.htmlverified = "Nope (Thanks for spamming my map...)";
             });
         });
@@ -72,7 +88,7 @@
                     vm.formData.favlang = "";
 
                     // Refresh the map with new data
-                    mapFactory.refresh($scope.formData.latitude, $scope.formData.longitude);
+                    gservice.refresh(vm.formData.latitude, vm.formData.longitude);
                 })
                 .error(function (data) {
                     console.log('Error: ' + data);

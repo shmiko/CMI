@@ -20,10 +20,13 @@
         // Array of locations obtained from API calls
         var locations = [];
 
+        // Variables we'll use to help us pan to the right spot
+        var lastMarker;
+        var currentSelectedMarker;
+
         // Selected Location (initialize to center of America)
         var selectedLat = 39.50;
         var selectedLong = -98.35;
-
 
         // Functions
         // --------------------------------------------------------------
@@ -89,17 +92,25 @@
     var initialize = function(latitude, longitude) {
 
         // Uses the selected lat, long as starting point
-        var myLatLng = {lat: selectedLat, lng: selectedLong};
-
+        //var myLatLng = {lat: selectedLat, lng: selectedLong};
+        var myLatLng = {selectedLat, selectedLong};
+        console.log("myLatLng is ", myLatLng);
         // If map has not been created already...
         if (!map){
 
             // Create a new map and place in the index.html page
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 3,
-                center: myLatLng
-            });
-        }
+            // var map = new google.maps.Map(document.getElementById('map'), {
+            //     zoom: 3,
+            //     center: myLatLng
+            // });
+            var mapOptions = {
+              center: myLatLng, //new google.maps.LatLng(20.68177501, -103.3514794),
+              zoom: 3,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map"),
+                mapOptions);
+            };
 
         // Loop through each location in the array and place a marker
         locations.forEach(function(n, i){
