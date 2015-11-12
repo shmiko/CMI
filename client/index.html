@@ -12,10 +12,17 @@
 </head>
     <body data-ng-cloak="">
         <div data-ng-include="'app/core/layout/navbar.html'"></div>
-        <div data-ng-include="'app/core/layout/body.html'"></div>
-        <!-- <div data-ng-view></div> -->
+        <div class="row content">
+            <!-- Google Map -->
+            <div class="col-md-7">
+                <div id="map"></div>
+            </div>
+            <div class="col-md-5">
+                <div data-ng-include="'app/core/layout/body.html'"></div>
+            </div>
+            <!-- <div data-ng-view></div> -->
+        </div>
         <div data-ng-include="'app/core/layout/footer.html'"></div>
-
     </body>
     <!-- ALL JS -->
     <!-- Vendor JS -->
@@ -44,4 +51,5 @@
     <!-- App Modules JS -->
     <script data-require="navbarController.js" data-semver="1" src="app/core/layout/navbarController.js"></script>
     <script data-require="userController.js" data-semver="1" src="app/core/users/userController.js"></script>
+    <script data-require="mapFactory.js" data-semver="1" src="app/services/mapFactory.js"></script>
 </html>

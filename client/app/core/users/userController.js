@@ -3,8 +3,8 @@
  */
 (function () {
 
-    var injectParams = ['$scope', '$http', 'geolocation'];
-    var userController = function ($scope, $http, geolocation) {
+    var injectParams = ['$scope', '$http', 'geolocation','mapFactory'];
+    var userController = function ($scope, $http, geolocation, mapFactory) {
 
         var vm = this;
         // Initializes Variables
@@ -42,7 +42,7 @@
                 gender: vm.formData.gender,
                 age: vm.formData.age,
                 favlang: vm.formData.favlang,
-                place: [vm.formData.longitude, vm.formData.latitude],
+                location: [vm.formData.longitude, vm.formData.latitude],
                 htmlverified: vm.formData.htmlverified
             };
 
@@ -61,7 +61,7 @@
                     vm.formData.favlang = "";
 
                     // Refresh the map with new data
-                    // gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+                    mapFactory.refresh($scope.formData.latitude, $scope.formData.longitude);
                 })
                 .error(function (data) {
                     console.log('Error: ' + data);

@@ -11,7 +11,7 @@ var UserSchema = new Schema({
     gender: {type: String, required: true},
     age: {type: Number, required: true},
     favlang: {type: String, required: true},
-    place: {type: [Number], required: true}, // [Long, Lat]
+    location: {type: [Number], required: true}, // [Long, Lat]
     htmlverified: String,
     created_at: {type: Date, default: Date.now},
     updated_at: {type: Date, default: Date.now}
@@ -28,7 +28,7 @@ UserSchema.pre('save', function(next){
 });
 
 // Indexes this schema in 2dsphere format (critical for running proximity searches)
-UserSchema.index({place: '2dsphere'});
+UserSchema.index({location: '2dsphere'});
 
 // Exports the UserSchema for use elsewhere. Sets the MongoDB collection to be used as: "cmi-users"
 module.exports = mongoose.model('user', UserSchema);
