@@ -6,9 +6,25 @@
     <title>CalMapIt</title>
     <meta name="description" content="A MEAN Calendar, Map, Itinrerary MashApp">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS -->
+    <!-- All CSS -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="content/css/style.css"/>
+</head>
+    <body data-ng-cloak="">
+        <div data-ng-include="'app/core/layout/navbar.html'"></div>
+        <div data-ng-include="'app/core/layout/shell.html'"></div>
+            <!-- JQuery to invoke include files until angular is hooked up -->
+            <!-- uncomment above div when angular is hooked up -->
+            <!--<div id="view"></div>-->
+        <span data-cc-scroll-to-top></span>
+        <div data-ng-view></div>
+        <div data-ng-include="'app/core/layout/footer.html'"></div>
+        <!--JQuery to invoke include files until angular is hooked up -->
+        <!-- uncomment above div's when angular is hooked up -->
+        <!--<div id="footer"></div>-->
+    </body>
+    <!-- ALL JS -->
+    <!-- Vendor JS -->
     <!-- Holder JS -->
     <script src="../bower_components/holderjs/holder.js"></script>
     <!-- Google Maps API -->
@@ -21,24 +37,17 @@
     <script src="../bower_components/angular-route/angular-route.js"></script>
     <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
     <!-- JQuery to invoke include files until angular is hooked up -->
-    <script>
-        $(function(){
-            $("#view").load("app/core/layout/shell.html");
-            $("#footer").load("app/core/layout/footer.html");
-        });
-    </script>
-</head>
-    <body>
-        <div>
-            <!--<div ng-include="'app/core/layout/shell.html'"></div>-->
-            <!-- JQuery to invoke include files until angular is hooked up -->
-            <!-- uncomment above div when angular is hooked up -->
-            <div id="view"></div>
-        </div>
-        <!--<span data-cc-scroll-to-top></span>-->
-        <!--<div ng-include="'app/core/layout/footer.html'"></div>-->
-        <!-- JQuery to invoke include files until angular is hooked up -->
-        <!-- uncomment above div's when angular is hooked up -->
-        <div id="footer"></div>
-    </body>
+    <!--<script>-->
+        <!--$(function(){-->
+            <!--$("#view").load("app/core/layout/shell.html");-->
+            <!--$("#footer").load("app/core/layout/footer.html");-->
+        <!--});-->
+    <!--</script>-->
+    <!-- App JS -->
+    <!-- App Root Module JS -->
+    <script src="app/app.module.js"></script>
+
+    <!-- App Modules JS -->
+    <script src="app/core/layout/navbarController.js"></script>
+    <script src="app/core/users/userController.js"></script>
 </html>

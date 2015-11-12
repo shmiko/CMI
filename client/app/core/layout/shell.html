@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" data-ng-controller="userController">
     <div class="header">
         <ul class="nav nav-pills pull-right">
             <li active><a href="">Join the Team</a></li>
@@ -17,7 +17,7 @@
             <div class="panel panel-default">
                 <!-- Panel Title -->
                 <div class="panel-heading">
-                    <h2 class="panel-title text-center">Yo Yo Get Funky! <span class="glyphicon glyphicon-map-marker"></span></h2>
+                    <h2 class="panel-title text-center">Yo Yo Yo Get Funky! <span class="glyphicon glyphicon-map-marker"></span></h2>
                 </div>
                 <!-- Panel Body -->
                 <div class="panel-body">
@@ -26,49 +26,49 @@
                         <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
                         <div class="form-group">
                             <label for="username">Username <span class="badge">All fields required</span></label>
-                            <input type="text" class="form-control" id="username" placeholder="OldandGold" ng-model="formData.username" required>
+                            <input type="text" class="form-control" id="username" placeholder="OldandGold" data-ng-model="formData.username" required>
                         </div>
                         <label class="radio control-label">Gender</label>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="radiomale" value="Male" ng-model="formData.gender">
+                                <input type="radio" name="optionsRadios" id="radiomale" value="Male" data-ng-model="formData.gender">
                                 Male
                             </label>
                         </div>
                         <div class="radio" required>
                             <label>
-                                <input type="radio" name="optionsRadios" id="radiofemale" value="Female" ng-model="formData.gender">
+                                <input type="radio" name="optionsRadios" id="radiofemale" value="Female" data-ng-model="formData.gender">
                                 Female
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="radioother" value="What's it to ya?" ng-model="formData.gender">
+                                <input type="radio" name="optionsRadios" id="radioother" value="What's it to ya?" data-ng-model="formData.gender">
                                 What's it to ya?
                             </label>
                         </div>
                         <div class="form-group">
                             <label for="age">Age</label>
-                            <input type="number" class="form-control" id="age" placeholder="72" ng-model="formData.age" required>
+                            <input type="number" class="form-control" id="age" placeholder="72" data-ng-model="formData.age" required>
                         </div>
                         <div class="form-group">
                             <label for="language">Favorite Language</label>
-                            <input type="text" class="form-control" id="language" placeholder="Fortran" ng-model="formData.favlang" required>
+                            <input type="text" class="form-control" id="language" placeholder="Fortran" data-ng-model="formData.favlang" required>
                         </div>
                         <div class="form-group">
                             <label for="latitude">Latitude</label>
-                            <input type="text" class="form-control" id="latitude" value="39.500" ng-model="formData.latitude" readonly>
+                            <input type="text" class="form-control" id="latitude" value="39.500" data-ng-model="formData.latitude" readonly>
                         </div>
                         <div class="form-group">
                             <label for="longitude">Longitude</label>
-                            <input type="text" class="form-control" id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
+                            <input type="text" class="form-control" id="longitude" value="-98.350" data-ng-model="formData.longitude" readonly>
                         </div>
                         <div class="form-group">
                             <label for="verified">HTML5 Verified Location? <span><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
-                            <input type="text" class="form-control" id="verified" placeholder= "Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" readonly>
+                            <input type="text" class="form-control" id="verified" placeholder= "Nope (Thanks for spamming my map...)" data-ng-model="formData.htmlverified" readonly>
                         </div>
                         <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
-                        <button type="submit" class="btn btn-danger btn-block" ng-disabled="addForm.$invalid">Submit</button>
+                        <button type="submit" class="btn btn-danger btn-block" data-ng-click="createUser()" data-ng-disabled="addForm.$invalid">Add</button>
                     </form>
                 </div>
             </div>
