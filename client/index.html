@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- Declares meanMapApp as the starting Angular module -->
+<html class="no-js" ng-app="cmiApp">
+<head>
+    <meta charset="utf-8">
+    <title>CalMapIt</title>
+    <meta name="description" content="A MEAN Calendar, Map, Itinrerary MashApp">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="content/css/style.css"/>
+    <!-- Holder JS -->
+    <script src="../bower_components/holderjs/holder.js"></script>
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDyuMEpvjNHZS8ACf1rJPhxMOODrfJyL4"></script>
+    <!-- Modernizr -->
+    <script src="../bower_components/modernizr/bin/modernizr"></script>
+    <!-- JS Source -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <!-- JQuery to invoke include files until angular is hooked up -->
+    <script>
+        $(function(){
+            $("#view").load("app/core/layout/shell.html");
+            $("#footer").load("app/core/layout/footer.html");
+        });
+    </script>
+</head>
+    <body>
+        <div>
+            test
+            <!--<div ng-include="'app/core/layout/shell.html'"></div>-->
+            <!-- JQuery to invoke include files until angular is hooked up -->
+            <!-- uncomment above div when angular is hooked up -->
+            <div id="view"></div>
+        </div>
+        <!--<span data-cc-scroll-to-top></span>-->
+        <!--<div ng-include="'app/core/layout/footer.html'"></div>-->
+        <!-- JQuery to invoke include files until angular is hooked up -->
+        <!-- uncomment above div's when angular is hooked up -->
+        <div id="footer"></div>
+    </body>
+</html>
