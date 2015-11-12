@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- Declares meanMapApp as the starting Angular module -->
-<html class="no-js" ng-app="cmiApp">
+<html class="no-js" data-ng-app="cmiApp">
 <head>
     <meta charset="utf-8">
     <title>CalMapIt</title>
@@ -13,23 +13,23 @@
     <body data-ng-cloak="">
         <div data-ng-include="'app/core/layout/navbar.html'"></div>
         <div data-ng-include="'app/core/layout/body.html'"></div>
-        <div data-ng-view></div>
+        <!-- <div data-ng-view></div> -->
         <div data-ng-include="'app/core/layout/footer.html'"></div>
 
     </body>
     <!-- ALL JS -->
     <!-- Vendor JS -->
     <!-- Holder JS -->
-    <script src="../bower_components/holderjs/holder.js"></script>
+    <script data-require="holder.js@2.9.7" data-semver="2.9.7" src="../bower_components/holderjs/holder.js"></script>
     <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDyuMEpvjNHZS8ACf1rJPhxMOODrfJyL4"></script>
+    <script data-require="gapi.js@3" data-semver="v3" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDyuMEpvjNHZS8ACf1rJPhxMOODrfJyL4"></script>
     <!-- Modernizr -->
-    <script src="../bower_components/modernizr/bin/modernizr"></script>
+    <script data-require="modernizr@3.0.0" data-semver="3.0.0" src="../bower_components/modernizr/bin/modernizr"></script>
     <!-- JS Source -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-route/angular-route.js"></script>
-    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script data-require="jquery.js@2.1.4" data-semver="2.1.4" src="../bower_components/jquery/dist/jquery.js"></script>
+    <script data-require="angular.js@1.4.6" data-semver="1.4.6" src="../bower_components/angular/angular.js"></script>
+    <script data-require="angular-route.js@1.4.6" data-semver="1.4.6" src="../bower_components/angular-route/angular-route.js"></script>
+    <script data-require="angularjs-geolocation.min.js@0.1.1" data-semver="0.1.1" src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
     <!-- JQuery to invoke include files until angular is hooked up -->
     <!--<script>-->
         <!--$(function(){-->
@@ -39,9 +39,9 @@
     <!--</script>-->
     <!-- App JS -->
     <!-- App Root Module JS -->
-    <script src="app/app.module.js"></script>
+    <script data-require="app.module.js" data-semver="1" src="app/app.module.js"></script>
 
     <!-- App Modules JS -->
-    <script src="app/core/layout/navbarController.js"></script>
-    <script src="app/core/users/userController.js"></script>
+    <script data-require="navbarController.js" data-semver="1" src="app/core/layout/navbarController.js"></script>
+    <script data-require="userController.js" data-semver="1" src="app/core/users/userController.js"></script>
 </html>
