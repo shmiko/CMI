@@ -1,0 +1,15 @@
+.body-container {
+    padding-top: 50px;
+    background-color: papayawhip;
+    /*width: 90%;*/
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header-container {
+    /*padding-top: 50px;*/
+    background-color: thistle;
+    /*width: 90%;*/
+    margin-left: 10px;
+    margin-right: 10px;
+}

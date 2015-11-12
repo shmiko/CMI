@@ -12,16 +12,10 @@
 </head>
     <body data-ng-cloak="">
         <div data-ng-include="'app/core/layout/navbar.html'"></div>
-        <div data-ng-include="'app/core/layout/shell.html'"></div>
-            <!-- JQuery to invoke include files until angular is hooked up -->
-            <!-- uncomment above div when angular is hooked up -->
-            <!--<div id="view"></div>-->
-        <span data-cc-scroll-to-top></span>
+        <div data-ng-include="'app/core/layout/body.html'"></div>
         <div data-ng-view></div>
         <div data-ng-include="'app/core/layout/footer.html'"></div>
-        <!--JQuery to invoke include files until angular is hooked up -->
-        <!-- uncomment above div's when angular is hooked up -->
-        <!--<div id="footer"></div>-->
+
     </body>
     <!-- ALL JS -->
     <!-- Vendor JS -->
@@ -39,7 +33,7 @@
     <!-- JQuery to invoke include files until angular is hooked up -->
     <!--<script>-->
         <!--$(function(){-->
-            <!--$("#view").load("app/core/layout/shell.html");-->
+            <!--$("#view").load("app/core/layout/body.html");-->
             <!--$("#footer").load("app/core/layout/footer.html");-->
         <!--});-->
     <!--</script>-->

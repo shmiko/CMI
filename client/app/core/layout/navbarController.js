@@ -4,7 +4,7 @@
 
     var navbarController = function ($scope, $location) {
         var vm = this,
-            appTitle = 'CalMapIt';
+            appTitle = 'CalMapIt MashApp';
 
         vm.isCollapsed = false;
         vm.appTitle = appTitle;
