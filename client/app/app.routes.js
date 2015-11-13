@@ -25,7 +25,7 @@ angular.module('cmiApp')
             {
                 url: '/addevent',
                 config: {
-                    controller: 'eventController',
+                    // controller: 'eventController',
                     templateUrl: '/app/events/addEvent.html'
 
                 }
