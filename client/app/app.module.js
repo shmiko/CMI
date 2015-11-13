@@ -10,18 +10,6 @@
         'gservice'
     ]);
 
-    //app.config(['$routeProvider', function ($routeProvider) {
-    //    var viewBase = 'client';
-    //
-    //    $routeProvider
-    //        .when('/', {
-    //            controller: 'usersController',
-    //            templateUrl: viewBase + '/index.html',
-    //            controllerAs: 'vm'
-    //        })
-    //
-    //        .otherwise({ redirectTo: '/' });
-    //
-    //}]);
+
 
 }());

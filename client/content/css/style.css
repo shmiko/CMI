@@ -1,8 +1,8 @@
 .panel-container {
     background-color: papayawhip;
-/*    width: 48%;
-    height:645px;
-    position: relative;*/
+    /*    width: 48%;
+        height:645px;
+        position: relative;*/
     float:right;
     margin-right: 10px;
     width: 100%;
@@ -22,5 +22,5 @@
     height: 645px;
     margin-left: 10px;
     /*position: relative;*/
-    
+
 }
