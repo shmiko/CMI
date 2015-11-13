@@ -8,19 +8,19 @@ angular.module('cmiApp')
 
 
         var routes = [
-            {
-                url: '/adduser',
-                config: {
-                    controller: 'userController',
-                    templateUrl: '/app/users/addUser.html'
-                }
-            },
-            {
-                url: '/finduser',
-                config: {
-                    templateUrl: '/app/users/queryUser.html'
-                }
-            },
+            //{
+            //    url: '/adduser',
+            //    config: {
+            //        controller: 'userController',
+            //        templateUrl: '/app/users/addUser.html'
+            //    }
+            //},
+            //{
+            //    url: '/finduser',
+            //    config: {
+            //        templateUrl: '/app/users/queryUser.html'
+            //    }
+            //},
             {
                 url: '/addevent',
                 config: {
