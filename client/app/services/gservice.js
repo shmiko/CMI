@@ -72,8 +72,8 @@ angular.module('gservice', [])
                         content: contentString,
                         maxWidth: 320
                     }),
-                    eventname: event.eventname,
-                    duration: event.duration,
+                    username: event.eventname,
+                    gender: event.duration,
                     eventtype: event.eventtype,
                     mustdo: event.mustdo
             });
@@ -152,8 +152,6 @@ var initialize = function(latitude, longitude) {
         googleMapService.clickLong = marker.getPosition().lng();
         $rootScope.$broadcast("clicked");
     });
-
-
 };
 
 // Refresh the page upon window load. Use the initial latitude and longitude

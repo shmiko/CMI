@@ -1,6 +1,7 @@
 /**
  * Created by pauljones on 13/11/15.
  */
+(function () {
 "use strict";
 
 angular.module('cmiApp')
@@ -28,18 +29,20 @@ angular.module('cmiApp')
                     templateUrl: '/app/events/addEvent.html'
 
                 }
-            },
-            {
-                url: '/findevent',
-                config: {
-                    templateUrl: '/app/events/queryEvent.html'
-
-                }
             }
+            // ,
+            // {
+            //     url: '/findevent',
+            //     config: {
+            //         templateUrl: '/app/events/queryEvent.html'
+
+            //     }
+            // }
         ];
         routes.forEach(function (route) {
             $routeProvider.when(route.url, route.config);
         });
 
         $routeProvider.otherwise({ redirectTo: '/addevent' });
-}]);
+    }])
+})();
