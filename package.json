@@ -1,13 +1,14 @@
 {
-    "name": "CMI",
-    "description": "A MEAN Calendar, Map, Itinrerary MashApp.",
-    "main": "node server.js",
-    "dependencies" : {
-        "express"    : "~4.7.2",
-        "mongoose"   : "~4.1.0",
-        "morgan"     : "~1.2.2",
-        "body-parser": "~1.5.2",
-        "jsonwebtoken": "^5.0.2",
-        "method-override": "~2.1.2"
-    }
+  "name": "CMI",
+  "description": "A MEAN Calendar, Map, Itinrerary MashApp.",
+  "main": "node server.js",
+  "dependencies": {
+    "body-parser": "~1.5.2",
+    "compression": "^1.6.0",
+    "express": "~4.7.2",
+    "jsonwebtoken": "^5.0.2",
+    "method-override": "~2.1.2",
+    "mongoose": "~4.1.0",
+    "morgan": "~1.2.2"
+  }
 }
