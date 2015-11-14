@@ -12,7 +12,7 @@
     <div id="map"></div>
 </div>
 <!-- Side Panel -->
-<div class="col-md-5">
+<div class="col-md-5 fade-purp">
 <div class="panel-container panel panel-default" data-ng-controller="eventController as vm">
     <!-- Panel Title -->
     <div class="panel-heading">
@@ -68,7 +68,7 @@
             </div>
             <!-- Submit button. Note that its tied to createEvent() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
             <!-- <button data-ng-click="createEvent()" class="btn btn-danger btn-block" >Add</button>  -->
-            <button type="submit" class="btn btn-danger btn-block" data-ng-click="vm.createEvent()" ng-disabled="addForm.$invalid">Submit</button>
+            <button type="submit" class="btn btn-info btn-block" data-ng-click="vm.createEvent()" ng-disabled="addForm.$invalid">Submit</button>
             <!--  -->
         </form>
     </div>
