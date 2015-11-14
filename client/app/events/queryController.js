@@ -30,6 +30,7 @@
             vm.formData.longitude = parseFloat(coords.long).toFixed(3);
             vm.formData.latitude = parseFloat(coords.lat).toFixed(3);
 
+            gservice.refresh(vm.formData.latitude, vm.formData.longitude);
             
         });
 

@@ -9,13 +9,13 @@ angular.module('cmiApp')
 
 
         var routes = [
-            //{
-            //    url: '/adduser',
-            //    config: {
-            //        controller: 'userController',
-            //        templateUrl: '/app/users/addUser.html'
-            //    }
-            //},
+            {
+               url: '/calendar',
+               config: {
+                   controller: 'calendarController',
+                   templateUrl: '/app/calendar/calendar.html'
+               }
+            },
             {
                url: '/findevent',
                config: {

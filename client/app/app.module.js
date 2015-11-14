@@ -7,7 +7,8 @@
     var app = angular.module('cmiApp', [
         'ngRoute',
         'geolocation',
-        'gservice'
+        'gservice',
+        'calendarDemoApp'
     ]);
 
     //app.config(['$routeProvider', function ($routeProvider) {
