@@ -12,7 +12,7 @@ module.exports = {
     {
         name: "aws-ec2",
         url: 'mongo ec2-52-64-219-249.ap-southeast-2.compute.amazonaws.com',
-
+        url1: 'mongodb://@52.64.219.249:27017/calmapit'
     },
     local:
     {

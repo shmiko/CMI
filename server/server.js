@@ -15,7 +15,7 @@ var app             = express();
 // Express Configuration
 // -----------------------------------------------------
 // Sets the connection to MongoDB
-mongoose.connect(database.local.url);
+mongoose.connect(database.aws.url1);
 //mongoose.connect("mongodb://localhost/calmapit");
 
 // Logging and Parsing
