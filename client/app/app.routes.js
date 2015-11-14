@@ -30,6 +30,24 @@ angular.module('cmiApp')
                     templateUrl: '/app/events/addEvent.html'
 
                 }
+            },
+            {
+                url: '/introduction',
+                config: {
+                    // controller: 'IntroductionController',
+                    templateUrl: '/app/introduction/introduction.tmpl.html'
+                    // controllerAs: 'vm'
+
+                }
+            },
+            {
+                url: '/itinerary',
+                config: {
+                    // controller: 'IntroductionController',
+                    templateUrl: '/app/itinerary/itinerary.html'
+                    // controllerAs: 'vm'
+
+                }
             }
             // ,
             // {
@@ -44,6 +62,6 @@ angular.module('cmiApp')
             $routeProvider.when(route.url, route.config);
         });
 
-        $routeProvider.otherwise({ redirectTo: '/addevent' });
+        $routeProvider.otherwise({ redirectTo: '/introduction' });
     }])
 })();
