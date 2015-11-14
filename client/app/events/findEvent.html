@@ -1,0 +1,78 @@
+<!-- Find Teammates (Query) Form -->
+<div class="col-md-5">
+
+    <!-- Creates Main Panel -->
+    <div class="panel panel-default"  data-ng-controller="queryController as vm">
+
+        <!-- Panel Title -->
+        <div class="panel-heading">
+            <h2 class="panel-title text-center">Find Events! (Map Query) <span class="glyphicon glyphicon-search"></span></h2>
+        </div>
+
+        <!-- Panel Body -->
+        <div class="panel-body">
+
+            <!-- Creates Form -->
+            <form name ="queryForm">
+
+                <!-- Text Boxes and Other User Inputs. Note data-ng-model binds the values to Angular $scope -->
+                <div class="form-group">
+                    <label for="latitude">Your Latitude</label>
+                    <input type="text" class="form-control" id="latitude" placeholder="39.5" data-ng-model="vm.formData.latitude" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="longitude">Your Longitude</label>
+                    <input type="text" class="form-control" id="longitude" placeholder="-98.35" data-ng-model="vm.formData.longitude" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="distance">Max. Distance (miles)</label>
+                    <input type="text" class="form-control" id="distance" placeholder="500" data-ng-model="vm.formData.distance">
+                </div>
+
+                <!-- Note data-ng-true-value which translates check values into explicit gender strings -->
+                <label>EventType</label>
+                <div class="form-group">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="optionsRadios" id="checkbusiness" value="Business" data-ng-model="vm.formData.business" data-ng-true-value = "'Business'">
+                        Business
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="optionsRadios" id="checkfamily" value="Family" data-ng-model="vm.formData.family" data-ng-true-value="'Family'">
+                        Family
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="optionsRadios" id="checkother" value="What's it to ya?" data-ng-model="vm.formData.other" data-ng-true-value="'What\'s it to ya?'">
+                        What's it to ya?
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="minduration">Min. Duration</label>
+                    <input type="number" class="form-control" id="minduration" placeholder="5" data-ng-model="vm.formData.minduration">
+                </div>
+                <div class="form-group">
+                    <label for="maxduration">Max Duration</label>
+                    <input type="number" class="form-control" id="maxduration" placeholder="80" data-ng-model="vm.formData.maxduration">
+                </div>
+                <div class="form-group">
+                    <label for="mustdo">Must Do!</label>
+                    <input type="text" class="form-control" id="mustdo" placeholder="SIghtseeing" data-ng-model="vm.formData.mustdo">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="verified" id="radiomale" value="True" data-ng-model="vm.formData.verified"> <strong>Include Only HTML5 Verified Locations?</strong>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
+                <button type="submit" class="btn btn-danger btn-block" data-ng-click="vm.queryEvents()">Search</button>
+            </form>
+        </div>
+
+        <!-- Footer panel for displaying count. Note how it will only display if queryCount is greater than 0 -->
+        <div data-ng-show="queryCount>0" class="panel-footer">
+                <p class="text-center">Unreal! We Found {{queryCount}} Teammates.</p>
+        </div>
+    </div>
+</div>

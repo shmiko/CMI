@@ -11,6 +11,7 @@
         // ----------------------------------------------------------------------------
         //$scope.formData = {};
         vm.formData = {};
+        var queryBody = {};
         var coords = {};
         var lat = 0;
         var long = 0;
@@ -95,7 +96,39 @@
                 });
         };
 
+        // Take query parameters and incorporate into a JSON queryBody
+        vm.queryEvents = function(){
 
+            // Assemble Query Body
+            queryBody = {
+                longitude: parseFloat($scope.formData.longitude),
+                latitude: parseFloat($scope.formData.latitude),
+                distance: parseFloat($scope.formData.distance),
+                business: $scope.formData.business,
+                family: $scope.formData.family,
+                other: $scope.formData.other,
+                minDuration: $scope.formData.minDuration,
+                maxDuration: $scope.formData.maxDuration,
+                mustdo: $scope.formData.mustdo,
+                reqVerified: $scope.formData.verified
+            };
+
+            // Post the queryBody to the /query POST route to retrieve the filtered results
+            $http.post('/query', queryBody)
+
+                // Store the filtered results in queryResults
+                .success(function(queryResults){
+
+                    // Pass the filtered results to the Google Map Service and refresh the map
+                    gservice.refresh(queryBody.latitude, queryBody.longitude, queryResults);
+
+                    // Count the number of records retrieved for the panel-footer
+                    $scope.queryCount = queryResults.length;
+                })
+                .error(function(queryResults){
+                    console.log('Error ' + queryResults);
+                })
+        };
         // createUser = function () {
         //     debugger
         //     // Grabs all of the text box fields

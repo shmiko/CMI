@@ -6,6 +6,7 @@
 var express         = require('express');
 var mongoose        = require('mongoose');
 var port            = process.env.PORT || 9999;
+var database        = require('./config/config');
 var morgan          = require('morgan');
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
@@ -14,7 +15,8 @@ var app             = express();
 // Express Configuration
 // -----------------------------------------------------
 // Sets the connection to MongoDB
-mongoose.connect("mongodb://localhost/calmapit");
+mongoose.connect(database.local.url);
+//mongoose.connect("mongodb://localhost/calmapit");
 
 // Logging and Parsing
 app.use(express.static(__dirname + '/../client'));                 // sets the static files location to public
@@ -33,4 +35,4 @@ app.use(methodOverride());
 // Listen
 // -------------------------------------------------------
 app.listen(port);
-console.log('App listening on port ' + port);
+console.log('CMI listening on port ' + port);

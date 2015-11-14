@@ -16,16 +16,17 @@ angular.module('cmiApp')
             //        templateUrl: '/app/users/addUser.html'
             //    }
             //},
-            //{
-            //    url: '/finduser',
-            //    config: {
-            //        templateUrl: '/app/users/queryUser.html'
-            //    }
-            //},
+            {
+               url: '/findevent',
+               config: {
+                    controller: 'queryController',
+                    templateUrl: '/app/events/findEvent.html'
+               }
+            },
             {
                 url: '/addevent',
                 config: {
-                    // controller: 'eventController',
+                    controller: 'eventController',
                     templateUrl: '/app/events/addEvent.html'
 
                 }

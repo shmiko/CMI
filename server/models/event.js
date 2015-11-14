@@ -28,7 +28,8 @@ EventSchema.pre('save', function(next){
 });
 
 // Indexes this schema in 2dsphere format (critical for running proximity searches)
+//EventSchema.index({location: '2dsphere'});
 EventSchema.index({location: '2dsphere'});
 
 // Exports the EventSchema for use elsewhere. Sets the MongoDB collection to be used as: "cmi-events"
-module.exports = mongoose.model('event', EventSchema);
+module.exports = mongoose.model('event', EventSchema); 
