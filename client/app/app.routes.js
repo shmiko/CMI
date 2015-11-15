@@ -44,7 +44,7 @@ angular.module('cmiApp')
                 url: '/intro',
                 config: {
                     // controller: 'IntroductionController',
-                    templateUrl: '/app/introduction/introduction.tmpl.html'
+                    templateUrl: '/app/introduction/intro.html'
                     // controllerAs: 'vm'
 
                 }
@@ -81,6 +81,6 @@ angular.module('cmiApp')
             $routeProvider.when(route.url, route.config);
         });
 
-        $routeProvider.otherwise({ redirectTo: '/travel' });
+        $routeProvider.otherwise({ redirectTo: '/intro' });
     }])
 })();

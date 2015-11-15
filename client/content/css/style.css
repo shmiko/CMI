@@ -1,27 +1,24 @@
 
 
 body {
-    background:transparent;
-    min-height:100%;    
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-    line-height: 1.5em;
-    font-size:14px;
-    font-family: Helvetica, Arial, sans-serif;
-    color:#fff;
-    color:rgba(255,255,255,.8); 
-    font-weight: normal;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#04061b+0,0f1431+62,0c143a+100 */
+background: #04061b; /* Old browsers */
+background: -moz-linear-gradient(top,  #04061b 0%, #0f1431 62%, #0c143a 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #04061b 0%,#0f1431 62%,#0c143a 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #04061b 0%,#0f1431 62%,#0c143a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04061b', endColorstr='#0c143a',GradientType=0 ); /* IE6-9 */
+
 }
 
 .fade-purp{
-    background: #020031;
+   /* background: #020031;
     background: -moz-linear-gradient(45deg, #020031 0%, #6d3353 100%);
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353));
     background: -webkit-linear-gradient(45deg, #020031 0%,#6d3353 100%);
     background: -o-linear-gradient(45deg, #020031 0%,#6d3353 100%);
     background: -ms-linear-gradient(45deg, #020031 0%,#6d3353 100%);
     background: linear-gradient(45deg, #020031 0%,#6d3353 100%);
-    color: #FFFFFF;
+    color: #FFFFFF;*/
 }
 .footer{
     position: fixed;
@@ -30,7 +27,7 @@ body {
 }
 
 .panel-container {
-    background-color: papayawhip;
+    /*background-color: papayawhip;*/
 /*    width: 48%;
     height:645px;
     position: relative;*/
@@ -41,14 +38,14 @@ body {
 
 .header-container {
     /*padding-top: 50px;*/
-    background: #020031;
+ /*   background: #020031;
     background: -moz-linear-gradient(45deg, #020031 0%, #6d3353 100%);
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353));
     background: -webkit-linear-gradient(45deg, #020031 0%,#6d3353 100%);
     background: -o-linear-gradient(45deg, #020031 0%,#6d3353 100%);
     background: -ms-linear-gradient(45deg, #020031 0%,#6d3353 100%);
     background: linear-gradient(45deg, #020031 0%,#6d3353 100%);
-    color: #FFFFFF;
+    color: #FFFFFF;*/
     /*width: 90%;*/
     margin-left: 10px;
     margin-right: 10px;
@@ -89,4 +86,67 @@ body {
     url('../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
+
+
 }
+
+
+
+.svg-wrapper {
+  height: 10px;
+    margin: 0 auto;
+  position: relative;
+  top: 20px;
+  transform: translateY(-50%);
+  width: 50px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  stroke: #19f6e8;
+}
+
+.links {
+  /*color: #fff;*/
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
+  letter-spacing: 8px;
+  /*line-height: 32px;*/
+  position: relative;
+  /*top: -48px;*/
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
