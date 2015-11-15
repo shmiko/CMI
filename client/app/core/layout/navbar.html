@@ -1,4 +1,4 @@
-<header class="container-fluid header-container navbar navbar-inner " data-ng-controller="navbarController as vm">
+<header class="fade-purp container-fluid header-container navbar navbar-inner " data-ng-controller="navbarController as vm">
     <nav class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-ng-click="vm.isCollapsed = !vm.isCollapsed">
@@ -8,20 +8,21 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#/">
-                <!--<img src="Content/images/people.png" alt="logo">-->
             </a>
-            <h3 class="appTitle text-muted">{{ vm.appTitle }}</h3>
+            <h3 class="appTitle text-muted"><a href="/">{{ vm.appTitle }}</a></h3>
 
 
         </div>
         <div class="nav-container" data-collapse="isCollapsed">
 
-            <!-- With menu-highlighter directive -->
             <ul class="nav navbar-nav nav-pills navBarPadding"
                 data-menu-highlighter data-highlight-class-name="active">
                 <li><a href="#/calendar">Calendar</a></li>
                 <li><a href="/#/findevent">Map</a></li>
                 <li><a href="#/itinerary">Itinerary</a></li>
+                <li><a href="#/hex">Hex</a></li>
+                <li><a href="#/intro">Intro</a></li>
+                <li><a href="#/travel">Travel</a></li>
             </ul>
             <ul class="nav navbar-nav nav-pills navBarPadding pull-right">
                 <li active><a href="/#/addevent">Login</a></li>
@@ -31,4 +32,25 @@
         </div>
 
     </nav>
+
 </header>
+
+
+<!-- <header>
+    <ul class="nav navbar-nav nav-pills navBarPadding"
+        data-menu-highlighter data-highlight-class-name="active">
+        <li><a href="#/calendar">Calendar</a></li>
+        <li><a href="/#/findevent">Map</a></li>
+        <li><a href="#/itinerary">Itinerary</a></li>
+    </ul>
+    <ul class="nav navbar-nav nav-pills navBarPadding pull-right">
+        <li active><a href="/#/addevent">Login</a></li>
+        <li disabled><a href="/#/findevent">Looking?</a></li>
+    </ul>
+    <div class="poster">
+      <h1 class="poster__heading">USA 2015/2016 
+          <span class="poster__subheading">The Ultimate Family Adventure</span>
+         <a href="#" class="btn--primary">Follow Along</a>
+      </div>
+    </div>
+  </header> -->

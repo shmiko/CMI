@@ -41,6 +41,15 @@ angular.module('cmiApp')
                 }
             },
             {
+                url: '/intro',
+                config: {
+                    // controller: 'IntroductionController',
+                    templateUrl: '/app/introduction/introduction.tmpl.html'
+                    // controllerAs: 'vm'
+
+                }
+            },
+            {
                 url: '/itinerary',
                 config: {
                     // controller: 'IntroductionController',
@@ -48,20 +57,30 @@ angular.module('cmiApp')
                     // controllerAs: 'vm'
 
                 }
-            }
-            // ,
-            // {
-            //     url: '/findevent',
-            //     config: {
-            //         templateUrl: '/app/events/queryEvent.html'
+            },
+            {
+                url: '/travel',
+                config: {
+                    // controller: 'IntroductionController',
+                    templateUrl: '/app/travel/travel-cmi.html'
+                    // controllerAs: 'vm'
 
-            //     }
-            // }
+                }
+            },
+            {
+                url: '/hex',
+                config: {
+                    // controller: 'IntroductionController',
+                    templateUrl: '/app/introduction/hexback.html'
+                    // controllerAs: 'vm'
+
+                }
+            }
         ];
         routes.forEach(function (route) {
             $routeProvider.when(route.url, route.config);
         });
 
-        $routeProvider.otherwise({ redirectTo: '/introduction' });
+        $routeProvider.otherwise({ redirectTo: '/travel' });
     }])
 })();

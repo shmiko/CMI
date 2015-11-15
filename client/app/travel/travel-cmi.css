@@ -1,79 +1,22 @@
- body {
-  padding: 1em 0;
-  background: #000000;
-}
-svg {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-.hex {
-  opacity: 0;
-  -webkit-transition-duration: 1000ms;
-          transition-duration: 1000ms;
-  -webkit-transition-property: opacity, -webkit-transform;
-          transition-property: opacity, transform;
-  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-}
-.hex.in-view {
-  opacity: 1;
-}
-.hex:nth-child(6n + 6) {
-  -webkit-transition-delay: 600ms;
-          transition-delay: 600ms;
-}
-.hex:nth-child(6n + 5) {
-  -webkit-transition-delay: 550ms;
-          transition-delay: 550ms;
-}
-.hex:nth-child(6n + 4) {
-  -webkit-transition-delay: 500ms;
-          transition-delay: 500ms;
-}
-.hex:nth-child(6n + 3) {
-  -webkit-transition-delay: 450ms;
-          transition-delay: 450ms;
-}
-.hex:nth-child(6n + 2) {
-  -webkit-transition-delay: 400ms;
-          transition-delay: 400ms;
-}
-.hex:nth-child(6n + 1) {
-  -webkit-transition-delay: 350ms;
-          transition-delay: 350ms;
-}
 
-
-html {
-    background:#505D6E url(../../content/images/mb-bg-fb-09.png) no-repeat center center fixed; 
-    min-height:100%;
-    -webkit-background-size: cover;
-       -moz-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
-}
-
-
-.intro-feature-row {
-  .md-whiteframe-z1 {
-    background-color: #26C6DA;
-  }
-  .md-font {
-    color: white;
-  }
-}
-
-.intro-back {
-	background:#505D6E url(../../content/images/travel.svg) no-repeat center center fixed; 
-	}
 /*
 * By Jose Aguinaga
 * http://jjperezaguinaga.com
 */
 @import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
-body {
+/*body {
   background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #f2efd9 100%);
+}*/
+
+body{
+  background: #020031;
+    background: -moz-linear-gradient(45deg, #020031 0%, #6d3353 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353));
+    background: -webkit-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+    background: -o-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+    background: -ms-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+    background: linear-gradient(45deg, #020031 0%,#6d3353 100%);
+    color: #FFFFFF;
 }
 
 @-webkit-keyframes rotate-right {
@@ -220,10 +163,10 @@ body {
   background-color: #E6E3D3;
 }
 svg {
-  width: 480px;
+  height: 800px;
   margin: 0 auto;
   display: flex;
-  visibility: hidden;
+  /*visibility: hidden;*/
 }
 
 /*-- CONTROLS --*/
@@ -239,3 +182,5 @@ svg {
   cursor: pointer;
   fill: #0E979F;
 }
+
+
