@@ -19,8 +19,9 @@
         // Set initial coordinates to the center of the US
         // $scope.formData.latitude = 39.500;
         // $scope.formData.longitude = -98.350;
-        vm.formData.latitude = 39.500;
-        vm.formData.longitude = -98.350;
+        //40.6700, -73.9400 New York
+        vm.formData.latitude = 40.6700;
+        vm.formData.longitude = -73.9400;
 
         // Get User's actual coordinates based on HTML5 at window load
         geolocation.getLocation().then(function(data){
