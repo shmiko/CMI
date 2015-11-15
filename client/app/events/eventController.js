@@ -128,7 +128,7 @@
                 })
                 .error(function(queryResults){
                     console.log('Error ' + queryResults);
-                })
+                });
         };
         // createUser = function () {
         //     debugger

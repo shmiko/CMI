@@ -82,5 +82,5 @@ angular.module('cmiApp')
         });
 
         $routeProvider.otherwise({ redirectTo: '/intro' });
-    }])
+    }]);
 })();

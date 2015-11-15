@@ -1,0 +1,80 @@
+<!-- <div class="pull-right" > -->
+<!--     <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li active><a href="">Join the Team</a></li>
+            <li disabled><a href="">Find Teammates</a></li>
+        </ul>
+        <h3 class="text-muted">CalMapIt MashApp</h3>
+    </div> -->
+<!-- Map and Side Panel -->
+<!-- Google Map -->
+
+<div class="col-md-7">
+    <div id="map"></div>
+</div>
+<!-- Side Panel -->
+<div class="col-md-5 fade-purp">
+<div class="panel-container panel panel-default" data-ng-controller="eventController as vm">
+    <!-- Panel Title -->
+    <div class="panel-heading">
+        <h2 class="panel-title text-center">Travel around the Country-side..<span class="glyphicon glyphicon-map-marker"></span></h2>
+    </div>
+    <!-- Panel Body -->
+    <div class="panel-body">
+        <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+        <form name ="addForm" novalidate>
+            <!-- Text Boxes and Other Event Inputs. Note ng-model binds the values to Angular $scope -->
+            <div class="form-group">
+                <label for="eventname">Eventname <span class="badge">All fields required</span></label>
+                <input type="text" class="form-control" id="eventname" placeholder="USA Holiday" data-ng-model="vm.formData.eventname" required>
+            </div>
+            <label class="radio control-label">Type</label>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="radiobusines" value="Business" data-ng-model="vm.formData.eventtype">
+                    Business
+                </label>
+            </div>
+            <div class="radio" required>
+                <label>
+                    <input type="radio" name="optionsRadios" id="radiofamily" value="Family" data-ng-model="vm.formData.eventtype">
+                    Family
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="radioother" value="Other" data-ng-model="vm.formData.eventtype">
+                    Other
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration</label>
+                <input type="number" class="form-control" id="duration" placeholder="22" data-ng-model="vm.formData.duration" required>
+            </div>
+            <div class="form-group">
+                <label for="mustdo">Must Do</label>
+                <input type="text" class="form-control" id="mustdo" placeholder="Visit Statue of Liberty" data-ng-model="vm.formData.mustdo" required>
+            </div>
+            <div class="form-group">
+                <label for="latitude">Latitude</label>
+                <input type="text" class="form-control" id="latitude" value="39.500" data-ng-model="vm.formData.latitude" readonly>
+            </div>
+            <div class="form-group">
+                <label for="longitude">Longitude</label>
+                <input type="text" class="form-control" id="longitude" value="-98.350" data-ng-model="vm.formData.longitude" readonly>
+            </div>
+            <div class="form-group">
+                <label for="verified">HTML5 Verified Location? <span><button ng-click="vm.refreshLoc()" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
+                <input type="text" class="form-control" id="verified" placeholder= "Nope (Thanks for spamming my map...)" data-ng-model="vm.formData.htmlverified" readonly>
+            </div>
+            <!-- Submit button. Note that its tied to createEvent() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
+            <!-- <button data-ng-click="createEvent()" class="btn btn-danger btn-block" >Add</button>  -->
+            <button type="submit" class="btn btn-info btn-block" data-ng-click="vm.createEvent()" ng-disabled="addForm.$invalid">Submit</button>
+            <!--  -->
+        </form>
+    </div>
+</div>
+</div>
+<!-- </div> -->
+<!-- <hr/> -->
+    
