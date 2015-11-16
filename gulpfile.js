@@ -12,12 +12,12 @@ var less = require('gulp-less');
 var autoprefix = require('gulp-autoprefixer');
 
 gulp.paths = {
-  src: 'client/app/',
+  src: 'client/',
   dist: 'dist/'
 };
 
 var bases = {
- app: 'client/app/',
+ app: 'client/',
  dist: 'dist/',
 };
 
@@ -42,14 +42,14 @@ gulp.task('buildjs', function () {
       .pipe(jshint.reporter('default'))
       .pipe(uglify())
       .pipe(concat('app.js'))
-      .pipe(gulp.dest(bases.dist + 'scripts/'));
+      .pipe(gulp.dest(bases.dist));
 });
 
 gulp.task('less', function () {
    gulp.src(bases.app + '/**/*.less')
       .pipe(less())
       .pipe(autoprefix('last 2 version', 'ie 8', 'ie 9'))
-      .pipe(gulp.dest(bases.dist + 'styles/'));
+      .pipe(gulp.dest(bases.dist));
 });
 
 
@@ -84,15 +84,15 @@ gulp.task('copy', function() {
 
  // Copy html
  gulp.src(bases.app + '/**/*.html')
- .pipe(gulp.dest(bases.dist + 'app/'));
+ .pipe(gulp.dest(bases.dist));
 
  // Copy styles
  gulp.src(bases.app + '/**/*.css')
- .pipe(gulp.dest(bases.dist + 'styles'));
+ .pipe(gulp.dest(bases.dist));
 
- // Copy lib scripts, maintaining the original directory structure
- gulp.src(['bower_components/**/*.js', '!bower_components/**/*.min.js'])
- .pipe(gulp.dest(bases.dist + 'bower_components/'));
+ // // Copy lib scripts, maintaining the original directory structure
+ // gulp.src(['bower_components/**/*.js', '!bower_components/**/*.min.js'])
+ // .pipe(gulp.dest(bases.dist + 'bower_components/'));
 
  // Copy extra html5bp files
  gulp.src('client/favicon.ico')

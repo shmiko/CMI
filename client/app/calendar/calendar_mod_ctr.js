@@ -5,7 +5,7 @@
 //var app = angular.module('App', ['ui.calendar'])
 var calendarDemoApp = angular.module('calendarDemoApp', ['ui.calendar', 'ui.bootstrap']);
 
-calendarDemoApp.controller('calendarController',
+calendarDemoApp.controller('calendarController',['$scope', '$compile', '$timeout', 'uiCalendarConfig',
    function($scope, $compile, $timeout, uiCalendarConfig) {
     var date = new Date();
     var d = date.getDate();
@@ -144,5 +144,5 @@ calendarDemoApp.controller('calendarController',
     console.log("eventSource are ",$scope.eventSources);
     console.log("events are ",$scope.events[0]);
     console.log("events are ",$scope.events);
-});
+}]);
 /* EOF */
