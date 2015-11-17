@@ -114,7 +114,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04061b', end
   font-family: 'Roboto Condensed';
   font-size: 22px;
   letter-spacing: 8px;
-  /*line-height: 32px;*/
+  line-height: 32px;
   position: relative;
   /*top: -48px;*/
 }
