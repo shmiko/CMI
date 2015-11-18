@@ -8,16 +8,6 @@
   background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #f2efd9 100%);
 }*/
 
-body{
-/*  background: #020031;
-    background: -moz-linear-gradient(45deg, #020031 0%, #6d3353 100%);
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353));
-    background: -webkit-linear-gradient(45deg, #020031 0%,#6d3353 100%);
-    background: -o-linear-gradient(45deg, #020031 0%,#6d3353 100%);
-    background: -ms-linear-gradient(45deg, #020031 0%,#6d3353 100%);
-    background: linear-gradient(45deg, #020031 0%,#6d3353 100%);
-    color: #FFFFFF;*/
-}
 
 @-webkit-keyframes rotate-right {
   from {

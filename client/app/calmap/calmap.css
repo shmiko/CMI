@@ -1,11 +1,26 @@
 /* app css stylesheet */
 
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+   background:#020031;
 }
 
+.jumbotron{
+    background-color: transparent;
+    padding-top:45px;
+    margin-bottom: -30px;
+}
 
+.well{
+    color: #1db7d7;
+  font-weight: normal;
+  background-color: transparent;
+  border: 1px solid #eeb432;
+    border-radius: 4px;
+}
+
+.cal-form{
+    display: none;
+}
 
 a:hover {
     cursor: pointer;

@@ -1,5 +1,6 @@
 function getCalUrl(id, config) {
     var dateTime = new Date();
+    // dateTime.setDate(d.getDate() - 1);
     dateTime.setHours(0,0,0,0);
 
     return 'https://www.googleapis.com/calendar/v3/calendars/'

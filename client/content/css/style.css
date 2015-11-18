@@ -9,7 +9,9 @@
 }
 
 body {
-  background:transparent;
+  /*background:transparent;*/
+  background:#020031;
+  
   min-height:100%;  
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
@@ -19,6 +21,7 @@ body {
   color:#fff;
   color:rgba(255,255,255,.8); 
   font-weight: normal;
+  /*#020031*/
 }
 
 
