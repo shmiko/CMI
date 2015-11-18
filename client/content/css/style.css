@@ -1,14 +1,45 @@
 
+.body_content {
+  background:#505D6E url(../images/large_canyon.jpg) no-repeat center center fixed; 
+  min-height:100%;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
 
 body {
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#04061b+0,0f1431+62,0c143a+100 */
-background: #04061b; /* Old browsers */
-background: -moz-linear-gradient(top,  #04061b 0%, #0f1431 62%, #0c143a 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #04061b 0%,#0f1431 62%,#0c143a 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #04061b 0%,#0f1431 62%,#0c143a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04061b', endColorstr='#0c143a',GradientType=0 ); /* IE6-9 */
-/*padding-top: 80px;
-padding-bottom: 180px;*/
+  background:transparent;
+  min-height:100%;  
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  line-height: 1.5em;
+  font-size:14px;
+  font-family: Helvetica, Arial, sans-serif;
+  color:#fff;
+  color:rgba(255,255,255,.8); 
+  font-weight: normal;
+}
+
+
+
+/********************************************************/
+/*             Sections - universal classes             */
+/********************************************************/
+.section { 
+  z-index: 1;
+  min-height:420px;
+  width: 100%; 
+  overflow:auto;
+  height:100%;
+  padding-top:100px;
+  padding-bottom:50px; 
+  display:none;
+  top:0;
+} 
+
+.body_content{
+  margin-top:85x;
 }
 
 /* app css stylesheet */
