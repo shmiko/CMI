@@ -60,6 +60,25 @@ body {
     font-weight: lighter !important;
 }
 
+.weather-data{
+  line-height: 1.5em;
+  font-size:14px;
+  font-family: Helvetica, Arial, sans-serif;
+  color:#020031;
+  /*color:rgba(255,255,255,.8); */
+  font-weight: normal;
+}
+
+.panel-heading{
+  background: #020031!important;
+  color:rgba(4, 249, 241, 0.93)!important;
+}
+
+
+
+
+}
+
 .fade-purp{
    /* background: #020031;
     background: -moz-linear-gradient(45deg, #020031 0%, #6d3353 100%);
