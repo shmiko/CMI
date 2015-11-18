@@ -38,6 +38,35 @@ googleCalControllers.controller('CalendarCtrl', ['$scope', '$http', '$controller
             });
         }
 
+        // GCal Helper Methods
+        $scope.insertCalendarEvent = function(title, startTime, endTime, callback) {
+            console.log('inserting event');
+            console.log('start: '+startTime);
+            console.log('end: '+endTime);
+            calendar.events.insert({
+                auth:oAuthClient,
+                calendarId: googleConfig.calendarId,
+                resource: {
+                    'start': {
+                        dateTime: startTime,
+                        timeZone: "America/New_York"
+                    },
+                    'end': {
+                        dateTime: endTime,
+                        timeZone: "America/New_York"
+                    },
+                    'summary': title
+                }
+            }, function(err, eventObj) {
+                if(err) {
+                    console.log('Error: '+err);
+                } else {
+                    console.log('Success: '+eventObj);
+                    callback(eventObj);
+                }
+            });
+        };
+
         /* Display the calendar */
         $scope.updateCal();
 
