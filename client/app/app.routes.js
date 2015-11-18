@@ -89,8 +89,24 @@ angular.module('cmiApp')
                     templateUrl: 'app/calmap/event.html',
                     controller: 'EventCtrl'
                 }
+            },
+            {
+                url: '/forecast',
+                config:{
+                    templateUrl: 'app/weather/forecast.html',
+                    controller: 'OpenWeatherCtrl'
+                }
+            },
+            {
+                url: '/storm',
+                config:{
+                    templateUrl: 'app/weather/storm.html',
+                    controller: 'OpenWeatherCtrl'
+                }
             }
         ];
+
+       
         routes.forEach(function (route) {
             $routeProvider.when(route.url, route.config);
         });

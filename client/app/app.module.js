@@ -10,7 +10,12 @@
 		'calendarDemoApp',
 		'googleCalControllers',
 		'ngMap',
-		'ngAnimate'
+		'ngAnimate',
+    'openWeatherApp.filters',
+    'openWeatherApp.services',
+    'openWeatherApp.directives',
+    'openWeatherApp.controllers',
+    "iso-3166-country-codes"
     ]);
 
      app.constant('config', {

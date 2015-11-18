@@ -7,7 +7,23 @@ background: -moz-linear-gradient(top,  #04061b 0%, #0f1431 62%, #0c143a 100%); /
 background: -webkit-linear-gradient(top,  #04061b 0%,#0f1431 62%,#0c143a 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  #04061b 0%,#0f1431 62%,#0c143a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04061b', endColorstr='#0c143a',GradientType=0 ); /* IE6-9 */
+/*padding-top: 80px;
+padding-bottom: 180px;*/
+}
 
+/* app css stylesheet */
+
+.weather.panel {
+    /*font-weight: lighter !important;*/
+}
+
+.weather.panel .panel-heading {
+    font-weight: lighter !important;
+    font-size: 1.2em;
+}
+
+.weather.panel .panel-footer {
+    font-weight: lighter !important;
 }
 
 .fade-purp{
@@ -146,7 +162,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04061b', end
 
 
 
-
+.weather_content{
+  top:100px;
+}
 
 
 
