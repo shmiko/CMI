@@ -57,7 +57,8 @@ googleCalControllers.controller('CalendarCtrl', ['$scope', '$http', '$controller
         $scope.toggleDetails = function(id) {
 
             $scope.showDetails = null;
-
+            console.log("location is ",$scope.events[id].location);
+            console.log("color is ",$scope.events[id].ColorId);
             // if the event has a location, but no lat or lng, look up it's location by address
             if($scope.events[id].location && !$scope.events[id].lat && !$scope.events[id].lng) {
 

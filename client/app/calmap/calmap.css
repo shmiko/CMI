@@ -2,6 +2,7 @@
 
 body {
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 a:hover {
@@ -45,5 +46,14 @@ div.row.calendar div.details h3 {
 }
 
 div.container.calendar {
-    margin-bottom: 32px;
+    padding-bottom: 32px;
+}
+
+.box{
+    position: fixed;
+    bottom:40px;
+    width: 100%;
+    height:800px;
+    background: #020031;
+    top:50px;
 }

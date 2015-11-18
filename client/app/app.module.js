@@ -25,7 +25,7 @@
           'maps':     'AIzaSyCDyuMEpvjNHZS8ACf1rJPhxMOODrfJyL4'
         },
         'options': {
-          'perPage':          10,
+          'perPage':          40,
           'dateFormat':       'd MMMM yyyy',
           'dateTimeFormat':   'h:mm a d MMMM yyyy'
         }
