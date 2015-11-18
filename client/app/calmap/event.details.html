@@ -1,0 +1,20 @@
+<div ng-if="event.description">
+    <h3>Event Description</h4>
+    <p>{{event.description}}
+</div>
+<div ng-if="event.lat && event.lng">
+    <h3>Event Location</h4>
+    <div map-lazy-load="https://maps.googleapis.com/maps/api/js?key={{calConfig.apiKeys.googleMapsApiKey}}" class="map">
+      <map center="{{event.lat}}, {{event.lng}}" zoom="10">
+          <marker position="[{{event.lat}}, {{event.lng}}]">
+            <info-window id="1" position="{{event.lat}}, {{event.lng}}" visible="true">
+                <div ng-non-bindable="">
+                    {{event.formatted_address}}
+                </div>
+            </info-window>
+      </map>
+    </div>
+</div>
+<div ng-if="event.location && (!event.lat || !event.lng)">
+    <p class="alert alert-info"><strong>Ooops!</strong> It seems like we can't locate that address at the moment to show you a map {{event.lng}}.</p>
+</div>

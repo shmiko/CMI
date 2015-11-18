@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="//codepen.io/assets/reset/normalize.css">
     <link rel="stylesheet" href="app/travel/travel-cmi.css" />
     <link rel="stylesheet" href="app/introduction/intro.css" />
+    <link rel="stylesheet" href="app/calmap/calmap.css">
     
 </head>
     <body data-ng-cloak="">
@@ -33,30 +34,34 @@
         <div data-ng-include="'app/core/layout/footer.html'"></div>
     </body>
     <!-- ALL JS -->
-    <!-- Vendor JS -->
-    <!-- Holder JS -->
-    <script data-require="TweenMax.min.js@1.18.0" data-semver="1.18.0" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script data-require="TweenMax.min.js@1.18.0" data-semver="1.18.0" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ThrowPropsPlugin.min.js"></script>
-    <script data-require="TweenMax.min.js@1.18.0" data-semver="1.18.0" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/utils/Draggable.min.js"></script>
-    
-    <script data-require="holder.js@2.9.7" data-semver="2.9.7" src="../bower_components/holderjs/holder.js"></script>
-    <!-- Google Maps/Cal API -->
-    <script data-require="gapi.js@3" data-semver="v3" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDyuMEpvjNHZS8ACf1rJPhxMOODrfJyL4"></script>
-    <script data-require="calendar.js" data-semver="v3" src="app/calendar/calendar.js"></script>
-<!-- <script data-require="ui-bootstrap-tpls-0.13.0.js@0.13.0" data-semver="0.13.0" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
-<script data-require="tweenmax.js" data-semver="1" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
-<script data-require="scrollmagic.js" data-semver="2.0.3" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
-<script data-require="animation.gasp.js" data-semver="2.0.3" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
-<script data-require="DrawSVGPlugin.js" data-semver="1" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js?r=11"></script>
-<script src="//assets.codepen.io/assets/common/stopExecutionOnTimeout-f961f59a28ef4fd551736b43f94620b5.js"></script>    
-<!-- Modernizr --> -->
-    <script data-require="modernizr@3.0.0" data-semver="3.0.0" src="../bower_components/modernizr/bin/modernizr"></script>
-    <!-- JS Source -->
     <script data-require="jquery.js@2.1.4" data-semver="2.1.4" src="../bower_components/jquery/dist/jquery.js"></script>
     <script data-require="angular.js@1.4.6" data-semver="1.4.6" src="../bower_components/angular/angular.js"></script>
     <script data-require="angular-route.js@1.4.6" data-semver="1.4.6" src="../bower_components/angular-route/angular-route.js"></script>
     <script data-require="angularjs-geolocation.min.js@0.1.1" data-semver="0.1.1" src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
     <script data-require="moment.js@2.10.6" data-semver="2.10.6" src="../bower_components/moment/moment.js"></script>
+    <!-- Vendor JS -->
+    <!-- Holder JS -->
+    <script data-require="TweenMax.min.js@1.18.0" data-semver="1.18.0" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script data-require="TweenMax.min.js@1.18.0" data-semver="1.18.0" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ThrowPropsPlugin.min.js"></script>
+    <script data-require="TweenMax.min.js@1.18.0" data-semver="1.18.0" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/utils/Draggable.min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+    <script src="../bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+    <script data-require="holder.js@2.9.7" data-semver="2.9.7" src="../bower_components/holderjs/holder.js"></script>
+    <!-- Google Maps/Cal API -->
+    <script data-require="gapi.js@3" data-semver="v3" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDyuMEpvjNHZS8ACf1rJPhxMOODrfJyL4"></script>
+    <script data-require="calendar.js" data-semver="v3" src="../bower_components/angular-ui-calendar/src/calendar.js"></script>
+<script data-require="ui-bootstrap-tpls-0.13.0.js@0.13.0" data-semver="0.13.0" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+<!-- <script data-require="tweenmax.js" data-semver="1" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+<script data-require="scrollmagic.js" data-semver="2.0.3" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+<script data-require="animation.gasp.js" data-semver="2.0.3" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
+<script data-require="DrawSVGPlugin.js" data-semver="1" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js?r=11"></script>
+<script src="//assets.codepen.io/assets/common/stopExecutionOnTimeout-f961f59a28ef4fd551736b43f94620b5.js"></script>     -->
+<!-- Modernizr -->
+    <script data-require="modernizr@3.0.0" data-semver="3.0.0" src="../bower_components/modernizr/bin/modernizr"></script>
+    <!-- JS Source -->
     <!-- Google Calendar Support -->
     <script data-require="fullcalendar.js@v2.3.2" data-semver="v2.3.2" src="../bower_components/fullcalendar/dist/fullcalendar.js"></script>
     <script data-require="gcal.js@v2.3.2" data-semver="v2.3.2" src="../bower_components/fullcalendar/dist/gcal.js"></script>
@@ -79,6 +84,8 @@
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/calendar/calendar_mod_ctr.js"></script>
 <!-- <script data-require="itinerary.js" data-semver="1" src="app/itinerary/itinerary.js"></script> -->
     <script data-require="gservice.js" data-semver="1" src="app/services/gservice.js"></script>
+    <script src="app/calmap/controllers.js"></script>
+    <script src="app/calmap/functions.js"></script>
     
 
 

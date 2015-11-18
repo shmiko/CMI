@@ -1,0 +1,49 @@
+/* app css stylesheet */
+
+body {
+  padding-top: 20px;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+div.well p:last-child {
+    margin-bottom: 0;
+}
+
+div.row.calendar div.map {
+    margin-bottom: 24px;
+}
+div.row.calendar div.map, div.row.calendar map {
+    height: 400px;
+}
+
+/* Animate the details box */
+
+div.row.calendar div.details.ng-enter, div.row.calendar div.details.ng-leave {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    overflow: hidden;
+}
+
+div.row.calendar div.details.ng-enter, div.row.calendar div.details.ng-leave.ng-leave-active {
+    max-height: 0;
+}
+
+div.row.calendar div.details.ng-enter.ng-enter-active, div.row.calendar div.details.ng-leave {
+    /* Cannot CSS transition to max-height auto */
+    max-height: 1000px;
+}
+
+div.row.calendar div.details h3 {
+    /* Top margin of h3 tag causes a jump after animation finishes. */
+    margin-top: 0;
+}
+
+div.container.calendar {
+    margin-bottom: 32px;
+}

@@ -37,10 +37,12 @@
     "contextmenu",
     "cookies",
     "cors",
+    "crypto",
     "crypto/getrandomvalues",
     "css/all",
     "css/animations",
     "css/appearance",
+    "css/backdropfilter",
     "css/backgroundblendmode",
     "css/backgroundcliptext",
     "css/backgroundposition-shorthand",
@@ -110,8 +112,8 @@
     "css/vwunit",
     "css/will-change",
     "css/wrapflow",
-    "customevent",
     "custom-protocol-handler",
+    "customevent",
     "dart",
     "dataview-api",
     "dom/classlist",
@@ -176,6 +178,7 @@
     "iframe/seamless",
     "iframe/srcdoc",
     "img/apng",
+    "img/jpeg2000",
     "img/jpegxr",
     "img/sizes",
     "img/srcset",
@@ -234,6 +237,7 @@
     "svg/inline",
     "svg/smil",
     "templatestrings",
+    "test/elem/bdi",
     "textarea/maxlength",
     "touchevents",
     "typed-arrays",
@@ -263,6 +267,7 @@
     "workers/dataworkers",
     "workers/sharedworkers",
     "workers/transferables",
-    "workers/webworkers"
+    "workers/webworkers",
+    "xdomainrequest"
   ]
 }

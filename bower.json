@@ -1,0 +1,41 @@
+{
+  "name": "cmi",
+  "version": "0.0.1",
+  "author": {
+    "name": "Paul Jones"
+  },
+  "description": "CalMapIt API",
+  "main": "server/server.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "package.json",
+    "bower.json"
+  ],
+  "dependencies": {
+    "angular": "~1.4.6",
+    "angular-animate": "~1.4.6",
+    "angular-mocks": "~1.4.6",
+    "angular-route": "~1.4.6",
+    "bootstrap": "~3.1.0",
+    "angular-bootstrap": "~0.10.0",
+    "angular-cookies": "~1.4.6",
+    "angular-strap": "~2.0.1",
+    "angular-motion": "~0.3.2",
+    "jquery": "~2.1.4",
+    "fullcalendar": "~2.3.2",
+    "moment": "~2.10.3",
+    "angular-ui-calendar": "~1.0.1",
+    "modernizr": "~3.2.0",
+    "ngmap" : "1.13.x"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.x",
+    "bootstrap-css": "2.3.1"
+  },
+  "resolutions": {
+    "jquery": "~2.1.4",
+    "angular": "1.4.1"
+  }
+}

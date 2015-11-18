@@ -75,6 +75,20 @@ angular.module('cmiApp')
                     // controllerAs: 'vm'
 
                 }
+            },
+            {
+                url: '/calmap',
+                config:{
+                    templateUrl: 'app/calmap/calmap.html',
+                    controller: 'CalendarCtrl'
+                }
+            },
+            {
+                url: '/calmap/:eventId',
+                config:{
+                    templateUrl: 'app/calmap/event.html',
+                    controller: 'EventCtrl'
+                }
             }
         ];
         routes.forEach(function (route) {
@@ -83,4 +97,7 @@ angular.module('cmiApp')
 
         $routeProvider.otherwise({ redirectTo: '/intro' });
     }]);
+    
+   
+
 })();
