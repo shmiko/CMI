@@ -68,12 +68,11 @@ angular.module('cmiApp')
                 }
             },
             {
-                url: '/hex',
+                url: '/form',
                 config: {
                     // controller: 'IntroductionController',
-                    templateUrl: '/app/introduction/hexback.html'
+                    templateUrl: '/app/form/form.html'
                     // controllerAs: 'vm'
-
                 }
             },
             {
@@ -102,6 +101,20 @@ angular.module('cmiApp')
                 config:{
                     templateUrl: 'app/weather/storm.html',
                     controller: 'OpenWeatherCtrl'
+                }
+            },
+            {
+                url: '/blog',
+                config:{
+                    templateUrl: 'app/blog/blog.html',
+                    controller: 'BlogController'
+                }
+            },
+            {
+                url: '/todo',
+                config:{
+                    templateUrl: 'app/todo/todo.html',
+                    controller: 'todoController'
                 }
             }
         ];

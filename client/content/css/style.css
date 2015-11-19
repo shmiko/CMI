@@ -10,7 +10,7 @@
 
 body {
   /*background:transparent;*/
-  background:#020031;
+  background:#020031 !important;
   
   min-height:100%;  
   -webkit-font-smoothing: antialiased;
@@ -22,6 +22,8 @@ body {
   color:rgba(255,255,255,.8); 
   font-weight: normal;
   /*#020031*/
+  /*background: url(http://i1102.photobucket.com/albums/g449/Andres_Rendon/Backgrounds/Africa-Brief-SA-telecoms-Tanzania-call-costs-and-more.jpg~original);*/
+  /*background-size: cover;*/
 }
 
 
@@ -37,8 +39,8 @@ body {
   height:100%;
   padding-top:100px;
   padding-bottom:50px; 
-  display:none;
-  top:0;
+  /*display:none;*/
+  top:120px;
 } 
 
 .body_content{
@@ -76,7 +78,9 @@ body {
 
 
 
-
+.panel{
+  background-color: #fff!important;
+  opacity: .6;
 }
 
 .fade-purp{
@@ -220,7 +224,10 @@ body {
 }
 
 
-
+.body-container{
+  position: relative;
+  top:120px;
+}
 
 
 

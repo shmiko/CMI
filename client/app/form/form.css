@@ -1,0 +1,163 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Boogaloo);
+* {
+  font: 1em "Montserrat", sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  /*background: url(http://i1102.photobucket.com/albums/g449/Andres_Rendon/Backgrounds/Africa-Brief-SA-telecoms-Tanzania-call-costs-and-more.jpg~original)!important;*/
+  /*background: url(MonumentValley.jpg)!important;
+  background-size: cover!important;*/
+}
+
+#containerf > p {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  color: #eee;
+  margin: 1em;
+  text-shadow: 0 1px 1px #000;
+}
+#containerf > p a {
+  color: #efbe57;
+  padding: 3px;
+}
+#containerf > p a:hover {
+  color: #ebac28;
+}
+#containerf > h1 {
+  font: 4em "Boogaloo", sans-serif;
+  letter-spacing: -2px;
+  margin: 0;
+  padding: 20px;
+  color: #efbe57;
+  text-shadow: 0 3px 1px #000;
+}
+
+.widget {
+  background: linear-gradient(rgba(255, 255, 255, 0.5) 0%, rgba(229, 229, 229, 0.2) 100%);
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.5);
+  padding: 0;
+  height: 100%;
+}
+.widget:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+#booking {
+  min-width: 380px;
+  border-bottom: 3px solid #efbe57;
+  border-radius: 10px;
+}
+
+#imagePreview {
+  min-height: 555px;
+  margin: 0;
+  height: 100%;
+  padding: 1.2em 0 0 1.6em;
+  /*background: url(http://i1102.photobucket.com/albums/g449/Andres_Rendon/Backgrounds/hd-lion-wallpapers.jpg~original);*/
+  /*background: url(sand-dunes-adj.jpg);*/
+  background-color: #FFF;
+  opacity: .6;
+  background-size:cover;
+  left:-10px;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.5);
+  border-radius: 10px 0 0 10px;
+  color: #000000;
+}
+@media only screen and (max-width: 768px) {
+  #imagePreview {
+    min-height: 380px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: inset 0px 2px 1px -1px rgba(255, 255, 255, 0.5);
+  }
+}
+#imagePreview h1, #imagePreview h3 {
+  color: white;
+  text-shadow: 0 -1px 6px #000;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+#imagePreview h1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+#imagePreview h3 {
+  letter-spacing: -1px;
+}
+
+#menu {
+  padding: 0;
+}
+#menu h3 {
+  margin: 0;
+  padding: 0.3em;
+  background: #efbe57;
+  color: #875f0d;
+  text-shadow: 0 1px 0px #f3d086;
+  border-bottom: 1px solid #f8e2b4;
+  border-radius: 0 10px 0 0;
+}
+@media only screen and (max-width: 768px) {
+  #menu h3 {
+    border-radius: 0;
+  }
+}
+#menu form {
+  padding: 1.5em;
+}
+#menu label {
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+#menu input[type="date"], #menu select {
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid #eee;
+  border-radius: 3px;
+  color: #fff;
+}
+#menu input[type="date"]:focus, #menu select:focus {
+  box-shadow: 0 0 0.5em rgba(238, 238, 238, 0.6);
+}
+#menu option {
+  color: #000;
+}
+#menu input[type="checkbox"], #menu label[for="sinFecha"] {
+  display: inline-block;
+  margin: 0 0.3em 1em;
+  line-height: 0.7em;
+  font-style: italic;
+}
+#menu input[type="button"] {
+  display: block;
+  margin: 1em auto;
+  padding: 0.7em 1.5em;
+  font: bold 1.4em "Montserrat", sans-serif;
+  letter-spacing: -1px;
+  color: #875f0d;
+  background: #efbe57;
+  border: none;
+  box-shadow: 0 3px 0 #cd9113;
+  border-radius: 3px;
+}
+#menu input[type="button"]:hover {
+  position: relative;
+  top: -1px;
+  box-shadow: 0 0 10px #f3d086, 0 3px 0 #cd9113;
+}
+#menu input[type="button"]:active {
+  border-bottom: none;
+  position: relative;
+  top: 1px;
+}

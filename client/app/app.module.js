@@ -15,7 +15,9 @@
     'openWeatherApp.services',
     'openWeatherApp.directives',
     'openWeatherApp.controllers',
-    "iso-3166-country-codes"
+    "iso-3166-country-codes",
+    "blogApp",
+    "todoApp"
     ]);
 
      app.constant('config', {
