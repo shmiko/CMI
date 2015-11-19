@@ -30,9 +30,6 @@ table img {
 
 
 
-body {
-	-webkit-perspective: 1800px;
-}
 
 .wrap {
   transition-delay:.3s;

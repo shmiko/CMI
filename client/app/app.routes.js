@@ -118,10 +118,10 @@ angular.module('cmiApp')
                 }
             },
             {
-                url: '/photos',
+                url: '/instagram',
                 config:{
-                    templateUrl: 'app/instagram/instagram.html'
-                    // controller: 'todoController'
+                    templateUrl: 'app/instagram/instagram.html',
+                    controller: 'Example'
                 }
             }
         ];

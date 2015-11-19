@@ -173,10 +173,7 @@ svg {
   fill: #0E979F;
 }
 
-.fullheight{
-  height:100%;
-  top:60px;
-}
+
 
 
 @media screen and (max-width: 450px) {
