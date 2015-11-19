@@ -116,6 +116,13 @@ angular.module('cmiApp')
                     templateUrl: 'app/todo/todo.html',
                     controller: 'todoController'
                 }
+            },
+            {
+                url: '/photos',
+                config:{
+                    templateUrl: 'app/instagram/instagram.html'
+                    // controller: 'todoController'
+                }
             }
         ];
 

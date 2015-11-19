@@ -40,7 +40,7 @@ body {
   padding-top:100px;
   padding-bottom:50px; 
   /*display:none;*/
-  top:120px;
+  top:0;
 } 
 
 .body_content{
@@ -224,10 +224,7 @@ body {
 }
 
 
-.body-container{
-  position: relative;
-  top:120px;
-}
+
 
 
 

@@ -17,7 +17,8 @@
     'openWeatherApp.controllers',
     "iso-3166-country-codes",
     "blogApp",
-    "todoApp"
+    "todoApp",
+    "instagramApp"
     ]);
 
      app.constant('config', {
