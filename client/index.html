@@ -12,24 +12,24 @@
     <!-- <link rel="stylesheet" href="../bower_components/bootstrap-css/css/bootstrap.css" /> -->
     <link rel="stylesheet" href="../bower_components/fullcalendar/dist/fullcalendar.css">
     <link rel="stylesheet" href="app/calendar/calendarDemo.css" />
-    <link rel="stylesheet" href="app/itinerary/itinerary.css" />
+    <!-- <link rel="stylesheet" href="app/itinerary/itinerary.css" /> -->
     <link rel="stylesheet" href="//codepen.io/assets/reset/normalize.css">
     <link rel="stylesheet" href="app/travel/travel-cmi.css" />
-    <!-- <link rel="stylesheet" href="app/introduction/intro.css" /> -->
+    <link rel="stylesheet" href="app/introduction/intro.css" />
     <link rel="stylesheet" href="app/calmap/calmap.css">
     <link rel="stylesheet" href="app/form/form.css">
     <!-- <link rel="stylesheet" href="app/blog/blog.css"> -->
-    <!-- <link rel="stylesheet" href="app/todo/todo.css"> -->
+    <link rel="stylesheet" href="app/todo/todo2.css">
     <link rel="stylesheet" href="app/instagram/instagram.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/110131/responsive.css" rel="stylesheet">
+    <!-- <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/110131/responsive.css" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="http://cdn.jsdelivr.net/foundation/4.3.1/css/foundation.min.css"> -->
     <link rel="stylesheet" href="app/blogger/blogger.css">
     
 </head>
     <body data-ng-cloak="">
-        <div data-ng-include="'app/core/layout/navbar.html'"></div>
-        <div class="container">
+        <nav data-ng-include="'app/core/layout/navbar.html'"></nav>
+        <section>
             <!-- Google Map -->
             <!-- <div class="col-md-7">
                 <div id="map"></div>
@@ -39,8 +39,8 @@
             <!-- </div> -->
             <!-- <div data-ng-view></div> -->
             <div data-ui-view></div>
-        </div>
-        <div data-ng-include="'app/core/layout/footer.html'"></div>
+        </section>
+        <footer data-ng-include="'app/core/layout/footer.html'"></footer>
     </body>
     <!-- ALL JS -->
 <!-- <script data-require="jquery.js@2.1.4" data-semver="2.1.4" src="../bower_components/jquery/dist/jquery.js"></script> -->
@@ -49,9 +49,12 @@
     <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script data-require="angular-route.js@1.4.6" data-semver="1.4.6" src="../bower_components/angular-route/angular-route.js"></script>
     <script data-require="angularjs-geolocation.min.js@0.1.1" data-semver="0.1.1" src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
     <script data-require="moment.js@2.10.6" data-semver="2.10.6" src="../bower_components/moment/moment.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="../bower_components/angular/angular-resource.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="../bower_components/iso-3166-country-codes-angular/iso-3166-country-codes-angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
     <script src="../bower_components/easing.js"></script>
     <!-- Vendor JS -->
     <!-- Holder JS -->
@@ -76,6 +79,8 @@
 <!-- Modernizr -->
 <!-- <script data-require="modernizr@3.0.0" data-semver="3.0.0" src="../bower_components/modernizr/bin/modernizr"></script> -->
     <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+    <script src="//use.edgefonts.net/vast-shadow:n4:all.js"></script>
+    <script src="//use.edgefonts.net/vast-shadow:n4:all;megrim.js"></script>
     <!-- JS Source -->
     <!-- Google Calendar Support -->
     <script data-require="fullcalendar.js@v2.3.2" data-semver="v2.3.2" src="../bower_components/fullcalendar/dist/fullcalendar.js"></script>
@@ -94,6 +99,7 @@
 
     <!-- App Modules JS -->
     <script data-require="navbarController.js" data-semver="1" src="app/core/layout/navbarController.js"></script>
+<!-- <script data-require="navbarController.js" data-semver="1" src="app/core/layout/core-back.js"></script> -->
     <script data-require="queryController.js" data-semver="1" src="app/events/queryController.js"></script>
     <script data-require="eventController.js" data-semver="1" src="app/events/eventController.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/calendar/calendar_mod_ctr.js"></script>
@@ -107,10 +113,11 @@
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/weather/filters.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/weather/directives.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/atlas/atlas.js"></script>
-    <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/blog/blog.js"></script>
+<!-- <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/blog/blog.js"></script> -->
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/todo/todo.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/instagram/instagram.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/blogger/blogger.js"></script>
+
 </html>
 
 

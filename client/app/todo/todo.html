@@ -2,10 +2,11 @@
 <div class="todo-container" ng-app="TaskManager">
             <div class="content" ng-controller="todoController">
             <h1>CalMapIt</h1>
-            <p class="tagline">What ToDo?</p>
+            <!-- <p class="tagline">What ToDo?</p> -->
+            <h2>You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2>
             <form>
                 <div class="inputContainer">
-                    <input type="text" id="description" class="taskName" placeholder="What do you need to do?" ng-model="newTask">
+                    <input type="text" id="description" class="add-input" placeholder="What do you need to do?" ng-model="newTask">
                     <label for="description">Description</label>
                 </div>
                 <div class="inputContainer half last">
@@ -20,8 +21,8 @@
                     <label for="dueDate">Due Date</label>
                 </div>
                 <div class="row">
-                    <button class="taskAdd" ng-click="addNew()"><i class="fa fa-plus icon"></i>Add task</button>
-                    <button class="taskDelete" ng-click="deleteTask()"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
+                    <button class="add-btn" ng-click="addNew()"><i class="fa fa-plus icon"></i>Add task</button>
+                    <button class="clear-btn" ng-click="deleteTask()"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
                 </div>
             </form>
             <ul  class="taskList">
@@ -35,3 +36,23 @@
  </div><!-- container -->
 
 <!-- </div> -->
+<!-- 
+  <body>
+    <div class="todo-wrapper" ng-controller="TodoCtrl">
+      <h2>You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2>
+      <ul>
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done"/>
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form>
+        <input class="add-input" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant />
+        <button class="add-btn" ng-click="addTodo()"><h2>Add</h2></button>
+      </form>
+      
+      <button class="clear-btn" ng-click="clearCompleted()">Clear completed</button>
+    </div>
+  </body>
+  
+</html> -->

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29706219-6376-4222-bf03-6babfdcfc9bf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/calmap/calmap.html" afterPath="$PROJECT_DIR$/client/app/calmap/calmap.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/content/css/style.css" afterPath="$PROJECT_DIR$/client/content/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/travel/travel-cmi.css" afterPath="$PROJECT_DIR$/client/app/travel/travel-cmi.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CMI.iws" />
     <ignored path=".idea/workspace.xml" />

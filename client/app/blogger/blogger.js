@@ -22,7 +22,7 @@
   // .run(function($state){
   //   $state.go('blogger');
   // });
-    
+
 
 	bloggerApp.controller('bloggerController',function($scope,$state,Blog){
         $scope.title = 'CalMapIt Blogger';
@@ -42,7 +42,7 @@
 
 	bloggerApp.factory('Blog',function($resource){
     	return $resource(
-    		'https://www.googleapis.com/blogger/v3/blogs/8557529916229380730/posts?&key=AIzaSyCDyuMEpvjNHZS8ACf1rJPhxMOODrfJyL4',
+    		'https://www.googleapis.com/blogger/v3/blogs/8557529916229380730/posts?&maxPosts=20&key=AIzaSyCDyuMEpvjNHZS8ACf1rJPhxMOODrfJyL4',
     		{},
       		{query: { method: 'GET', isArray: false }}
     	);

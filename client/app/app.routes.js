@@ -146,7 +146,7 @@ angular.module('cmiApp')
             })
             .state('todo',{
                 url:'/todo',
-                templateUrl : 'app/todo/todo.html',
+                templateUrl : 'app/todo/todo2.html',
                 controller  : 'todoController'
             })
             .state('forecast',{
@@ -184,6 +184,10 @@ angular.module('cmiApp')
             .state('introduction',{
                 url:'/introduction',
                 templateUrl : 'app/introduction/introduction.tmpl.html'
+            })
+            .state('atlas',{
+                url:'/atlas',
+                templateUrl : 'app/atlas/atlas.html'
             })
             .state('addevent',{
                 url:'/addevent',

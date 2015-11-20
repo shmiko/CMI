@@ -16,10 +16,11 @@
     'openWeatherApp.directives',
     'openWeatherApp.controllers',
     "iso-3166-country-codes",
-    "blogApp",
+    // "blogApp",
     "todoApp",
     "instagramApp",
-    "bloggerApp"
+    "bloggerApp",
+    "ngMaterial"
     ]);
 
      app.constant('config', {

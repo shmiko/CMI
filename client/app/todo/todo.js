@@ -50,6 +50,10 @@ app.controller('todoController', function($scope) {
         });
         localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
     };
+
+     $scope.getTotalTodos = function () {
+        return $scope.taskItem.length;
+      };
     
     $scope.save = function () {
         localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
