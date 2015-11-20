@@ -28,7 +28,8 @@
     "moment": "~2.10.3",
     "angular-ui-calendar": "~1.0.1",
     "modernizr": "~3.2.0",
-    "ngmap" : "1.13.x"
+    "ngmap": "1.13.x",
+    "angular-ui-router": "ui-router#~0.2.15"
   },
   "devDependencies": {
     "angular-mocks": "~1.x",

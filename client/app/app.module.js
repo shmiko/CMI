@@ -18,7 +18,8 @@
     "iso-3166-country-codes",
     "blogApp",
     "todoApp",
-    "instagramApp"
+    "instagramApp",
+    "bloggerApp"
     ]);
 
      app.constant('config', {

@@ -18,12 +18,13 @@
     <!-- <link rel="stylesheet" href="app/introduction/intro.css" /> -->
     <link rel="stylesheet" href="app/calmap/calmap.css">
     <link rel="stylesheet" href="app/form/form.css">
-    <link rel="stylesheet" href="app/blog/blog.css">
-    <link rel="stylesheet" href="app/todo/todo.css">
+    <!-- <link rel="stylesheet" href="app/blog/blog.css"> -->
+    <!-- <link rel="stylesheet" href="app/todo/todo.css"> -->
     <link rel="stylesheet" href="app/instagram/instagram.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/110131/responsive.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="http://cdn.jsdelivr.net/foundation/4.3.1/css/foundation.min.css"> -->
+    <link rel="stylesheet" href="app/blogger/blogger.css">
     
 </head>
     <body data-ng-cloak="">
@@ -36,7 +37,8 @@
             <!-- <div class="col-md-5"> -->
                 <!-- <div data-ng-include="'app/events/addEvent.html'"></div> -->
             <!-- </div> -->
-            <div data-ng-view></div>
+            <!-- <div data-ng-view></div> -->
+            <div data-ui-view></div>
         </div>
         <div data-ng-include="'app/core/layout/footer.html'"></div>
     </body>
@@ -44,12 +46,13 @@
 <!-- <script data-require="jquery.js@2.1.4" data-semver="2.1.4" src="../bower_components/jquery/dist/jquery.js"></script> -->
     <script data-require="jquery.js@2.1.4" data-semver="2.1.4" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script data-require="angular.js@1.4.6" data-semver="1.4.6" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script data-require="angular-route.js@1.4.6" data-semver="1.4.6" src="../bower_components/angular-route/angular-route.js"></script>
     <script data-require="angularjs-geolocation.min.js@0.1.1" data-semver="0.1.1" src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
     <script data-require="moment.js@2.10.6" data-semver="2.10.6" src="../bower_components/moment/moment.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="../bower_components/angular/angular-resource.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="../bower_components/iso-3166-country-codes-angular/iso-3166-country-codes-angular.js"></script>
-    
+    <script src="../bower_components/easing.js"></script>
     <!-- Vendor JS -->
     <!-- Holder JS -->
     <script data-require="TweenMax.min.js@1.18.0" data-semver="1.18.0" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
@@ -107,6 +110,7 @@
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/blog/blog.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/todo/todo.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/instagram/instagram.js"></script>
+    <script data-require="calendar_mod_ctr.js" data-semver="1" src="app/blogger/blogger.js"></script>
 </html>
 
 

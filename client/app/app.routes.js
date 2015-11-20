@@ -5,7 +5,7 @@
 "use strict";
 
 angular.module('cmiApp')
-    .config(['$routeProvider', function ($routeProvider) {
+    .config(['$stateProvider','$httpProvider','$routeProvider', function ($stateProvider,$httpProvider,$routeProvider) {
 
 
         var routes = [
@@ -124,8 +124,83 @@ angular.module('cmiApp')
                     controller: 'Example'
                 }
             }
+  
         ];
+        $stateProvider
 
+            .state('posts',{
+                url:'/posts',
+                templateUrl : 'app/blogger/pages/blog.html',
+                controller  : 'bloggerController'
+            })
+
+            .state('post',{
+                url:'/post/:id',
+                templateUrl : 'app/blogger/pages/post.html',
+                controller  : 'postsController'
+            })
+            .state('instagram',{
+                url:'/instagram',
+                templateUrl : 'app/instagram/instagram.html',
+                controller  : 'Example'
+            })
+            .state('todo',{
+                url:'/todo',
+                templateUrl : 'app/todo/todo.html',
+                controller  : 'todoController'
+            })
+            .state('forecast',{
+                url:'/forecast',
+                templateUrl : 'app/weather/forecast.html',
+                controller  : 'OpenWeatherCtrl'
+            })
+            .state('event',{
+                url:'/calmap/:eventId',
+                templateUrl : 'app/calmap/event.html',
+                controller  : 'EventCtrl'
+            })
+            .state('calmap',{
+                url:'/calmap',
+                templateUrl : 'app/calmap/calmap.html',
+                controller  : 'CalendarCtrl'
+            })
+            .state('form',{
+                url:'/form',
+                templateUrl : 'app/form/form.html'
+            })
+            .state('travel',{
+                url:'/travel',
+                templateUrl : 'app/travel/travel-cmi.html'
+            })
+
+            .state('itinerary',{
+                url:'/itinerary',
+                templateUrl : 'app/itinerary/itinerary.html'
+            })
+            .state('intro',{
+                url:'/intro',
+                templateUrl : 'app/introduction/intro.html'
+            })
+            .state('introduction',{
+                url:'/introduction',
+                templateUrl : 'app/introduction/introduction.tmpl.html'
+            })
+            .state('addevent',{
+                url:'/addevent',
+                templateUrl : 'app/events/addEvent.html',
+                controller: 'eventController'
+            })
+            .state('findevent',{
+                url:'/findevent',
+                templateUrl : 'app/events/findEvent.html',
+                controller: 'queryController'
+            })
+            .state('calendar',{
+                url:'/calendar',
+                templateUrl : 'app/calendar/calendar.html',
+                controller: 'calendarController'
+            })
+            ;
        
         routes.forEach(function (route) {
             $routeProvider.when(route.url, route.config);
