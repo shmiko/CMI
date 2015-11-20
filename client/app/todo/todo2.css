@@ -1,6 +1,4 @@
-
-
-.todo-container {
+.todo-wrapper {
   background: #55B6AE;
   width: 100%;
 }
@@ -19,6 +17,7 @@ h2 {
   font-family: vast-shadow, sans-serif;
   font-size: 4em;
 }
+
 
 ul {
   padding: 0px;
@@ -52,7 +51,7 @@ li input[type="checkbox"] {
 }
 
 .add-input {
-  width: 60%;
+  width: 33%;
   height: 20px;
   float: left;
   border: none;
@@ -60,14 +59,46 @@ li input[type="checkbox"] {
   font-size: 2em;
   font-family: megrim, fantasy;
   text-indent: 55px;
+  color: #13756D;
+  background-color:#F38207;
+  border-color: #13756D;
+    
+}
+.taskCategory{
+    width: 33%;
+  height: 80px;
+  float: left;
+  border: none;
+  padding: 40px 0;
+  font-size: 2em;
+  font-family: megrim, fantasy;
+  text-indent: 55px;
+  color: #13756D;
+  background-color:#F38207;
+  border-color: #13756D;
+  /*margin-top: 2px;*/
+    
+}
+
+.todo-row {
+    margin-right: -15px;
+    margin-left: -15px;
+    background-color: #F38207;
 }
 
 .add-btn {
-  width: 40%;
-  border: none;
-  background: #29F4E3;
-  padding: 0;
-  height: 100px;
+    width: 50%;
+    /* border: 5px; */
+    /* border-color: rgb(245, 242, 242); */
+    border-color: #FF9200;
+    height: 100px;
+    background: #13756D;
+    font-size: 4em;
+    font-family: megrim, fantasy;
+    color: rgb(230, 113, 24);
+    float: left;
+    /* padding: 40px 0; */
+    /*margin-left:5px;*/
 }
 .add-btn h2 {
   background: #29F4E3;
@@ -78,11 +109,16 @@ li input[type="checkbox"] {
 }
 
 .clear-btn {
-  width: 100%;
-  border: none;
-  height: 100px;
-  background: #13756D;
-  font-size: 2em;
-  font-family: megrim, fantasy;
-  color: #aaa;
+    width: 50%;
+    /* border: 5px; */
+    /* border-color: rgb(245, 242, 242); */
+    border-color: #FF9200;
+    height: 100px;
+    background: #13756D;
+    font-size: 4em;
+    font-family: megrim, fantasy;
+    color: rgb(230, 113, 24);
+    float: left;
+    /*margin-right:5px;*/
+    /* padding: 40px 0; */
 }

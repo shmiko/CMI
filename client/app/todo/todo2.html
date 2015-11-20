@@ -1,7 +1,7 @@
 <!-- <div >         -->
 <div class="todo-container" ng-app="TaskManager">
     <div class="todo-wrapper" ng-controller="todoController">
-      <h2>You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2>
+      <div class="todo-count">You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</div>
       <ul>
        <!--  <li ng-repeat="todo in todos">
           <input type="checkbox" ng-model="todo.done"/>
@@ -14,25 +14,26 @@
             <strong class="taskDate complete-{{taskItem.complete}}"><i class="fa fa-calendar"></i>{{taskItem.date | date : 'mediumDate'}}</strong>
         </li>
       </ul>
-      <form>
+      <form class="todo-row">
 
         <input type="text" id="description" class="add-input" placeholder="What do you need to do?" ng-model="newTask">
-        <label for="description">Description</label>
+        <!-- <label for="description">Description</label> -->
    
         <i class="fa fa-caret-down selectArrow"></i>
-        <select id="category" class="taskCategory" ng-model="newTaskCategory" ng-options="obj.name for obj in categories">
+        <select id="category" class="taskCategory add-input" ng-model="newTaskCategory" ng-options="obj.name for obj in categories">
             <option class="disabled" value="">Choose a category</option>
         </select>
-        <label for="category">Category</label>
+        <!-- <label for="category">Category</label> -->
    
         <input type="date" id="dueDate" class="add-input" ng-model="newTaskDate">
-        <label for="dueDate">Due Date</label>
+        <!-- <label for="dueDate">Due Date</label> -->
                 
-        <input class="addinput" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant />
-        <button class="add-btn" ng-click="addTodo()"><h2>Add</h2></button>
+        <!-- <input class="add-input" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant /> -->
+        <button class="add-btn" ng-click="addNew()">Add</button>
+        <button class="clear-btn" ng-click="deleteTask()">Delete</button>
       </form>
       
-      <button class="clear-btn" ng-click="clearCompleted()">Clear completed</button>
+      
     </div>
 </div>
 

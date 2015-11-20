@@ -58,6 +58,29 @@ h1 {
     margin: 0;
 }
 
+.setrow{
+  display: inline-block;
+}
+
+h4 {
+    font-family: 'Rokkitt', sans-serif;
+    color: #F38207;
+    text-align: center;
+    font-weight: 400;
+    margin: 5px;
+    font-size: 1em;
+}
+
+.todo-count {
+  font-size: 2em;
+  font-family: megrim, fantasy;
+  background: #1CA89C;
+  padding: 20px;
+  margin: 0;
+  color: #333;
+  text-align: center;
+}
+
 body {
   /*background:transparent;*/
   background:#020031 !important;
