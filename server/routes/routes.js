@@ -5,9 +5,56 @@
 var mongoose        = require('mongoose');
 //var User            = require('../models/user.js');
 var Event            = require('../models/event.js');
+// define model =================
+var Todo = mongoose.model('Todo', {
+    text: String,
+    category: String,
+    completed: Boolean,
+    createdAt: Date,  
+    updatedAt: Date,
+});
+
+
+// var Schema = mongoose.Schema;
+var schema = new mongoose.Schema({ name: 'string', size: 'string' });    
+/**
+ * Todo Schema
+ */
+// var Tank = mongoose.model('Tank', yourSchema);
+var Tank = mongoose.model('Tank', schema);
+var small = new Tank({ size: 'small' });
+small.save(function (err) {
+  if (err) return handleError(err);
+  // saved!
+})
+
+// var TodoSchema = new Schema({
+//   text: String,
+//   completed: Boolean,
+//   createdAt: Date,  
+//   updatedAt: Date,
+// });
+
+// Todo.pre('save', function(next, done){
+//   if (this.isNew) {
+//     this.createdAt = Date.now();
+//   }
+//   this.updatedAt = Date.now();
+//   next();
+// });
+
+// mongoose.model('Todo', TodoSchema);
+
+
+
 
 // Opens App Routes
 module.exports = function(app) {
+// --------------------------------------------------------
+// --------------------------------------------------------
+//          Start of Event Routes
+// --------------------------------------------------------
+// --------------------------------------------------------
     // Retrieve records for all events in the db
     app.get('/events', function(req, res){
         // Uses Mongoose schema to run the search (empty conditions)
@@ -126,4 +173,63 @@ module.exports = function(app) {
             res.json(req.body);
         });
     });
+
+// --------------------------------------------------------
+// --------------------------------------------------------
+//          Start of Todo Routes
+// --------------------------------------------------------
+// --------------------------------------------------------
+                // get all todos
+    app.get('/api/todos', function(req, res) {
+
+        // use mongoose to get all todos in the database
+        Todo.find(function(err, todos) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(todos); // return all todos in JSON format
+        });
+    });
+
+    // create todo and send back all todos after creation
+    app.post('/api/todos', function(req, res) {
+
+        // create a todo, information comes from AJAX request from Angular
+        Todo.create({
+            text : req.body.text,
+            category : req.body.category,
+            completed : false
+        }, function(err, todo) {
+            if (err)
+                res.send(err);
+
+            // get and return all the todos after you create another
+            Todo.find(function(err, todos) {
+                if (err)
+                    res.send(err)
+                res.json(todos);
+            });
+        });
+
+    });
+
+    // delete a todo
+    app.delete('/api/todos/:todo_id', function(req, res) {
+        Todo.remove({
+            _id : req.params.todo_id
+        }, function(err, todo) {
+            if (err)
+                res.send(err);
+
+            // get and return all the todos after you create another
+            Todo.find(function(err, todos) {
+                if (err)
+                    res.send(err)
+                res.json(todos);
+            });
+        });
+    });
+
 };

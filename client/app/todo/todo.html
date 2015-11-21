@@ -1,58 +1,84 @@
-<!-- <div >         -->
-<div class="todo-container" ng-app="TaskManager">
-            <div class="content" ng-controller="todoController">
-            <h1>CalMapIt</h1>
-            <!-- <p class="tagline">What ToDo?</p> -->
-            <h2>You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2>
-            <form>
-                <div class="inputContainer">
-                    <input type="text" id="description" class="add-input" placeholder="What do you need to do?" ng-model="newTask">
-                    <label for="description">Description</label>
-                </div>
-                <div class="inputContainer half last">
-                    <i class="fa fa-caret-down selectArrow"></i>
-                    <select id="category" class="taskCategory" ng-model="newTaskCategory" ng-options="obj.name for obj in categories">
-                        <option class="disabled" value="">Choose a category</option>
-                    </select>
-                    <label for="category">Category</label>
-                </div>
-                <div class="inputContainer half last right">
-                    <input type="date" id="dueDate" class="taskDate" ng-model="newTaskDate">
-                    <label for="dueDate">Due Date</label>
-                </div>
-                <div class="row">
-                    <button class="add-btn" ng-click="addNew()"><i class="fa fa-plus icon"></i>Add task</button>
-                    <button class="clear-btn" ng-click="deleteTask()"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
-                </div>
-            </form>
-            <ul  class="taskList">
-                <li class="taskItem" ng-repeat="taskItem in taskItem track by $index" ng-model="taskItem"><input type="checkbox" class="taskCheckbox" ng-model="taskItem.complete" ng-change="save()">
-                    <span class="complete-{{taskItem.complete}}">{{taskItem.description}}</span>
-                    <span class="category-{{taskItem.category}}">{{taskItem.category}}</span>
-                    <strong class="taskDate complete-{{taskItem.complete}}"><i class="fa fa-calendar"></i>{{taskItem.date | date : 'mediumDate'}}</strong>
-                </li>
-            </ul><!-- taskList -->
-            </div><!-- content -->
- </div><!-- container -->
+<div class="container">
 
-<!-- </div> -->
-<!-- 
-  <body>
-    <div class="todo-wrapper" ng-controller="TodoCtrl">
-      <h2>You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2>
-      <ul>
-        <li ng-repeat="todo in todos">
-          <input type="checkbox" ng-model="todo.done"/>
-          <span class="done-{{todo.done}}">{{todo.text}}</span>
-        </li>
-      </ul>
-      <form>
-        <input class="add-input" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant />
-        <button class="add-btn" ng-click="addTodo()"><h2>Add</h2></button>
-      </form>
-      
-      <button class="clear-btn" ng-click="clearCompleted()">Clear completed</button>
+        <!-- HEADER AND TODO COUNT -->
+        <div class="jumbotron text-center">
+            <h1>What's left to do?<span class="label label-info">{{ todos.length }}</span></h1>
+        </div>
+
+        <!-- TODO LIST -->
+        <div id="todo-list" class="row">
+            <div class="col-sm-8 col-sm-offset-4">
+                <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                <div class="checkbox" ng-repeat="todo in todos track by $index">
+                    <label>
+                        <input type="checkbox" ng-click="deleteTodo(todo._id)">Title: {{ todo.text }} 
+                    </label>
+                    <label>
+                      <span class="category-{{todo.category}}">Category: {{todo.category}}</span>
+                      <!-- category-{{ formData.category }} -->
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORM TO CREATE TODOS -->
+        <div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                        <label class="">Title</label>
+                        <input type="text" class="form-control add-input text-center" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
+                        <!-- <i class="fa fa-caret-down selectArrow"></i> -->
+                        <!-- <select id="category" class="taskCategory add-input" ng-model="formData.category" ng-options="obj.name for obj in categories">
+                            <option class="" value="{{obj.name}}">Choose a category</option>
+                        </select> -->
+                        <label class="radio control-label">Category</label>
+                   <!--      <div style="display: inline-block; background-color: #000000; color: #FFF;">
+                        <md-radio-group ng-model="data.group1" layout="row">
+                          <md-radio-button value="Business" class="md-primary" data-ng-model="formData.category">Business</md-radio-button>
+                          <md-radio-button value="Family" data-ng-model="formData.category"> Family </md-radio-button>
+                          <md-radio-button value="Other" data-ng-model="formData.category"> Other </md-radio-button>
+                        </md-radio-group>
+                        <p>Selected Value: <span class="radioValue">{{ data.group1 }}</span> </p>
+                        </div> -->
+                        
+                        <row style="display: inline-block;">
+                        <div class="radio category-">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="radiobusines" value="Business" data-ng-model="formData.category">
+                                Business
+                            </label>
+                        </div>
+                        <div class="radio category-" required>
+                            <label>
+                                <input type="radio" name="optionsRadios" id="radiofamily" value="Family" data-ng-model="formData.category">
+                                Family
+                            </label>
+                        </div>
+                        <div class="radio category-">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="radioother" value="Other" data-ng-model="formData.category">
+                                Other
+                            </label>
+                        </div>  
+                        </row>
+                    <!--     <md-select placeholder="Categories" ng-class="add-input" ng-init="formData.category = selected" ng-model="formData.category">
+                            <md-option ng-repeat="(i,item) in categories" value="{{item}}"
+                                       ng-selected="i == 0 ? true:false">{{item.Name}}</md-option>  $
+                         </md-select> -->
+                         <!-- <select class="form-control ng-pristine ng-valid" ng-init="formData.category = selected" ng-model="formData.category" ng-options="obj.name for obj in categories">
+                           <option value="?"></option>
+                           <option value="0">Inventory Not On Site</option>
+                           <option value="1">Inventory On Site</option>
+                           <option value="2">Ready For Pick-Up</option>
+                           <option value="3">Sterilized For Surgery</option>
+                        </select> -->
+                        <!-- createToDo() WILL CREATE NEW TODOS -->
+                        <button type="submit" class="add-btn" ng-click="createTodo()">Add</button>
+                    </div>                    
+                </form>
+            </div>
+        </div>
     </div>
-  </body>
-  
-</html> -->
+    

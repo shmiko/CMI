@@ -30,8 +30,8 @@ app.use(methodOverride());
 
 // Routes
 // ------------------------------------------------------
- require('./routes/routes.js')(app);
-
+require('./routes/routes.js')(app);
+// require('./routes/todo.routes.js')(app);
 // Listen
 // -------------------------------------------------------
 app.listen(port);

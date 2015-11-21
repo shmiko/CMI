@@ -1,16 +1,9 @@
-//Define angular app
-var app = angular.module('todoApp', []); 
+//public/main.js
 
-//controllers
-app.controller('todoController', function($scope) {
-    $scope.today = new Date();
-    $scope.saved = localStorage.getItem('taskItems');
-    $scope.taskItem = (localStorage.getItem('taskItems')!==null) ? 
-    JSON.parse($scope.saved) : [ {description: "Why not add a task?", date: $scope.today, complete: false}];
-    localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
-    
-    $scope.newTask = null;
-    $scope.newTaskDate = null;
+angular.module('todoApp', [])
+
+.controller("todoController",['$scope', '$http', function($scope, $http) {
+    $scope.formData = {};
     $scope.categories = [
         {name: 'Personal'},
         {name: 'Work'},
@@ -18,44 +11,86 @@ app.controller('todoController', function($scope) {
         {name: 'Cleaning'},
         {name: 'Other'}
     ];
-    $scope.newTaskCategory = $scope.categories;
-    $scope.addNew = function () {
-        if ($scope.newTaskDate == null || $scope.newTaskDate == '') {
-            $scope.taskItem.push({
-                description: $scope.newTask,
-                date: "No deadline",
-                complete: false,
-                category: $scope.newTaskCategory.name
-            }) 
-        } else {
-            $scope.taskItem.push({
-                description: $scope.newTask,
-                date: $scope.newTaskDate,
-                complete: false,
-                category: $scope.newTaskCategory.name
-            })
-        };
-        $scope.newTask = '';
-        $scope.newTaskDate = '';
-        $scope.newTaskCategory = $scope.categories;
-        localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
-    };
-    $scope.deleteTask = function () {
-        var completedTask = $scope.taskItem;
-        $scope.taskItem = [];
-        angular.forEach(completedTask, function (taskItem) {
-            if (!taskItem.complete) {
-                $scope.taskItem.push(taskItem);
-            }
+    // $scope.selected = $scope.category.name;
+    
+
+            //  var eventData = {
+            //     eventname: vm.updatedAt.eventname,
+            //     eventtype: vm.formData.eventtype,
+            //     duration: vm.formData.duration,
+            //     mustdo: vm.formData.mustdo,
+            //     location: [vm.formData.longitude, vm.formData.latitude],
+            //     htmlverified: vm.formData.htmlverified
+            // };
+    // $scope.newTaskCategory = $scope.categories;
+    // var category: $scope.newTaskCategory.name;
+    // var todoData = {
+    //             text: vm.newTask,
+    //             createdAt: vm.newTaskDate,
+    //             completed: false,
+    //             category: vm.newTaskCategory.name
+    //         };
+     // when landing on the page, get all todos and show them
+    $http.get('/api/todos')
+        .success(function(data) {
+            $scope.todos = data;
+            console.log(data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
         });
-        localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
+
+    // when submitting the add form, send the text to the node API
+    $scope.createTodo = function() {
+           var todoData = {
+                text: $scope.formData.text,
+                category: $scope.formData.category
+            }; 
+
+
+        $http.post('/api/todos', todoData)
+
+            .success(function(data) {
+                console.log("todoData.category is ",todoData.category);
+            console.log("data is ",data);
+                $scope.formData = {}; // clear the form so our user is ready to enter another
+                $scope.todos = data;
+                console.log("Data is ",data);
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
     };
 
-     $scope.getTotalTodos = function () {
-        return $scope.taskItem.length;
-      };
-    
-    $scope.save = function () {
-        localStorage.setItem('taskItems', JSON.stringify($scope.taskItem));
-    }
-});
+    $scope.createEventTodo = function() {
+
+           var todoData = {
+                text: $scope.formData.text,
+                category: $scope.formData.category
+            };
+
+            // Saves the event data to the db
+            $http.post('/api/todos', todoData)
+                .success(function (data) {
+                    console.log('Success: ' + data);
+                    $scope.formData.text = "";
+                    $scope.formData.category = "";
+
+                })
+                .error(function (data) {
+                    console.log('DB Event Error: ' + data);
+                });
+        };
+
+    // delete a todo after checking it
+    $scope.deleteTodo = function(id) {
+        $http.delete('/api/todos/' + id)
+            .success(function(data) {
+                $scope.todos = data;
+                console.log(data);
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
+}]);
