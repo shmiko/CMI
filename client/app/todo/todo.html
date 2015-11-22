@@ -1,39 +1,59 @@
-<div class="container">
+<md-content md-theme="calmapit-dark" >
 
         <!-- HEADER AND TODO COUNT -->
         <div class="jumbotron text-center">
-            <h1>What's left to do?<span class="label label-info">{{ todos.length }}</span></h1>
+            <h1>You have <span class="label label-info">{{ todos.length }}</span> things to do!</h1>
         </div>
 
         <!-- TODO LIST -->
-        <div id="todo-list" class="row">
+ <!--        <div id="todo-list" class="row">
             <div class="col-sm-8 col-sm-offset-4">
-                <!-- LOOP OVER THE TODOS IN $scope.todos -->
-                <div class="checkbox" ng-repeat="todo in todos track by $index">
+    -->             <!-- LOOP OVER THE TODOS IN $scope.todos -->
+<!--                 <div class="checkbox" ng-repeat="todo in todos track by $index">
                     <label>
+
                         <input type="checkbox" ng-click="deleteTodo(todo._id)">Title: {{ todo.text }} 
                     </label>
                     <label>
                       <span class="category-{{todo.category}}">Category: {{todo.category}}</span>
-                      <!-- category-{{ formData.category }} -->
+                      
                     </label>
                 </div>
             </div>
-        </div>
-
+        </div> -->
+         <md-list-item ng-repeat="todo in todos track by $index">
+            <p> Title: {{ todo.text }} | <span class="category-{{todo.category}}">Category: {{todo.category}}</span> </p>
+            <md-checkbox class="md-secondary" ng-click="deleteTodo(todo._id)"></md-checkbox>
+            <md-divider ng-if="!$last"></md-divider>
+          </md-list-item>
+          <p>
         <!-- FORM TO CREATE TODOS -->
+
+        <span>Add New Todo's</span>
         <div id="todo-form" class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
-                <form>
+                <form class="inline">
                     <div class="form-group">
                         <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                        <label class="">Title</label>
+                        <!-- <label class="">Title</label>
                         <input type="text" class="form-control add-input text-center" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
+                         -->
+                        <md-input-container>
+                          <label>Title</label>
+                          <input md-placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
+                        </md-input-container>
                         <!-- <i class="fa fa-caret-down selectArrow"></i> -->
                         <!-- <select id="category" class="taskCategory add-input" ng-model="formData.category" ng-options="obj.name for obj in categories">
                             <option class="" value="{{obj.name}}">Choose a category</option>
                         </select> -->
-                        <label class="radio control-label">Category</label>
+                        <p>Category:
+                         <md-radio-group data-ng-model="formData.category">
+                          <md-radio-button value="Business" class="md-primary">Business</md-radio-button>
+                          <md-radio-button value="Family"> Family </md-radio-button>
+                          <md-radio-button value="Other">Other</md-radio-button>
+                        </md-radio-group>
+                       
+                        <!-- <label class="radio control-label">Category</label> -->
                    <!--      <div style="display: inline-block; background-color: #000000; color: #FFF;">
                         <md-radio-group ng-model="data.group1" layout="row">
                           <md-radio-button value="Business" class="md-primary" data-ng-model="formData.category">Business</md-radio-button>
@@ -43,7 +63,7 @@
                         <p>Selected Value: <span class="radioValue">{{ data.group1 }}</span> </p>
                         </div> -->
                         
-                        <row style="display: inline-block;">
+                       <!--  <row style="display: inline-block;">
                         <div class="radio category-">
                             <label>
                                 <input type="radio" name="optionsRadios" id="radiobusines" value="Business" data-ng-model="formData.category">
@@ -62,7 +82,7 @@
                                 Other
                             </label>
                         </div>  
-                        </row>
+                        </row> -->
                     <!--     <md-select placeholder="Categories" ng-class="add-input" ng-init="formData.category = selected" ng-model="formData.category">
                             <md-option ng-repeat="(i,item) in categories" value="{{item}}"
                                        ng-selected="i == 0 ? true:false">{{item.Name}}</md-option>  $
@@ -75,10 +95,12 @@
                            <option value="3">Sterilized For Surgery</option>
                         </select> -->
                         <!-- createToDo() WILL CREATE NEW TODOS -->
-                        <button type="submit" class="add-btn" ng-click="createTodo()">Add</button>
+                        <!-- <md-button class="md-raised md-primary">Primary</md-button> -->
+                        <md-button class="md-raised md-primary" ng-click="createTodo()" type="button">Add</md-button>
+                        <!-- <button type="submit" class="add-btn" ng-click="createTodo()">Add</button> -->
                     </div>                    
                 </form>
             </div>
         </div>
-    </div>
+  </md-content>
     

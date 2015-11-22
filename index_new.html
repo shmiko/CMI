@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html ng-app="mdapp">
+
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS material-sidenav Plunker</title>
+    <script>
+    document.write('<base href="' + document.location + '" />');
+    </script>
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="/app/core/sidebar/mdsb.css" />
+    <script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.0-rc.5/angular.js" data-semver="1.3.0-rc.5"></script>
+    <script data-require="angular-aria@1.3.x" src="https://code.angularjs.org/1.3.0-rc.5/angular-aria.js" data-semver="1.3.0-rc.5"></script>
+    <script data-require="angular-animate@1.3.x" src="https://code.angularjs.org/1.3.0-rc.5/angular-animate.js" data-semver="1.3.0-rc.5"></script>
+    <script src="http://hammerjs.github.io/dist/hammer.js"></script>
+    <script src="../bower_components/angular-material/angular-material/angular-material.js"></script>
+    <script src="/app/core/sidebar/mdsb.js"></script>
+</head>
+
+
+<body layout="horizontal">
+
+    <div layout="vertical" layout-fill tabIndex="-1" role="main">
+        <md-toolbar md-theme="default" class="app-toolbar md-whiteframe-z1">
+            <div class="md-toolbar-tools" ng-click="openMenu()">
+                Main Menu
+            </div>
+        </md-toolbar>
+
+        <md-content scroll-y flex class="md-padding">
+
+            <div ng-controller="AppCtrl" layout="vertical" layout-fill>
+
+                <section layout="horizontal" flex>
+
+                    <md-sidenav class="md-sidenav-left md-whiteframe-z2" component-id="left" is-locked-open="$media('md')">
+
+                        <md-toolbar class="md-theme-lime">
+                            <h1 class="md-toolbar-tools">Operations</h1>
+                        </md-toolbar>
+                        <md-content class="md-padding" ng-controller="LeftCtrl">
+                        <md-list>
+                          <md-item ng-repeat="item in menuLinks">
+                            <md-item-content>
+                              <div class="md-tile-content"><md-tooltip>{{item.tooltip}}</md-tooltip>
+                                <h3><a href="#">{{item.title}}</a></h3>
+                              </div>
+                            </md-item-content>
+                            <md-divider ng-if="!$last"></md-divider>
+                          </md-item>
+                        </md-list>
+                        <md-button ng-click="close()" class="md-primary" hide-md>
+                            Close (hide-md)
+                        </md-button>
+                        </md-content>
+
+                    </md-sidenav>
+
+                    <md-content flex class="md-padding">
+                      
+                        <div layout="vertical" layout-fill layout-align="center center">
+                            <p>The left sidenav will 'lock open' on a medium (>=960px wide) device.</p>
+
+                            <div>
+                                <md-button ng-click="toggleLeft()" class="md-primary" hide-md>Toggle Menu</md-button>
+                            </div>
+
+                            <div>
+                                <md-button ng-click="toggleRight()" class="md-primary">
+                                    Toggle right
+                                </md-button>
+                            </div>
+                        </div>
+
+                    </md-content>
+
+                    <md-sidenav class="md-sidenav-right md-whiteframe-z2" component-id="right">
+
+                        <div ng-controller="RightCtrl" layout="vertical" flex layout-fill>
+                            <md-content style="height: 600px;">
+                                <section>
+                                    <md-subheader class="md-primary">Tasks</md-subheader>
+                                    <md-list layout="vertical">
+                                        <md-item ng-repeat="task in tasks">
+                                            <md-item-content>
+                                                <div class="md-tile-left">
+                                                    <img ng-src="{{task.face}}" class="face" alt="{{task.who}}">
+                                                </div>
+                                                <div class="md-tile-content">
+                                                    <h3>{{task.what}}</h3>
+                                                    <h4>{{task.who}}</h4>
+                                                    <p>
+                                                        {{task.notes}}
+                                                    </p>
+                                                </div>
+                                            </md-item-content>
+                                        </md-item>
+                                    </md-list>
+                                </section>
+                                <section>
+                                    <md-subheader>Completed Tasks</md-subheader>
+                                    <md-list layout="vertical">
+                                        <md-item ng-repeat="task in tasks">
+                                            <md-item-content>
+                                                <div class="md-tile-left">
+                                                    <img ng-src="{{task.face}}" class="face" alt="{{task.who}}">
+                                                </div>
+                                                <div class="md-tile-content">
+                                                    <h3>{{task.what}}</h3>
+                                                    <h4>{{task.who}}</h4>
+                                                    <p>
+                                                        {{task.notes}}
+                                                    </p>
+                                                </div>
+                                            </md-item-content>
+                                        </md-item>
+                                    </md-list>
+                                </section>
+                            </md-content>
+                        </div>
+                    </md-sidenav>
+
+                </section>
+
+            </div>
+
+        </md-content>
+
+    </div>
+
+</body>
+
+</html>

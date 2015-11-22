@@ -206,7 +206,7 @@ angular.module('cmiApp')
             })
             .state('mdsb',{
                 url:'/mdsb',
-                templateUrl : 'app/core/sidebar/mdsb.html',
+                templateUrl : 'app/core/sidebar/mdsb2.html',
                 controller: 'AppCtrl'
             })
             

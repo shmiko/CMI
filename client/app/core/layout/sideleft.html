@@ -1,0 +1,12 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="true">
+   <md-toolbar md-theme="deep-orange">
+       <h2 class="md-toolbar-tools">Menu</h2>
+   </md-toolbar>
+   <md-content ng-controller="AppCtrl" md-theme="deep-orange">
+       <md-button layout-align="left" ng-repeat="item in items" ui-sref="{{item.location}}" class="menu-item"
+       md-ink-ripple="#bbb" aria-hidden="false"> 
+<!-- the above <md-button> just repeats buttons created in the JS -->
+        <span>{{item.label}}</span>
+       </md-button>
+   </md-content>
+</md-sidenav>

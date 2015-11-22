@@ -1,6 +1,67 @@
-<!-- Footer -->
-    <div class="footer">
-        <p class="text-center"><span class="glyphicon glyphicon-check"></span> Created by shmiko -
-            <a href="https://shmik.com/">shmik.com</a> | <a href="https://github.com/shmiko">Github</a></p>
-    </div>
+<div layout="column" ng-controller="DemoCtrl as demo" ng-cloak="" class="fabSpeedDialdemoMoreOptions" ng-app="MyApp">
+  <md-content md-theme="calmapit-dark" class="" layout="column">
+
+    <!-- <p class="intro">
+      The speed dial supports many advanced usage scenarios. This demo shows many of them mixed
+      together... and even includes a Toolbar - SpeedDial combination.
+    </p> -->
+
+    <md-toolbar>
+      <h3>
+        <md-button>Test</md-button>
+        <md-button>Test</md-button>
+        <md-button hide-sm="">Test</md-button>
+        <md-button hide-sm="">Test</md-button>
+        <md-button hide-sm="">Test</md-button>
+        <md-button hide-sm="">Test</md-button>
+        <md-button hide-sm="">Test</md-button>
+      </h3>
+    </md-toolbar>
+
+    <md-fab-speed-dial ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen" class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }" ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false">
+      <md-fab-trigger>
+        <md-button aria-label="menu" class="md-fab md-warn">
+          <md-tooltip md-direction="top" md-visible="tooltipVisible">Menu</md-tooltip>
+          <md-icon md-svg-src="../../content/img/icons/menu.svg" aria-label="menu"></md-icon>
+        </md-button>
+      </md-fab-trigger>
+
+      <md-fab-actions>
+        <div ng-repeat="item in demo.items">
+          <md-button aria-label="{{item.name}}" class="md-fab md-raised md-mini" ng-click="demo.openDialog($event, item)">
+            <md-tooltip md-direction="{{item.direction}}" md-visible="tooltipVisible" md-autohide="false">
+              {{item.name}}
+            </md-tooltip>
+
+            <md-icon md-svg-src="{{item.icon}}" aria-label="{{item.name}}"></md-icon>
+          </md-button>
+        </div>
+      </md-fab-actions>
+    </md-fab-speed-dial>
+  </md-content>
+
+  
+
+  <script type="text/ng-template" id="dialog.html">
+    <md-dialog>
+      <md-toolbar>
+        <div class="md-toolbar-tools">Cool Dialog!</div>
+      </md-toolbar>
+
+      <md-dialog-content layout-padding>
+        Hello user! you clicked {{dialog.item.name}}.
+      </md-dialog-content>
+
+      <div class="md-actions">
+        <md-button aria-label="Close dialog" ng-click="dialog.close()" class="md-primary">
+          Close Greeting
+        </md-button>
+
+        <md-button aria-label="Submit dialog" ng-click="dialog.submit()" class="md-primary">
+          Submit
+        </md-button>
+      </div>
+    </md-dialog>
+  </script>
+
 </div>

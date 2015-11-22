@@ -20,8 +20,8 @@
     "todoApp",
     "instagramApp",
     "bloggerApp",
-    "ngMaterial"
-        // "sidenavDemo1"
+    "ngMaterial",
+    "MyApp"
     ]);
 
      app.constant('config', {
