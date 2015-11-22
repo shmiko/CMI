@@ -36,3 +36,36 @@ a {
 span {
 	color:#000000;
 }
+
+.box{
+	background-color: #000;
+	color: red;
+	
+}
+
+
+@import '//fonts.googleapis.com/css?family=Bangers';
+
+body { margin:0; }
+.wrap {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:300px;
+  background:transparent;
+}
+.time-to {
+  text-align:center;
+  font-family:Bangers;
+  color:white;
+  font-size:35px;
+  letter-spacing:2px;
+  color:red !important;
+  top:80px;
+  height: 100%;
+  span {
+    display:block;
+    font-size:80px;
+    color:red !important;
+  }
+}

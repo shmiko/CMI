@@ -204,10 +204,10 @@ angular.module('cmiApp')
                 templateUrl : 'app/calendar/calendar.html',
                 controller: 'calendarController'
             })
-            .state('mdsb',{
-                url:'/mdsb',
-                templateUrl : 'app/core/sidebar/mdsb2.html',
-                controller: 'AppCtrl'
+            .state('cd',{
+                url:'/cd',
+                templateUrl : 'app/todo/cd.html',
+                controller: 'todoController'
             })
             
             ;
