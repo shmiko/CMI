@@ -10,6 +10,7 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var less = require('gulp-less');
 var autoprefix = require('gulp-autoprefixer');
+var sass = require('gulp-sass');
 
 gulp.paths = {
   src: 'client/',
@@ -17,8 +18,11 @@ gulp.paths = {
 };
 
 var bases = {
- app: 'client/',
- dist: 'dist/',
+    app:  'client/',
+    dist: 'dist/',
+    sass: 'client/sass/',
+    css:  'client/sass/',
+    less: 'client/less/', 
 };
 
 var paths = {
@@ -46,13 +50,33 @@ gulp.task('buildjs', function () {
 });
 
 gulp.task('less', function () {
-   gulp.src(bases.app + '/**/*.less')
+   gulp.src('client/app/**/*.less', { base: 'client/app' })
       .pipe(less())
       .pipe(autoprefix('last 2 version', 'ie 8', 'ie 9'))
-      .pipe(gulp.dest(bases.dist));
+      .pipe(gulp.dest('client/app'));
 });
 
 
+
+gulp.task('sass', function() {
+    gulp.src(bases.app + 'app/**/*.scss',bases.app + '/**/*.sass')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefix('last 2 version', 'ie 8', 'ie 9'))
+        .pipe(gulp.dest(bases.app));
+});
+
+gulp.task('sassy', function (done) {
+  sass.render({
+    file: 'client/sass/test.scss',
+    success: function () { done() }
+  });
+});
+
+ // Copy styles
+gulp.task('css', function() {
+ gulp.src(bases.app + '/**/*.css')
+ .pipe(gulp.dest(bases.css));
+});
 // Delete the dist directory
 // gulp.task('clean', function() {
 //  return gulp.src(bases.dist)
@@ -86,9 +110,6 @@ gulp.task('copy', function() {
  gulp.src(bases.app + '/**/*.html')
  .pipe(gulp.dest(bases.dist));
 
- // Copy styles
- gulp.src(bases.app + '/**/*.css')
- .pipe(gulp.dest(bases.dist));
 
  // // Copy lib scripts, maintaining the original directory structure
  // gulp.src(['bower_components/**/*.js', '!bower_components/**/*.min.js'])

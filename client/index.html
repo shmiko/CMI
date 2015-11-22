@@ -7,28 +7,30 @@
     <meta name="description" content="A MEAN Calendar, Map, Itinrerary MashApp">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- All CSS -->
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="app/core/layout/style.css"/>
-    <!-- <link rel="stylesheet" href="../bower_components/bootstrap-css/css/bootstrap.css" /> -->
-    <link rel="stylesheet" href="../bower_components/fullcalendar/dist/fullcalendar.css">
-    <link rel="stylesheet" href="app/calendar/calendarDemo.css" />
+    <!-- <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/> -->
+    <!-- <link rel="stylesheet" href="app/core/layout/style.css"/> -->
+    <!-- <link rel="stylesheet" href="../bower_components/fullcalendar/dist/fullcalendar.css"> -->
+    <!-- <link rel="stylesheet" href="app/calendar/calendarDemo.css" /> -->
     <!-- <link rel="stylesheet" href="app/itinerary/itinerary.css" /> -->
-    <link rel="stylesheet" href="//codepen.io/assets/reset/normalize.css">
+<!--     <link rel="stylesheet" href="//codepen.io/assets/reset/normalize.css">
     <link rel="stylesheet" href="app/travel/travel-cmi.css" />
     <link rel="stylesheet" href="app/introduction/intro.css" />
     <link rel="stylesheet" href="app/calmap/calmap.css">
-    <link rel="stylesheet" href="app/form/form.css">
-    <!-- <link rel="stylesheet" href="app/blog/blog.css"> -->
-    <link rel="stylesheet" href="app/todo/todo2.css">
+    <link rel="stylesheet" href="app/form/form.css"> -->
+    <link rel="stylesheet" href="app/atlas/atlas.css">
+     <!-- <link rel="stylesheet" href="app/core/sidebar/mdsb.css"> 
+     <link rel="stylesheet" type="text/css" href="https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.0-rc4/angular-material.css">
+      --><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- <link rel="stylesheet" href="app/todo/todo2.css">
     <link rel="stylesheet" href="app/instagram/instagram.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+     --><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/110131/responsive.css" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="http://cdn.jsdelivr.net/foundation/4.3.1/css/foundation.min.css"> -->
-    <link rel="stylesheet" href="app/blogger/blogger.css">
+    <!-- <link rel="stylesheet" href="app/blogger/blogger.css"> -->
     
 </head>
     <body data-ng-cloak="">
-        <nav data-ng-include="'app/core/layout/navbar.html'"></nav>
+        <!-- <nav data-ng-include="'app/core/layout/navbar.html'"></nav> -->
         <section>
             <!-- Google Map -->
             <!-- <div class="col-md-7">
@@ -51,11 +53,13 @@
     <script data-require="angularjs-geolocation.min.js@0.1.1" data-semver="0.1.1" src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+    <script type="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
     <script data-require="moment.js@2.10.6" data-semver="2.10.6" src="../bower_components/moment/moment.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="../bower_components/angular/angular-resource.js"></script>
     <script data-require="calendar_mod_ctr.js" data-semver="1" src="../bower_components/iso-3166-country-codes-angular/iso-3166-country-codes-angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
     <script src="../bower_components/easing.js"></script>
+    <script type="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js"></script>
     <!-- Vendor JS -->
     <!-- Holder JS -->
     <script data-require="TweenMax.min.js@1.18.0" data-semver="1.18.0" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
@@ -99,6 +103,7 @@
 
     <!-- App Modules JS -->
     <script data-require="navbarController.js" data-semver="1" src="app/core/layout/navbarController.js"></script>
+    <script data-require="navbarController.js" data-semver="1" src="app/core/sidebar/mdsb.js"></script>
 <!-- <script data-require="navbarController.js" data-semver="1" src="app/core/layout/core-back.js"></script> -->
     <script data-require="queryController.js" data-semver="1" src="app/events/queryController.js"></script>
     <script data-require="eventController.js" data-semver="1" src="app/events/eventController.js"></script>

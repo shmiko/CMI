@@ -21,6 +21,7 @@
     "instagramApp",
     "bloggerApp",
     "ngMaterial"
+        // "sidenavDemo1"
     ]);
 
      app.constant('config', {

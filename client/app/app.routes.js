@@ -204,6 +204,12 @@ angular.module('cmiApp')
                 templateUrl : 'app/calendar/calendar.html',
                 controller: 'calendarController'
             })
+            .state('mdsb',{
+                url:'/mdsb',
+                templateUrl : 'app/core/sidebar/mdsb.html',
+                controller: 'AppCtrl'
+            })
+            
             ;
        
         routes.forEach(function (route) {
