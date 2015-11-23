@@ -1,10 +1,16 @@
-<md-content md-theme="calmapit-dark" >
+<md-content flex layout-padding md-theme="altTheme">
 
         <!-- HEADER AND TODO COUNT -->
         <div class="jumbotron text-center">
-            <h1>You have <span class="label label-info">{{ todos.length }}</span> things to do!</h1>
+            <!-- <h1>You have <span class="label label-info">{{ todos.length }}</span> things to do!</h1> -->
+        
+        
+        <h1>We have 
+        <md-button md-theme="altTheme" class="md-fab md-hue-1 set-icon-fab" md-ripple-size="full" aria-label="ToDoCount">
+            {{ todos.length }}
+        </md-button>
+        things to do!</h1>
         </div>
-
         <!-- TODO LIST -->
  <!--        <div id="todo-list" class="row">
             <div class="col-sm-8 col-sm-offset-4">

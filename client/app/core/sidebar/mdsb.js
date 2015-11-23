@@ -20,6 +20,8 @@ angular.module('mdapp', ['ngMaterial'])
   $scope.close = function() {
     $mdSidenav('right').close();
   };
+
+  $mdSidenav('left').isLockedOpen();
  
  $scope.tasks = [
   {

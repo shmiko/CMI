@@ -209,6 +209,11 @@ angular.module('cmiApp')
                 templateUrl : 'app/todo/cd.html',
                 controller: 'todoController'
             })
+            .state('mdsb',{
+                url:'/mdsb',
+                templateUrl : 'app/core/sidebar/mdsb2.html',
+                controller: 'AppCtrl'
+            })
             
             ;
        

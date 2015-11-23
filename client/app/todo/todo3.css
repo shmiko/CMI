@@ -26,21 +26,33 @@ md-checkbox.md-checked.green .md-icon {
 }
 
 .nav-text{
-	color:#000000;
+	color:#FFF;
 }
 
 a {
-	color:#000000;
+	color:#FFF;
 }
 
+a :hover {
+  color:yellow;
+}
+.h3t {
+  /*color: red !important;*/
+}
+
+
 span {
-	color:#000000;
+	color:#eeb432;
 }
 
 .box{
 	background-color: #000;
 	color: red;
 	
+}
+
+md-content{
+  height: 90% !important;
 }
 
 

@@ -1,36 +1,36 @@
 <div layout="column" ng-controller="DemoCtrl as demo" ng-cloak="" class="fabSpeedDialdemoMoreOptions" ng-app="MyApp">
-  <md-content md-theme="calmapit-dark" class="" layout="column">
+  <md-content md-theme="altTheme" class="" layout="column">
 
     <!-- <p class="intro">
       The speed dial supports many advanced usage scenarios. This demo shows many of them mixed
       together... and even includes a Toolbar - SpeedDial combination.
     </p> -->
 
-    <md-toolbar>
+    <md-toolbar >
       <h3>
         <md-button><a href="/#/cd">CountDown</a></md-button>
-        <md-button>Discovery</md-button>
-        <md-button>Planning</md-button>
-        <md-button hide-sm="">Booking</md-button>
-        <md-button hide-sm="">Tracking</md-button>
-        <md-button hide-sm="">During</md-button>
-        <md-button hide-sm="">After</md-button>
-        <md-button hide-sm="">Help</md-button>
+        <md-button><a href="/#/cd">Discovery</a></md-button>
+        <md-button><a href="/#/cd">Planning</a></md-button>
+        <md-button hide-sm=""><a href="/#/cd">Booking</a></md-button>
+        <md-button hide-sm=""><a href="/#/cd">Tracking</a></md-button>
+        <md-button hide-sm=""><a href="/#/cd">During</a></md-button>
+        <md-button hide-sm=""><a href="/#/cd">After</a></md-button>
+        <md-button hide-sm=""><a href="/#/cd">Help</a></md-button>
       </h3>
     </md-toolbar>
 
-    <md-fab-speed-dial ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen" class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }" ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false">
+    <md-fab-speed-dial md-theme="calmapit" ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen" class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }" ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false">
       <md-fab-trigger>
-        <md-button aria-label="menu" class="md-fab md-warn">
-          <md-tooltip md-direction="top" md-visible="tooltipVisible">Menu</md-tooltip>
+        <md-button aria-label="menu" class="md-fab" >
+          <md-tooltip md-theme="altTheme" md-direction="top" md-visible="tooltipVisible">Menu</md-tooltip>
           <md-icon md-svg-src="../../content/img/icons/menu.svg" aria-label="menu"></md-icon>
         </md-button>
       </md-fab-trigger>
 
       <md-fab-actions>
         <div ng-repeat="item in demo.items">
-          <md-button aria-label="{{item.name}}" class="md-fab md-raised md-mini" ng-click="demo.openDialog($event, item)">
-            <md-tooltip md-direction="{{item.direction}}" md-visible="tooltipVisible" md-autohide="false">
+          <md-button md-theme="altTheme" aria-label="{{item.name}}" class="md-fab md-raised md-mini" ng-click="demo.openDialog($event, item)">
+            <md-tooltip md-theme="altTheme" md-direction="{{item.direction}}" md-visible="tooltipVisible" md-autohide="false">
               {{item.name}}
             </md-tooltip>
 

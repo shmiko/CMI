@@ -3,6 +3,10 @@
 /**, *:before, *:after {
   box-sizing: inherit;
 }*/
+md-content.md-calmapit-theme {
+    color: rgba(0,0,0,0.87);
+    background-color: rgb(8, 8, 8);
+}
 
 .right {
   float: right;
