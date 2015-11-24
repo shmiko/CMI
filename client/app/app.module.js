@@ -22,7 +22,9 @@
     "bloggerApp",
     "ngMaterial",
     "MyApp",
-    // "sidenavDemo1"
+    "StarterApp",
+    "RSSFeedApp",
+    "FeedApp"
     ]);
 
      app.constant('config', {
@@ -66,11 +68,33 @@
          '200', '300', '400', 'A100'],
         'contrastLightColors': undefined    // could also specify this if default was 'dark'
       });
+      $mdThemingProvider.definePalette('validusPrimaryPalette', {
+        '50': '80cae0',
+        '100': '6cc1db',
+        '200': '57b9d6',
+        '300': '43b0d1',
+        '400': '31a6c9',
+        '500': '2c95b5',
+        '600': '2784a0',
+        '700': '22738c',
+        '800': '1d6277',
+        '900': '185163',
+        'A100': '95d2e5',
+        'A200': 'a9dbea',
+        'A400': 'bee4ef',
+        'A700': '13414e',
+        'contrastDefaultColor': 'light',
+        'contrastDarkColors': ['50', '100', '200', '300', '400', 'A100'],
+        'contrastLightColors': undefined
+      });
       $mdThemingProvider.theme('calmapit')
         .primaryPalette('amazingPaletteName')
         //.accentPalette('pink');
         .dark();
-
+       $mdThemingProvider.theme('aqua')
+        .primaryPalette('validusPrimaryPalette')
+        //.accentPalette('pink');
+        .dark(); 
        $mdThemingProvider.theme('altTheme','default')
         .primaryPalette('deep-purple')
         .accentPalette('indigo'); 

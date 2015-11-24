@@ -76,6 +76,14 @@ angular.module('cmiApp')
                 }
             },
             {
+                url: '/form_md',
+                config: {
+                    // controller: 'IntroductionController',
+                    templateUrl: '/app/form/form_md.html',
+                    controller: 'AppController'
+                }
+            },
+            {
                 url: '/calmap',
                 config:{
                     templateUrl: 'app/calmap/calmap.html',
@@ -168,6 +176,10 @@ angular.module('cmiApp')
                 url:'/form',
                 templateUrl : 'app/form/form.html'
             })
+            .state('form_md',{
+                url:'/form_md',
+                templateUrl : 'app/form/form_md.html'
+            })
             .state('travel',{
                 url:'/travel',
                 templateUrl : 'app/travel/travel-cmi.html'
@@ -214,7 +226,16 @@ angular.module('cmiApp')
                 templateUrl : 'app/core/sidebar/mdsb2.html',
                 controller: 'AppCtrl'
             })
-            
+            .state('rss',{
+                url:'/rss',
+                templateUrl : 'app/rss/rss.html',
+                controller: 'FeedController'
+            })
+            .state('rss2',{
+                url:'/rss2',
+                templateUrl : 'app/rss/rss2.html',
+                controller: 'FeedCtrl'
+            })
             ;
        
         routes.forEach(function (route) {
