@@ -1,0 +1,37 @@
+<div layout="column" class="sidenavdemoBasicUsage">
+	<div layout="row" layout-fill>
+		<!-- <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia( 'gt-md' )">
+			<md-content ng-controller="LeftCtrl">
+				<md-button ng-click="close()" class="md-primary" hide-gt-md>
+					Close Menu
+				</md-button>
+			</md-content>
+		</md-sidenav> -->
+		
+		<div layout="column" flex>
+			<md-toolbar>
+				<div class="md-toolbar-tools">
+					<md-button aria-label="Settings" class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
+						<md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+					</md-button>
+					
+					<span flex></span>
+					<h2>Material Design Gallery</h2>
+					<span flex></span>
+					
+					<md-button class="md-icon-button" aria-label="More">
+						<md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+					</md-button>
+				</div>
+			</md-toolbar>
+			
+			<md-content id="container">
+				<div id="gallery"></div>
+				
+				<div layout="row" layout-align="space-around">
+					<md-progress-circular id="loading" md-mode="indeterminate"></md-progress-circular>
+				</div>
+			</md-content>
+		</div>
+	</div>
+</div>

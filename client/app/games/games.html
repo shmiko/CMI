@@ -1,0 +1,9 @@
+<section class"sec-body">
+  <div class="header">angular emoji tic tac toe</div>
+  <div class="board" ng-show="user">
+    <div class="tile" ng-repeat="tile in board track by $index" ng-click="userMove($index)">{{tile}}</div>
+  </div> 
+  <div class="choices" ng-show="!user"><a class="choice" ng-click="user='❌';comp='⭕️'">❌</a> or  <a class="choice" ng-click="user='⭕️'; comp='❌'">⭕️</a>   ?</div>
+<span ng-show="losses!==0">losses: {{losses}}<br /></span><span ng-show="ties!==0">ties: {{ties}}</span>
+
+</section>

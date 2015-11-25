@@ -24,6 +24,10 @@ md-checkbox.md-checked.green .md-icon {
     /*position: relative;*/
     
 }
+.altura-mapa {
+    height: calc(100% - 244px);
+    margin: 0px 10px 0px 10px;
+}
 
 .nav-text{
 	color:#FFF;

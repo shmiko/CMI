@@ -1,0 +1,33 @@
+<div class="jumbotron text-center" md-theme="aqua">
+    <h2>Wikipidia Voice Seach </h2>
+      
+    <div class="text-center ">
+ 
+      <form class="form-inline" ng-submit="MainData.search(MainData.val)">
+       <div class="form-group has-feedback">
+         
+          <input type='text' class="form-control dirty ui-autocomplete-input" autocomplete="off" placeholder='Search' ng-model="MainData.val" required/>
+          <span class='mic_span'><a class="fa fa-microphone fa-lg form-control-feedback icon" style="pointer-events: auto;" ng-click="MainData.Speech()"></a>
+          </span>
+        </div>
+        
+        <button type="button" class="btn btn-info autoplay" ng-click="MainData.Random()">Random Search</button>
+        
+     </form>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div>
+      
+    </div>
+    <div ng-repeat="term in MainData.results">
+      <!-- <md-content style="padding:5px;"> -->
+        <md-card>
+        <md-card-content class="card" style="color: #FFF; padding:5px;"> 
+        <h2 class="md-title">{{term.title}} <a ng-href="{{term.url}}" target="_blank"><i class="fa fa-external-link-square"></i></a></h2>
+        <p>{{term.text}}</p>
+      <!-- </md-card-content> -->
+    </div>
+  </div>

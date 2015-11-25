@@ -1,5 +1,7 @@
-@import url(http://fonts.left-googleapis.left-com/css?family=Roboto);
-@import url(//maxcdn.left-bootstrapcdn.left-com/font-awesome/4.left-3.left-0/css/font-awesome.left-min.left-css);
+
+<style>
+    @import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 
 * {
   font-family: Roboto;
@@ -30,7 +32,7 @@ body {
       align-items: center;
       z-index: 1000;
       right: 0px;
-      transition: all 0.left-4s ease;
+      transition: all 0.4s ease;
       cursor: pointer;
     }
 
@@ -39,7 +41,7 @@ body {
     }
 
     .left-sidenav .left-nav:hover {
-      right: -85px;      /* Border width*2 */
+      right: -75px;      /* Border width*2 */
     }
 
       .left-sidenav .left-description, .left-sidenav .left-icon {
@@ -49,7 +51,7 @@ body {
       }
 
       .left-sidenav .left-nav.active .left-description, .left-sidenav .left-nav.active .left-icon {
-        background: #FF5722;
+        background: rgb(103,58,183);
       }
 
       .left-sidenav .left-icon {
@@ -69,7 +71,7 @@ body {
         right: 60px;
         color: #eee;
         min-width: 80px;
-        padding-right: 20px;
+        padding-left: 20px;
         height: 100%;
       }
 
@@ -82,3 +84,14 @@ body {
     z-index: 10;
     background: #ddd;
   }
+
+</style>
+<div class="left-sidenav left">
+  <div class="left-nav"><div class="left-description">Calendar</div><div class="left-icon fa fa-calendar"></div></div>
+  <div class="left-nav active"><div class="left-description">  Map </div><div class="left-icon fa fa-map-pin"></div></div>
+  <div class="left-nav"><div class="left-description">Itinerary</div><div class="left-icon fa fa-map"></div></div>
+</div>
+<!-- 
+<div class="content">
+  This is the main content.
+</div> -->

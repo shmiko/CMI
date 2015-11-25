@@ -1,0 +1,38 @@
+<!-- <span ng-app="ba3-angularmaterial-googlemaps-location"> -->
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h3><span>Angular Material & Google Maps Location Service</span></h3>
+        </div>
+    </md-toolbar>
+    <md-content layout-padding ng-controller="PrincipalController">
+        <md-input-container>
+            <label>Dirección</label>
+            <input ng-model="view.addressInput" ng-model-options="{debounce: 1000}" ng-change="buscarDireccion()" />
+        </md-input-container>
+        <div layout="row">
+            <md-input-container flex="99">
+                <label>Ubicaciones disponibles</label>
+                <md-select ng-model="view.selectedPlace" ng-disabled="view.places.length < 2" ng-change="centrarUbicacion()">
+                    <md-option ng-repeat="place in view.places" value="{{place.place_id}}">{{place.formatted_address}}</md-option>
+                </md-select>
+            </md-input-container>
+            <md-button class="md-icon-button" ng-click="borrarMarcadores()" ng-disabled="view.markers.length === 0">
+                <md-icon md-svg-icon="white_delete" aria-label="Borrar"></md-icon>
+                <md-tooltip md-delay="1500" md-autohide="true">Borrar</md-tooltip>
+            </md-button>
+        </div>
+    </md-content>
+    <div id="map" class="altura-mapa"></div>
+    <script type="text/ng-template" id="icons_24x24.svg">
+        <svg 
+             width="24"
+             height="24" 
+             viewBox="0 0 24 24" 
+             xmlns="http://www.w3.org/2000/svg">
+            <g id="white_delete">
+                <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" />
+                <path d="M0 0h24v24H0z" fill="none" />
+            </g>
+        </svg>
+    </script>
+<!-- </span> -->

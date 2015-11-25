@@ -1,0 +1,23 @@
+section {
+  font-size: 30px;
+  text-align: center;
+}
+
+.header {
+  margin-top: 10px;
+}
+.board {
+  line-height: 30px; 
+  width: 91px; 
+  margin: 15px auto 8px auto;  
+}
+.tile {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0px;
+}
+.choice {
+  cursor: pointer;
+}
+.choices {
+}

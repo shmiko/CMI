@@ -1,56 +1,84 @@
-[md-header-picture] {
-    position: relative;
-    width:100%;
-    height:0; /* Simple trick to keep a 16:9 ratio on your background image (height=0;padding-bottom=56.25%) */
-    padding-bottom: 56.25%;
-    overflow:hidden;
-    background-size:190%; /* You can override this value if your picture has a weird ratio */
-    background-position:50% 40%;
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
+* {
+  font-family: Roboto;
 }
 
-[scroll] {
-  position:fixed;
-  top:0;
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 
-/* I made a simple scale animation on float action button during scroll */
+  .sidenav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 60px;
+    background: #333;
+  }
+  
+  
+    .sidenav .nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+      left: 0px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
 
-.main-fab {
-  position:absolute;
-  left: calc(100% - 90px);
-  z-index: 20;
-  transform:scale(1,1);
-  transition: transform .1s ease-out;
-}
+    .sidenav .nav.active {
+      left: -10px;
+    }
 
-.main-fab.hide {
-  transform:scale(0,0);
-  transition: transform .1s ease-out;
-}
+    .sidenav .nav:hover {
+      left: -85px;      /* Border width*2 */
+    }
 
-/* Lines of code below are just here to get a better aspect but optionnal */
-section {
-  height: 1600px;
-  top:160px;
-}
+      .sidenav .description, .sidenav .icon {
+        height: 60px;
+        line-height: 60px;
+        background: #333;
+      }
 
-i {
-  font-size:24px;
-}
+      .sidenav .nav.active .description, .sidenav .nav.active .icon {
+        background: #FF5722;
+      }
 
-.md-tools {
-  width: 40px;
-}
+      .sidenav .icon {
+        width: 60px;          /* Width of navbar */
+        text-align: center;
+        color: #e9e9e9;
+        font-size: 25px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
 
-.muted {
-color: #bbb;
-font-size: inherit;
-font-weight: 700;
-text-align: left;
-}
+      .sidenav .description {
+        position: relative;
+        left: 60px;
+        color: #eee;
+        min-width: 80px;
+        padding-left: 20px;
+        height: 100%;
+      }
 
-.md-tile-left {
-  margin-right:0!important;
-  padding-left:24px;
-  color: rgb(63,81,181);
-}
+  .content {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 60px;        /* Width of navbar */
+    height: 100%;
+    z-index: 10;
+    background: #ddd;
+  }

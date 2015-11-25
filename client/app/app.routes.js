@@ -221,10 +221,13 @@ angular.module('cmiApp')
                 templateUrl : 'app/todo/cd.html',
                 controller: 'todoController'
             })
-            .state('mdsb',{
-                url:'/mdsb',
-                templateUrl : 'app/core/sidebar/mdsb2.html',
-                controller: 'AppCtrl'
+            .state('sidebar-right',{
+                url:'/sidebar-right',
+                templateUrl : 'app/core/sidebar/sidebar-right.html'
+            })
+            .state('sidebar-left',{
+                url:'/sidebar-left',
+                templateUrl : 'app/core/sidebar/sidebar-left.html'
             })
             .state('rss',{
                 url:'/rss',
@@ -235,6 +238,30 @@ angular.module('cmiApp')
                 url:'/rss2',
                 templateUrl : 'app/rss/rss2.html',
                 controller: 'FeedCtrl'
+            })
+            .state('wikipedia',{
+                url:'/wikipedia',
+                templateUrl : 'app/wikipedia/wikipedia.html',
+                controller: 'wikiCtrl'
+            })
+            .state('games',{
+                url:'/games',
+                templateUrl : 'app/games/games.html',
+                controller: 'gamesCtrl'
+            })
+            .state('twitter',{
+                url:'/twitter',
+                templateUrl : 'app/twitter/twitter.html'
+            })
+            .state('maps',{
+                url:'/maps',
+                templateUrl : 'app/maps/maps.html',
+                controller: 'PrincipalController'
+            })
+            .state('gallery',{
+                url:'/gallery',
+                templateUrl : 'app/gallery/gallery.html',
+                controller: 'galleryCtrl'
             })
             ;
        

@@ -21,6 +21,10 @@
     /*background-image: url(../../content/images/mb-bg-fb-09.png);
     font-family: 'Open Sans',sans-serif;*/
 }
+.altura-mapa {
+    height: calc(100% - 244px);
+    margin: 0px 10px 0px 10px;
+}
 
 .row {
     display: block;

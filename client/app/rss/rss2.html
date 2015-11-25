@@ -1,40 +1,24 @@
-<!-- <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script> -->
-<div class="container-fluid">
-    <div data-ng-controller="FeedCtrl">
-        <div class="row-fluid">
-            <h4>Feed Reader using AngularJS</h4>
-            <form>
-                <div class="input-prepend span12">
-              <div class="btn-group">
-                <button class="btn btn-info" type="button" tabindex="-1">{{loadButonText}}</button>
-                <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" tabindex="-1">
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a href="#" ng-click="feedSrc='http://rss.cnn.com/rss/cnn_topstories.rss';loadFeed($event);">CNN</a></li>
-                  <li><a href="#" ng-click="feedSrc='http://news.ycombinator.com/rss';loadFeed($event)">Hacker News</a></li>
-                  <li><a href="#" ng-click="feedSrc='http://feeds2.feedburner.com/Mashable';loadFeed($event)">Mashable</a></li>                  
-                  <li><a href="#" ng-click="feedSrc='http://feeds.huffingtonpost.com/huffingtonpost/raw_feed';loadFeed($event)">Huffington Post</a></li>
-                  <li><a href="#" ng-click="feedSrc='http://feeds.feedburner.com/TechCrunch';loadFeed($event)">TechCrunch</a></li>
-                </ul>
-              </div>
-                    <input type="text" class="span10" autocomplete="off" placeholder="Enter Feed URL" data-ng-model="feedSrc" />
-            </div>
-               <div class="input-prepend" ng-show="feeds.length > 0">
-              <span class="add-on"><i class="icon-search"></i></span>
-                   <input class="span12" type="text" placeholder="Search" data-ng-model="filterText" />
-               </div>
-            </form>
+<div class="col-md-8 col-sm-6">
+  <!-- Box Outer Layer [ Box 10 ] -->
+  <div class="box box-md br-maroon animated">
+    <!-- Box CTA Block -->
+    <div class="box-content box-cta" style="margin:0px; padding:0px!important;left:0px;">
+      <!-- Flat Icon -->
+      <!--<img src="img/flat-icon/fi1.png" class="img-responsive" alt="" />-->
+      <!-- Box CTA Info -->
+      <div class="box-cta-info" style="color:#000000 !important;margin:0px; padding:0px!important;left:0px;">
+        <h4><i class="fa fa-road link-icon"></i><span class="box-title"> Live Tourist Updates</span></h4>
+        <div class="row br-purp">
+        <script type="text/javascript" src="rsso.js"></script> 
+        <script type="text/javascript">(function() {var params = {rssmikle_url: "http://yosemiteblog.com/feed/",rssmikle_frame_width: "300",rssmikle_frame_height: "600",rssmikle_target: "_blank",rssmikle_font: "Arial, Helvetica, sans-serif",rssmikle_font_size: "10",rssmikle_border: "off",responsive: "on",rssmikle_css_url: "",text_align: "left",text_align2: "left",corner: "off",scrollbar: "on",autoscroll: "on",scrolldirection: "up",scrollstep: "3",mcspeed: "20",sort: "New",rssmikle_title: "on",rssmikle_title_sentence: "Travel Info Live Feeds",rssmikle_title_link: "",rssmikle_title_bgcolor: "#9673FF",rssmikle_title_color: "#000000",rssmikle_title_bgimage: "",rssmikle_item_bgcolor: "#00B3B3",rssmikle_item_bgimage: "",rssmikle_item_title_length: "55",rssmikle_item_title_color: "#000000",rssmikle_item_border_bottom: "on",rssmikle_item_description: "on",item_link: "on",rssmikle_item_description_length: "150",rssmikle_item_description_color: "#000000",rssmikle_item_date: "gl2",rssmikle_timezone: "Australia/Sydney",datetime_format: "%e.%m.%Y %l:%M:%S %p",rssmikle_item_description_tag: "on_html",rssmikle_item_description_image_scaling: "on",article_num: "15",rssmikle_item_podcast: "off",keyword_inc: "",keyword_exc: ""};feedwind_show_widget_iframe(params);})();</script>
+        <div style="font-size:10px; text-align:center; width:100%; margin:0; ">
+          <a href="http://feed.mikle.com/" target="_blank" >RSS Feed Widget</a>
+          <!--Please display the above link in your web page according to Terms of Service.-->
+          <!-- end feedwind code -->  
         </div>
-        <div class="row-fluid">
-            <ul class="unstyled">
-                <span class="badge badge-warning" ng-show="feeds.length > 0">{{(feeds | filter:filterText).length}} Items</span>
-                <li ng-repeat="feed in feeds | filter:filterText">                    
-                    <h5><a href="{{feed.link}}">{{feed.title}}</a></h5>                                        
-                    <p class="text-left">{{feed.contentSnippet}}</p>                    
-                    <span class="small">{{feed.publishedDate}}</span>
-                </li>                
-            </ul>            
-        </div>
+      </div>
+      </div>
+      <div class="clearfix"></div>
     </div>
+  </div>
 </div>

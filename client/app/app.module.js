@@ -24,7 +24,11 @@
     "MyApp",
     "StarterApp",
     "RSSFeedApp",
-    "FeedApp"
+    "FeedApp",
+    "Wikipedia",
+    "gamesApp",
+    "ba3-angularmaterial-googlemaps-location",
+    // "galleryApp"
     ]);
 
      app.constant('config', {
