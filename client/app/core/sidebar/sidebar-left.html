@@ -1,96 +1,112 @@
 
 <style>
     @import url(http://fonts.googleapis.com/css?family=Roboto);
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+  @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 
-* {
-  font-family: Roboto;
-}
-
-body {
-  margin: 0px;
-  padding: 0px;
-  overflow-x: hidden;
-}
-
-  .left-sidenav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: fixed;
-    left: 0px;
-    bottom: 82px;
-    /*height: 100%;*/
-    z-index: 1000;
-    width: 60px;
-    background: #333;
+  * {
+    font-family: Roboto;
   }
-  
-  
-    .left-sidenav .left-nav {
-      position: relative;
+
+  body {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+  }
+
+    .left-sidenav {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      position: fixed;
+      left: 0px;
+      bottom: 82px;
+      /*height: 100%;*/
       z-index: 1000;
-      right: 0px;
-      transition: all 0.4s ease;
-      cursor: pointer;
+      width: 60px;
+      background: #333;
     }
-
-    .left-sidenav .left-nav.active {
-      right: -10px;
-    }
-
-    .left-sidenav .left-nav:hover {
-      right: -75px;      /* Border width*2 */
-    }
-
-      .left-sidenav .left-description, .left-sidenav .left-icon {
-        height: 60px;
-        line-height: 60px;
-        background: #333;
-      }
-
-      .left-sidenav .left-nav.active .left-description, .left-sidenav .left-nav.active .left-icon {
-        background: rgb(103,58,183);
-      }
-
-      .left-sidenav .left-icon {
-        width: 60px;          /* Width of navbar */
-        text-align: center;
-        color: #e9e9e9;
-        font-size: 25px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-      }
-
-      .left-sidenav .left-description {
+    
+    
+      .left-sidenav .left-nav {
         position: relative;
-        right: 60px;
-        color: #eee;
-        min-width: 80px;
-        padding-left: 20px;
-        height: 100%;
+        display: flex;
+        align-items: center;
+        z-index: 1000;
+        right: 0px;
+        transition: all 0.4s ease;
+        cursor: pointer;
       }
 
-  .left-content {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    left: 60px;        /* Width of navbar */
-    height: 100%;
-    z-index: 10;
-    background: #ddd;
-  }
+      .left-sidenav .left-nav.active {
+        right: -10px;
+      }
 
+      .left-sidenav .left-nav:hover {
+        right: -75px;      /* Border width*2 */
+        padding-left: 0px;
+      }
+
+        .left-sidenav .left-description, .left-sidenav .left-icon {
+          height: 60px;
+          line-height: 60px;
+          background: #333;
+        }
+
+        .left-sidenav .left-nav.active .left-description, .left-sidenav .left-nav.active .left-icon {
+          background: rgb(103,58,183);
+        }
+
+        .left-sidenav .left-icon {
+          width: 60px;          /* Width of navbar */
+          text-align: center;
+          color: #e9e9e9;
+          font-size: 25px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+        }
+
+        .left-sidenav .left-description {
+          position: relative;
+          right: 60px;
+          color: #eee;
+          min-width: 80px;
+          padding-left: -5px;
+          height: 100%;
+        }
+
+    .left-content {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      left: 60px;        /* Width of navbar */
+      height: 100%;
+      z-index: 10;
+      background: #ddd;
+    }
+    ng-md-icon {
+            fill: white;
+            -webkit-transition: fill 750ms ease-in-out;
+            -moz-transition: fill 750ms ease-in-out;
+            -o-transition: fill 750ms ease-in-out;
+            transition: fill 750ms ease-in-out;
+        }
+        ng-md-icon > svg {
+            -webkit-transition: width 750ms ease-in-out, height 750ms ease-in-out;
+            -moz-transition: width 750ms ease-in-out, height 750ms ease-in-out;
+            -o-transition: width 750ms ease-in-out, height 750ms ease-in-out;
+            transition: width 750ms ease-in-out, height 750ms ease-in-out;
+                height: 100px;
+    padding-bottom: 45px;
+        }
 </style>
 <div class="left-sidenav left">
   <div class="left-nav"><div class="left-description">Calendar</div><div class="left-icon fa fa-calendar"></div></div>
   <div class="left-nav active"><div class="left-description">  Map </div><div class="left-icon fa fa-map-pin"></div></div>
   <div class="left-nav"><div class="left-description">Itinerary</div><div class="left-icon fa fa-map"></div></div>
+  <div class="left-nav"><div class="left-description">Directions</div><div class="left-icon"><ng-md-icon icon="directions" size="48"></ng-md-icon></div></div>
 </div>
 <!-- 
 <div class="content">
