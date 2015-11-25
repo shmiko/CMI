@@ -1,11 +1,7 @@
-angular
-	.module( "galleryApp" )
-	.config( function( $mdThemingProvider ) {
-  	$mdThemingProvider
-			.theme( "default" )
-    	.primaryPalette( "teal" );
-	})
-	.controller( "galleryCtrl", function( $scope, $timeout, $mdSidenav, $mdUtil, $log ) {
+var app = angular.module('galleryApp', []);
+
+	
+	app.controller( "galleryCtrl", ['$scope', '$timeout', '$mdSidenav', '$mdUtil', '$log', function( $scope, $timeout, $mdSidenav, $mdUtil, $log ) {
 		function buildToggler( navID ) {
 			var debounceFn = $mdUtil.debounce( function() {
 				$mdSidenav( navID ).toggle().then( function () {
@@ -17,12 +13,12 @@ angular
 		}
 		
 		$scope.toggleLeft = buildToggler( "left" );
-	})
-	.controller( "LeftCtrl", function( $scope, $timeout, $mdSidenav, $log ) {
+	}])
+	app.controller( "LeftCtrl",['$scope', '$timeout', '$mdSidenav', '$log', function( $scope, $timeout, $mdSidenav, $log ) {
 		$scope.close = function() {
 			$mdSidenav( "left" ).close();
 		};
-	});
+	}]);
 
 
 var redrawingLayout = false,
