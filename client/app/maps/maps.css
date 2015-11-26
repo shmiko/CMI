@@ -13,5 +13,6 @@
 	width:80%;
 	left:60px;
 	right:60px;
-	margin-left:60px;
+	/*margin-left:60px;*/
+	overflow: auto;;
 }
