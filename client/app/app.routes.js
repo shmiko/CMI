@@ -5,8 +5,8 @@
 "use strict";
 
 angular.module('cmiApp')
-    .config(['$stateProvider','$httpProvider','$routeProvider', function ($stateProvider,$httpProvider,$routeProvider) {
-
+    .config(['$stateProvider','$httpProvider','$routeProvider','$urlRouterProvider', function ($stateProvider,$httpProvider,$routeProvider,$urlRouterProvider) {
+        $urlRouterProvider.otherwise('/intro');
 
         var routes = [
             {
@@ -266,6 +266,10 @@ angular.module('cmiApp')
                 url:'/gallery',
                 templateUrl : 'app/gallery/gallery.html',
                 controller: 'galleryCtrl'
+            })
+            .state('home',{
+                url:'/',
+                templateUrl : 'app/introduction/intro.html'
             })
             ;
        
