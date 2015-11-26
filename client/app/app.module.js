@@ -28,7 +28,8 @@
     "Wikipedia",
     "gamesApp",
     "ba3-angularmaterial-googlemaps-location",
-    "ngMdIcons"
+    "ngMdIcons",
+    "ngMap"
     ]);
 
      app.constant('config', {

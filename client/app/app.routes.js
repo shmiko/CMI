@@ -262,6 +262,11 @@ angular.module('cmiApp')
                 templateUrl : 'app/maps/maps.html',
                 controller: 'PrincipalController'
             })
+            .state('directions',{
+                url:'/directions',
+                templateUrl : 'app/maps/directions.html',
+                controller: 'directionsController'
+            })
             .state('gallery',{
                 url:'/gallery',
                 templateUrl : 'app/gallery/gallery.html',
