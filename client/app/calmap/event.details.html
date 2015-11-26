@@ -3,7 +3,7 @@
     <p>{{event.description}}
 </div>
 <div ng-if="event.lat && event.lng">
-    <h3>Event Location</h4>
+    <!-- <h3>Event Location</h4> -->
     <div map-lazy-load="https://maps.googleapis.com/maps/api/js?key={{calConfig.apiKeys.googleMapsApiKey}}" class="map">
       <map center="{{event.lat}}, {{event.lng}}" zoom="10">
           <marker position="[{{event.lat}}, {{event.lng}}]">

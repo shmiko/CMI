@@ -9,12 +9,23 @@
 
 .well{
     color: #1db7d7;
-  font-weight: normal;
-  background-color: transparent;
-  border: 1px solid #eeb432;
+    font-weight: normal;
+    background-color: transparent;
+    border: 1px solid ##21C8CE;
     border-radius: 4px;
+    width: 90%;
+    margin-left: 30px:;
+    float: right;
+    /* top: 20px; */
+    /* position: fixed; */
+    left: 60px;
+    right: 60px;
+    overflow: auto;
 }
-
+.details{
+    float: right;
+    position: relative;
+}
 .cal-form{
     display: none;
 }
