@@ -6,6 +6,11 @@
 }
 body{
   color:#FFF;
+    padding-right:60px;
+  padding-left:60px;
+}
+.well{
+
 }
 </style>
 
@@ -40,13 +45,13 @@ body{
 
   <div class="well">
                 <div class="row-fluid">
-                    <div class="span4">
-                        <h3>What?</h3>
+                    <div class="lead">
+                        <h3>This calendar gets data from Google Calendar in real time.</h3>
 
-                        <p>Attach Angular objects to a calendar.</p>
-                        <p>Show the data binding between two differnet calendars using the same event sources.</p>
+                        <p>Since we use Google services to plan out holidays we can see 
+                        our events on a map which make planning a breeze.</p>
 
-                        <h3>Why?</h3>
+                        <span class="span8">Why?</h3>
 
                         <p>Why Not?</p>
                         
@@ -75,8 +80,8 @@ body{
                     </div>
 
                     <div class="span8">
-                        <tabset>
-                            <tab select="renderCalender('myCalendar1');">
+                        <!-- <tabset> -->
+   <!--                          <tab select="renderCalender('myCalendar1');">
                               <tab-heading>
                                <i class="glyphicon glyphicon-bell"></i> Calendar One
                               </tab-heading>
@@ -109,25 +114,23 @@ body{
                                 </div>
                               </div>
                             <div class="calendar" ng-model="eventSources" calendar="myCalendar2" ui-calendar="uiConfig.calendar"></div>
-                           </tab>
-                           <tab select="renderCalender('myCalendar3');">
-                            <tab-heading>
-                              <i class="glyphicon glyphicon-bell"></i> Calendar Three
-                            </tab-heading>
-                              <div class="alert-success calAlert">
-                                <h4>This calendar uses the extended form</h4>
-                              </div>
+                           </tab> -->
+                           <!-- <tab select="renderCalender('myCalendar3');"> -->
+                            
+                             <!--  <div class="alert-success calAlert">
+                                <h4>USA</h4>
+                              </div> -->
                               <div class="btn-toolbar">
-                                <p class="pull-right lead">Calendar Three View Options</p>
+                                <p class="pull-left lead">USA Options</p>
                                 <div class="btn-group">
                                     <button class="btn btn-success" ng-click="changeView('agendaDay', 'myCalendar3')">AgendaDay</button>
                                     <button class="btn btn-success" ng-click="changeView('agendaWeek', 'myCalendar3')">AgendaWeek</button>
                                     <button class="btn btn-success" ng-click="changeView('month', 'myCalendar3')">Month</button>
                                 </div>
                               </div>
-                            <div class="calendar" ng-model="eventSources2" calendar="myCalendar3" ui-calendar="uiConfig.calendar"></div>
-                           </tab>
-                        </tabset>
+                            <div class="calendar" ng-model="eventSources" calendar="myCalendar3" ui-calendar="uiConfig.calendar"></div>
+             <!--               </tab>
+                        </tabset> -->
                     </div>
                 </div>
             </div>

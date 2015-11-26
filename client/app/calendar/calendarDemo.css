@@ -32,6 +32,9 @@ body .fc { /* extra precedence to overcome jqui */
 	/*border-color: #F58808;*/
 }
 
+.lead{
+	color:#FFF;
+}
 .fc-unthemed .fc-popover {
 	background-color: #fff;
 }
