@@ -249,6 +249,10 @@ angular.module('cmiApp')
                 templateUrl : 'app/games/games.html',
                 controller: 'gamesCtrl'
             })
+            .state('quiz',{
+                url:'/quiz',
+                templateUrl : 'app/games/quiz.html'
+            })
             .state('twitter',{
                 url:'/twitter',
                 templateUrl : 'app/twitter/twitter.html'

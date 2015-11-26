@@ -1,6 +1,9 @@
 section {
-  font-size: 30px;
-  text-align: center;
+  font-size: 1.4em;
+    text-align: center;
+    width: 80%;
+    /* left: 60px; */
+    float: right;
 }
 
 .header {
@@ -20,4 +23,26 @@ section {
   cursor: pointer;
 }
 .choices {
+}
+
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+    /*width: 70%;
+    width: 0%;*/
+     /*float: left; */
+    }
+
+li{
+  width:50%;
+}
+
+button{
+  color:#9022cc;
+}
+
+input {
+  color:#000000;
+  background-color: #a8e3f7;
 }
