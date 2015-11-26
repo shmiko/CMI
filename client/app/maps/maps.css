@@ -1,0 +1,17 @@
+.adp-step, .adp-substep {
+    border-top: 1px solid #cdcdcd;
+    margin: 0;
+    padding: .3em 3px;
+    vertical-align: top;
+    color: white;
+}
+
+.directions{
+	width: 28%; float:left; height: 100%; margin: 0;padding: .3em 3px;vertical-align: top; overflow: auto; padding: 0px 5px; color:#FFF;
+}
+.adp-placemark{
+	width:80%;
+	left:60px;
+	right:60px;
+	margin-left:60px;
+}
