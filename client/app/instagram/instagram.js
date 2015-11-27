@@ -14,7 +14,7 @@ angular.module("instagramApp", [])
             return {
                 fetchPopular: function(callback) {
 
-                    var endPoint = "https://api.instagram.com/v1/media/popular?client_id=8d11693c54314da1acca39c219abf094&callback=JSON_CALLBACK";
+                    var endPoint = "https://api.instagram.com/v1/users/self?client_id=dfe99cb288a245088ff7f5dbe8b85a1f&callback=JSON_CALLBACK";
 
                     $http.jsonp(endPoint).success(function(response) {
                         callback(response.data);
