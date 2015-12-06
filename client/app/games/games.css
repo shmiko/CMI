@@ -2,8 +2,8 @@ section {
   font-size: 1.4em;
     text-align: center;
     width: 80%;
-    /* left: 60px; */
-    float: right;
+     margin-left: 90px; 
+    /*float: right;*/
 }
 
 .header {
