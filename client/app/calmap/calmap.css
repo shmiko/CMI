@@ -13,13 +13,14 @@
     background-color: transparent;
     border: 1px solid ##21C8CE;
     border-radius: 4px;
-    width: 90%;
+    width: 80%;
+    height:80%;
     margin-left: 30px:;
-    float: right;
+    /*float: right;*/
     /* top: 20px; */
     /* position: fixed; */
-    left: 60px;
-    right: 60px;
+    /*left: 60px;*/
+    right: 120px;
     overflow: auto;
 }
 .details{
