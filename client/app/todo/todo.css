@@ -6,7 +6,9 @@
 }
 
 
-
+body{
+  background-color: #010001 !important;
+}
   
 /* super basic grid structure */
 .todo-container {
