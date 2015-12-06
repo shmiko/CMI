@@ -39,10 +39,11 @@ div.well p:last-child {
 }
 
 div.row.calendar div.map {
-    margin-bottom: 24px;
+    /*margin-bottom: 24px;*/
 }
 div.row.calendar div.map, div.row.calendar map {
     height: 400px;
+    width:400px;
 }
 
 /* Animate the details box */

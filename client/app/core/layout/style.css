@@ -25,6 +25,10 @@
 
 
 }
+.force_black_back{
+  background-color: #000000 !important;
+}
+
 .fabSpeedDialdemoBasicUsage .text-capitalize {
   text-transform: capitalize; }
 .fabSpeedDialdemoBasicUsage .md-fab:hover, .fabSpeedDialdemoBasicUsage .md-fab.md-focused {

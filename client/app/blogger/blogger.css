@@ -1,21 +1,21 @@
 .blog-header-img{
-	display: table;
+	/*display: table;*/
 	width: 100%;
-	height: 500px;
-	position: fixed;
+	height: 150px;
+	position: absolute;
 	top: 0;
 	left: 0;
-	background: #D2894B;
-    background: url("header.jpg") no-repeat center center fixed;
+	background: #000000;
+    /*background: url("header.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-	z-index: 1;
+    background-size: cover;*/
+	/*z-index: 1;*/
 }
 
 .blog-title{
-	padding-top: 10%;
+	padding-top: 40px;
 	color: #fff;
 }
 
@@ -70,10 +70,11 @@
 }
 
 .blog-holder{
-	margin-top: 500px;
+	margin-top: 160px;
 	background: #fff;
 	position: relative;
-	z-index: 2;
+	/*z-index: 2;*/
+	color: #CB3631;
 }
 
 .post{
@@ -81,7 +82,7 @@
 }
 
 .postItem a{
-	color: #000;
+	/*color: #FFF;*/
 	text-decoration: none;
 }
 
@@ -92,13 +93,13 @@
 
 .postItem{
 	width: 100%;
-	background: #fff;
+	background: transparent;
 	padding: 5%;
 	margin: 0;
 }
 
 .postItem:hover{
-	background: #D2894B;
+	background: #8E3BD6;
 }
 
 #post-intro{
