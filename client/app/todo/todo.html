@@ -1,5 +1,5 @@
 
-<div class="row-fluid" style=" background-color: rgb(33, 33, 33); padding-left: 80px;">
+<div class="row-fluid" style=" background-color: rgb(33, 33, 33); padding-left: 80px; padding-bottom:60px;">
 <div class="well">
                 
 
@@ -38,25 +38,24 @@
           <p>
         <!-- FORM TO CREATE TODOS -->
 
-        <span>Add New Todo's</span>
+        <h3>Add New Todo's or tick them off to remove.</h3>
         <div id="todo-form" class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
-                <form class="inline">
+                <form class="inline-block">
                     <div class="form-group">
                         <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                        <!-- <label class="">Title</label>
-                        <input type="text" class="form-control add-input text-center" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
-                         -->
-                        <md-input-container>
+                        <label class="">Title</label>
+                        <input type="text" class="form-control add-input text-center" placeholder="I really need to do...." ng-model="formData.text">
+                        
+                        <!-- <md-input-container>
                           <label>Title</label>
-                          <input md-placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
-                        </md-input-container>
+                        </md-input-container> -->
                         <!-- <i class="fa fa-caret-down selectArrow"></i> -->
                         <!-- <select id="category" class="taskCategory add-input" ng-model="formData.category" ng-options="obj.name for obj in categories">
                             <option class="" value="{{obj.name}}">Choose a category</option>
                         </select> -->
                         <p>Category:
-                         <md-radio-group data-ng-model="formData.category">
+                         <md-radio-group data-ng-model="formData.category" layout="row">
                           <md-radio-button value="Business" class="md-primary">Business</md-radio-button>
                           <md-radio-button value="Family"> Family </md-radio-button>
                           <md-radio-button value="Other">Other</md-radio-button>

@@ -1,34 +1,40 @@
+html, body {
+  height: 100%;
+  color: rgba(0, 0, 0, 0.73);
+  /* background: #ffffff; */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  }
+
+
 .blog-header-img{
-	/*display: table;*/
-	width: 100%;
-	height: 150px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: #000000;
-    /*background: url("header.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
-	/*z-index: 1;*/
+	position: relative;
+    top: 0;
+    
+    width: 100%;
+   
 }
 
 .blog-title{
-	padding-top: 40px;
+	padding-top: 10px;
 	color: #fff;
+
 }
 
 .blog-title h1{
 	font-family: 'Lato', sans-serif;
 	font-size: 5em;
-	padding-bottom: 14px;
+	padding-bottom: 0px;
+	color: #673AB7;
 }
 
 .blog-title h4{
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 1.75em;
-	padding-bottom: 10px;
+	/*padding-bottom: 10px;*/
 }
 
 .post-title{
@@ -46,13 +52,13 @@
 
 .blog-holder-catagory{
 	font-family: 'Ubuntu', sans-serif;
-	font-weight: 600;
-	color: #D2894B;
+	font-weight: 300;
+	color: #4F24AC;
 }
 
 .blog-holder-title{
 	font-family: 'Lato', sans-serif;
-	font-weight: 400;
+	font-weight: 300;
 }
 
 .blog-holder-author{
@@ -70,11 +76,11 @@
 }
 
 .blog-holder{
-	margin-top: 160px;
-	background: #fff;
+	/*margin-top: 160px;
+	background: #fff;*/
 	position: relative;
 	/*z-index: 2;*/
-	color: #CB3631;
+	/*color: #CB3631;*/
 }
 
 .post{
@@ -94,12 +100,14 @@
 .postItem{
 	width: 100%;
 	background: transparent;
-	padding: 5%;
+	padding: 1%;
 	margin: 0;
+	border: 1px;
+	border-color: #4F24AC
 }
 
 .postItem:hover{
-	background: #8E3BD6;
+	background: #8ED3D6;
 }
 
 #post-intro{

@@ -43,10 +43,29 @@ a :hover {
 .h3t {
   /*color: red !important;*/
 }
+.display: block;
+    /* margin: 15px; */
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+}
 
+md-checkbox {
+    display: inline-block !important;
+/*    /* margin: 8px; */
+    white-space: nowrap !important;
+    cursor: pointer !important;*/
+/*    outline: none !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;*/
+    /*padding: 2px !important;*/
+    position: relative !important;
+}
 
 span {
-	color:#eeb432;
+	color: #FFF;
 }
 
 .box{

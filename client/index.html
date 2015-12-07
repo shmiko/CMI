@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="app/core/layout/footer.css"/>
     <link rel="stylesheet" href="app/core/layout/style.css"/>
-<!-- <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css"> -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.0-rc4/angular-material.css">
-    <link rel="stylesheet" href="app/calendar/calendarDemo.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.0-rc4/angular-material.css">
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
+<link rel="stylesheet" href="app/calendar/calendarDemo.css" />
     <link rel="stylesheet" href="app/itinerary/itinerary.css" />
     <!-- <link rel="stylesheet" href="//codepen.io/assets/reset/normalize.css"> -->
     <link rel="stylesheet" href="app/travel/travel-cmi.css" />
@@ -46,20 +46,13 @@
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
 </head>
-<style>
-    body {
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-    background-color: rgba(0,0,0,0.87) !important;
-}
-</style>
+
     <body data-ng-cloak="" >
 
-        <nav data-ng-include="'app/core/layout/nav.html'"></nav>
-        
-<nav data-ng-include="'app/core/sidebar/sidebar-right.html'" ></nav>
-<nav data-ng-include="'app/core/sidebar/sidebar-left.html'" ></nav>
+        <nav data-ng-include="'app/core/layout/navtop.html'"></nav>
+            <!-- <md-content flex="">         -->
+            <nav data-ng-include="'app/core/sidebar/sidebar-right.html'" ></nav>
+            <nav data-ng-include="'app/core/sidebar/sidebar-left.html'" ></nav>
         <!-- <md-content layout="row" flex md-theme="calmapit"> -->
         <!-- <div layout="row" flex> -->
    <!--          <md-sidenav md-theme="altTheme" layout="column" class="md-sidenav-left md-whiteframe-4dp md-padding" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
@@ -86,8 +79,10 @@
 <!--             <div class="col-md-4">
             <nav data-ng-include="'app/core/layout/sideright.html'"></nav>
             </div> -->
-        <footer data-ng-include="'app/core/layout/footer.html'"></footer>
-    </body>    
+            <!-- </md-content>  -->
+            <footer data-ng-include="'app/core/layout/footer.html'"></footer>
+    </body>   
+
 <!-- <script type="https://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="//code.jquery.com/jquery-2.1.0.min.js"></script> -->
 

@@ -1,0 +1,43 @@
+
+<md-toolbar md-theme="altTheme" md-scroll-shrink="" ng-if="true" ng-controller="TitleController">
+    <!-- <div class="md-toolbar-tools nav-text" ng-click="openMenu()"> -->
+    <div class="md-toolbar-tools">
+      <h3 class="appTitle text-muted"><a href="#/intro"><img src="../../content/images/calmapit_icon_55.png"><img src="../../content/images/calmapit_logo1.png" alt="user image"/></a></h3>
+        <span class="cli" active><a href="#/calendar" class="text">  Calendar  </a></span>
+                <span class="cli" active><a href="/#/findevent">Map  </a></span>
+                <span class="cli" active><a href="#/itinerary">Itinerary  </a></span>
+                <span class="cli" active><a href="#/calmap">CalMap  </a></span>
+                <span class="cli" active><a href="#/forecast">Weather  </a></span>
+                <span class="cli" active><a href="#/travel">Travel  </a></span>
+                <span class="cli" active><a href="#/instagram">Photos  </a></span> 
+                <span class="cli" active><a href="#/posts">Blog  </a></span>
+                <span class="cli" active><a href="#/todo">ToDo  </a></span>
+                <span class="cli" active><a href="/#/addevent">+Event</a></span> 
+    </div>
+
+</md-toolbar>
+
+
+  <md-content flex="">
+
+    <md-list>
+
+      <md-list-item class="md-3-line" ng-repeat="item in todos">
+        <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">
+
+        <div class="md-list-item-text">
+          <h3>{{item.what}}</h3>
+          <h4>{{item.who}}</h4>
+
+          <p>
+            {{item.notes}}
+          </p>
+        </div>
+        <md-divider inset=""></md-divider>
+      </md-list-item>
+
+    </md-list>
+
+  </md-content>
+
+</div>

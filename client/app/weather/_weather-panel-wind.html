@@ -4,8 +4,9 @@
         <div>
             <p class="lead">
                 <img ng-src="{{getIconImageUrl(useDayForecast.weather[0].icon)}}" />
-                Speed: {{ (useDayForecast.speed * 3.6).toFixed(2) }} km/h ({{useDayForecast.speed}} m/s)<br />
-                Pressure: {{useDayForecast.pressure}} hPa
+                {{useDayForecast.temp.day | number:1}}&#176;C {{useDayForecast.weather[0].main}}<br />
+                Wind Speed: {{ (useDayForecast.speed * 3.6).toFixed(2) }} km/h ({{useDayForecast.speed}} m/s)<br />
+                Wind Pressure: {{useDayForecast.pressure}} hPa
             </p>
             <p>
                 {{useDayForecast.temp.day | number:1}}&#176;C {{useDayForecast.weather[0].main}}&nbsp;&#126;&nbsp;
@@ -20,7 +21,8 @@
             Day: {{useDayForecast.temp.day}}&#176;C&nbsp;&#126;&nbsp;
             Night: {{useDayForecast.temp.night}}&#176;C&nbsp;&#126;&nbsp;
             Pressure: {{useDayForecast.pressure}} hPa&nbsp;&#126;&nbsp;
-            Humidity: {{useDayForecast.humidity}}%
+            Humidity: {{useDayForecast.humidity}}%&nbsp;&#126;&nbsp;
+            
         </small>
     </div>
 </div>
