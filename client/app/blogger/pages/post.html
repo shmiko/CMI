@@ -1,5 +1,29 @@
-<div class="post .bg-maroon" style="padding-top:60px; background-color:#000000;">
-        <a class="close-post" href="#">
+<style>
+    section {
+    z-index: 1;
+    /* min-height: 420px; */
+    width: 100%;
+    overflow: auto;
+    height: 100%;
+    padding-top: 20px;
+     padding-bottom: 20px !important; 
+    /* display: none; */
+    /* top: 120px; */
+}
+</style>
+<div style="top: 300px;
+    color: azure;
+    font-size: 1.4em;
+    text-align: center;
+    margin-left: 60px;">Post comments below.</div>
+<div class="post .bg-maroon" style="    padding-top: 0px;
+    margin-top: 10px;
+    top: -260px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;">
+
+        <a class="close-post" href="#/posts">
             <div class="lr">
                 <div class="rl">
                 </div>
@@ -7,13 +31,13 @@
         </a>
         <section id="post-intro">
         <div class="container">
-            <h1 class="post-title text-left">{{ posts.items[key].title }}</h1>
-            <h3 class="post-author text-left">{{ posts.items[key].author.displayName }} /// {{ posts.items[key].published | date:'fullDate' }}</h3>
+            <h1 class="post-title text-left" style="color: rgb(3,169,244);text-align: center;font-size: 1.4em;padding: 5px;">{{ posts.items[key].title }}</h1>
+            <h3 class="post-author text-left">Posted by {{ posts.items[key].author.displayName }} on {{ posts.items[key].published | date:'fullDate' }}</h3>
         </div>
         </section>
         <section class="contents">
             <div class="container">
-                <div ng-bind-html="posts.items[key].content | to_trusted"></div>
+                <div ng-bind-html="posts.items[key].content | to_trusted" style="color: rgb(3,169,244);text-align: center;font-size: 1.4em;padding: 5px;"></div>
             </div>
         </section>
         <section class="comments">
