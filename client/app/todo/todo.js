@@ -5,10 +5,9 @@ angular.module('todoApp', ['ngMaterial'])
 .controller("todoController",['$scope', '$http', function($scope, $http) {
     $scope.formData = {};
     $scope.categories = [
-        {name: 'Personal'},
-        {name: 'Work'},
-        {name: 'School'},
-        {name: 'Cleaning'},
+        {name: 'Shopping'},
+        {name: 'Booking'},
+        {name: 'MustSee'},
         {name: 'Other'}
     ];
     // $scope.selected = $scope.category.name;

@@ -25,8 +25,8 @@
 
 
 	bloggerApp.controller('bloggerController',function($scope,$state,Blog){
-        $scope.title = 'CalMapIt Blogger';
-        $scope.description = 'CalMapIt via Blogger API';
+        $scope.title = 'CalMapIt Travel Blog';
+        $scope.description = 'http://calmapit.blogspot.com.au/';
 	    $scope.posts = Blog.query();
 	});
 
