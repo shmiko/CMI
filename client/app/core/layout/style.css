@@ -272,9 +272,9 @@ section {
 /*    width: 48%;
     height:645px;
     position: relative;*/
-    float:right;
-    margin-right: 10px;
+    margin-bottom: 130px;
     width: 100%;
+    margin-left:10px;
 }
 
 .header-container {

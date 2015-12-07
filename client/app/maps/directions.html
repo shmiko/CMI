@@ -1,14 +1,14 @@
 
     <div ng-controller="directionsController as vm" style="width: 68%; float:left; height: 100%;     margin-left: 160px;">
       foo: {{foo}}
-      <ng-map zoom="14" center="1135 Karamea-Kohaihai Rd, Kahurangi National Park, Tasman" style="height:90%" >
+      <ng-map zoom="14" center="New York" style="height:90%" >
         <directions
           draggable="true"
           panel="directions-panel"
           travel-mode="DRIVING"
           on-directions_changed="vm.myFunc()"
-          origin="1135 Karamea-Kohaihai Rd, Kahurangi National Park, Tasman"
-          destination="Pier St, Jackson Bay, West Coast, New Zeland">
+          origin="New York, NY, USA"
+          destination="Los Angeles, CA, USA">
         </directions>
       </ng-map>
       Directions path length:
@@ -18,3 +18,4 @@
     <div id="directions-panel" style="margin-left: 160px;">
     </div>
 
+<!-- https://www.google.com.au/maps/dir/New+York,+NY,+USA/Los+Angeles,+CA,+USA/@37.5597945,-105.1359171,5z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62!2m2!1d-74.0059413!2d40.7127837!1m5!1m1!1s0x80c2c75ddc27da13:0xe22fdf6f254608f4!2m2!1d-118.2436849!2d34.0522342 -->

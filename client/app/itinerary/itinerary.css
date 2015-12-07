@@ -42,6 +42,9 @@ html {
     font-size: 125%;
   }
 }
+.map1img{
+  background-image: url(https://www.google.com.au/maps/dir/New+York,+NY,+USA/Los+Angeles,+CA,+USA/@37.5597945,-105.1359171,5z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62!2m2!1d-74.0059413!2d40.7127837!1m5!1m1!1s0x80c2c75ddc27da13:0xe22fdf6f254608f4!2m2!1d-118.2436849!2d34.0522342);
+}
 
 .btn--primary, .btn--comments {
   display: inline;
