@@ -1,48 +1,111 @@
 
-
-<section>
+<style>
+.quiz{  
+  text-align: center;
+  culor: #2196F3;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+button{
+      color: #1180F4 !important;
+}
+input{
+  color: #41067D !important;
+}
+.answerText{
+  color:#FF5F10;
+  background-color: #1180F4;
+  color:#FFF509;
+  width:320px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1{
+  font-size: 1.6em;
+  margin: 0.83em 0;
+  color:#7434FF;
+}
+h2 {
+    font-size: 1.4em;
+    margin: 0.83em 0;
+    color: #2196F3;
+}
+.errorText{
+  background-color: #063465;
+  color:#FF5F10;
+  width:320px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+md-divider{
+  width:400px;
+  color: #7434FF;
+  padding-bottom:10px;
+  padding-top:10px;
+  margin-top:10px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+h3{
+  font-size: 1.3em;
+    margin: 0.83em 0;
+    color: #EEF30D;
+}
+md-divider[md-inset] {
+     margin-left: auto;
+  margin-right: auto;
+}
+.padby10{
+  padding:10px;
+}
+</style>
+<div ng-class="quiz" style="text-align: center; color: rgb(236,239,241);">
   <h1>THE GREAT QUIZ</h1>
   <h2>Section 1 - Geography</h2>
-  <p>What is the capital of Bhutan?</p>
+  
+
   <div>
+    <h3>What is the capital of Bhutan?</h3>
     <strong>Your Answer:         <input type="text" id="answer-1" onclick="hideAnswer1()" /> 
         <button onclick="checkAnswer1()"> check answer</button>
       </strong>
   </div>
-  <div id="answer1Text" style="display:none">
+  <div id="answer1Text" class="answerText" style="display:none">
     <p>You are correct!</p>
   </div>
-  <div id="error1Text" style="display:none">
+  <div id="error1Text" class="errorText" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
-    <li>Thimpu.</li>
-    <li>Iof.</li>
-    <li>Kathmandu.</li>
-  </ol>
-  <div>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p>What is the 2nd smallest country in the world?</p>
-    <strong>Your Answer:         <input type="text" id="answer-2" onclick="hideAnswer2()" /> 
-        <button onclick="checkAnswer2()"> check answer</button>
-      </strong>
+  <div class="padby10">
+    <span>1. Thimpu - </span>
+    <span>2. Iof - </span>
+    <span>3. Kathmandu</span>
   </div>
-  <div id="answer2Text" style="display:none">
+  <md-divider md-inset></md-divider>
+  
+  <div>
+    <h3>What is the 2nd smallest country in the world?</h3>
+    <strong>Your Answer:         <input type="text" id="answer-2" onclick="hideAnswer2()" /> 
+      <button onclick="checkAnswer2()"> check answer</button>
+    </strong>
+  </div>
+  <div id="answerText answer2Text" style="display:none">
     <p>You are correct</p>
-
   </div>
   <div id="error2Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
-    <li>Tulavu.</li>
-    <li>Nauru.</li>
-    <li>Monaco.</li>
-  </ol>
+  <div class="padby10">
+    <span>1. Tulavu - </span>
+    <span>2. Nauru - </span>
+    <span>3. Monaco</span>
+  </div>
+  <md-divider md-inset></md-divider>
+  
   <p>What country is the largest producer of cacoa beans?</p>
   <div>
     <strong>Your Answer:         <input type="text" id="answer-3" onclick="hideAnswer3()" /> 
@@ -56,12 +119,12 @@
   <div id="error3Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
+  
+  <ul>
     <li>Ghana.</li>
     <li>Ivory Coast.</li>
     <li>Indonesia.</li>
-  </ol>
+  </ul>
   <p>What country was the largest (population wise) in 1900?</p>
   <div>
     <strong>Your Answer:         <input type="text" id="answer-4" onclick="hideAnswer4()" /> 
@@ -75,12 +138,12 @@
   <div id="error4Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
+  
+  <ul>
     <li>Russian Empire.</li>
     <li>United States.</li>
     <li>Qing Empire.</li>
-  </ol>
+  </ul>
   <p>What was the smallest country by population in 1900? (Indepeddent nation)</p>
   <div>
     <strong>Your Answer:         <input type="text" id="answer-5" onclick="hideAnswer5()" /> 
@@ -94,12 +157,12 @@
   <div id="error5Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
-    <li>Tavolara.</li>
+  
+  <ul>
+    <li>Tavulara.</li>
     <li> Neutral Moresnet.</li>
     <li> Andorra.</li>
-  </ol>
+  </ul>
 
 <h2>Section 2 - Chemistry</h2>
 
@@ -115,12 +178,12 @@
   <div id="error6Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
+  
+  <ul>
     <li>Unudecium.</li>
-    <li>Gold.</li>
+    <li>Guld.</li>
     <li>Californium.</li>
-  </ol>
+  </ul>
   <div>
     <p></p>
     <p></p>
@@ -137,12 +200,12 @@
   <div id="error7Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
+  
+  <ul>
     <li>Marie Curie.</li>
     <li>Frederick Sanger.</li>
     <li>Albert Einstein.</li>
-  </ol>
+  </ul>
   <p>How many elements are on the Periodic Table?</p>
   <div>
     <strong>Your Answer:         <input type="text" id="answer-8" onclick="hideAnswer8()" /> 
@@ -156,12 +219,12 @@
   <div id="error8Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
+  
+  <ul>
     <li>119.</li>
     <li>117.</li>
     <li>118.</li>
-  </ol>
+  </ul>
   <p>What is the most common element?</p>
   <div>
     <strong>Your Answer:         <input type="text" id="answer-9" onclick="hideAnswer9()" /> 
@@ -175,12 +238,12 @@
   <div id="error9Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
+  
+  <ul>
     <li>Hydrogen.</li>
     <li>Helium.</li>
     <li>Neon.</li>
-  </ol>
+  </ul>
   <p>What element can stand the hightest temperture?</p>
   <div>
     <strong>Your Answer:         <input type="text" id="answer-10" onclick="hideAnswer10()" /> 
@@ -194,12 +257,12 @@
   <div id="error10Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
+  
+  <ul>
     <li>Iron.</li>
     <li>Thorium.</li>
     <li>Tungsten.</li>
-  </ol>
+  </ul>
 
 
   <h2>Section 3 - Earth Science</h2>
@@ -215,12 +278,12 @@
   <div id="error11Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
+  
+  <ul>
     <li>600.</li>
     <li>10000.</li>
     <li>6000.</li>
-  </ol>
+  </ul>
   <div>
     <p></p>
     <p></p>
@@ -237,12 +300,12 @@
   <div id="error12Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
+  
+  <ul>
     <li>40.</li>
     <li>60.</li>
     <li>50.</li>
-  </ol>
+  </ul>
   <p>When you travel through the Panama Canal, which direction do you go?</p>
   <div>
     <strong>Your Answer:         <input type="text" id="answer-13" onclick="hideAnswer13()" /> 
@@ -256,12 +319,12 @@
   <div id="error13Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
+  
+  <ul>
     <li>North-South.</li>
     <li>North-East.</li>
     <li>West-East.</li>
-  </ol>
+  </ul>
   <p>What is the highest mountain from peak ?</p>
   <div>
     <strong>Your Answer:         <input type="text" id="answer-14" onclick="hideAnswer14()" /> 
@@ -274,12 +337,12 @@
   <div id="error14Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
+  
+  <ul>
 <li>Russian Empire.</li>
   <li>United States.</li>
     <li>Qing Empire.</li>
-  </ol>
+  </ul>
   <p>What was the smallest country by population in 1900? (Indepeddent nation)</p>
   <div>
     <strong>Your Answer:         <input type="text" id="answer-15" onclick="hideAnswer15()" /> 
@@ -293,14 +356,14 @@
   <div id="error15Text" style="display:none">
     <p>You are wrong...Try Again?</p>
   </div>
-  <div style="clear:both"></div>
-  <ol>
-    <li>Tavolara.</li>
+  
+  <ul>
+    <li>Tavulara.</li>
     <li> Neutral Moresnet.</li>
     <li> Andorra.</li>
-  </ol>
+  </ul>
 
-</section>
+</div>
 <script>
   // Code goes here
 function checkAnswer1()
@@ -429,7 +492,7 @@ function checkAnswer5()
 {
   var answer = $('#answer-5').val();
   
-  if (answer == 1 || answer == "Tavolara")
+  if (answer == 1 || answer == "Tavulara")
   {
     $('#answer5Text').show();
     $('#error5Text').hide();

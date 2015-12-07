@@ -36,7 +36,7 @@ body .fc { /* extra precedence to overcome jqui */
 	color: #E8FB03;
     font-weight: bolder;
     margin: 2px;
-    background: #2196F3;
+    /*background: #2196F3;*/
 }
 .fc-unthemed .fc-popover {
 	background-color: #fff;
@@ -210,6 +210,8 @@ previous button's border...
 .fc .fc-button-group > * { /* extra precedence b/c buttons have margin set to zero */
 	float: left;
 	margin: 0 0 0 -1px;
+	color: blueviolet;
+    background: #5CB85C;
 }
 
 .fc .fc-button-group > :first-child { /* same */
@@ -567,7 +569,7 @@ a.fc-more:hover {
 }
 
 .fc-toolbar .fc-right {
-	float: right;
+	/*float: right;*/
 }
 
 .fc-toolbar .fc-center {

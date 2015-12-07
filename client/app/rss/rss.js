@@ -6,5 +6,6 @@ app.controller("FeedController", ['$scope', '$http', '$sce', function ($scope, $
       //old url http://feeds.feedburner.com/crunchgear
         $scope.feeds = res.data.responseData.feed.entries;
         $scope.trustAsHtml = $sce.trustAsHtml;
+        $scope.title = "Yosemite, Las Vegas, New York"
     });
 }]);

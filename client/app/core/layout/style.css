@@ -184,7 +184,15 @@ body html {
 .fullheight{
     height: 100%;
     /* top: 60px; */
-    /* top: -280px; */
+     top: -250px; 
+    width: 90%;
+    margin-left: 60px;
+}
+
+.fullheight2{
+    height: 100%;
+    /* top: 60px; */
+     /*top: -250px; */
     width: 90%;
     margin-left: 60px;
 }
