@@ -282,7 +282,7 @@ angular.module('cmiApp')
             $routeProvider.when(route.url, route.config);
         });
 
-        $routeProvider.otherwise({ redirectTo: '/intro' });
+        $routeProvider.otherwise({ redirectTo: '/travel' });
     }]);
     
    

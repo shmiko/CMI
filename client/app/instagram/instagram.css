@@ -65,7 +65,7 @@ table img {
 input[type=number] {
   background: transparent;
   border: 0;
-  width: 3em;
+  width: 30em;
   text-align: center;
 }
 .jumbotron {
