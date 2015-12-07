@@ -53,6 +53,11 @@ html, body {
 .blog-holder-catagory{
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: 300;
+	/*color: #4F24AC;*/
+}
+.blog-holder-catagory :hover{
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
 	color: #4F24AC;
 }
 
