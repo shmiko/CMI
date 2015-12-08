@@ -9,7 +9,9 @@
         vm.isCollapsed = false;
         vm.appTitle = appTitle;
 
-
+        // vm.item.who = 'PRJ';
+        // vm.item.what = 'USA';
+        // vm.item.notes = 'travel around the countryside';
 
     };
 

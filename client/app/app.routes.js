@@ -147,11 +147,11 @@ angular.module('cmiApp')
                 templateUrl : 'app/blogger/pages/post.html',
                 controller  : 'postsController'
             })
-            .state('instagram',{
-                url:'/instagram',
-                templateUrl : 'app/instagram/instagram.html',
-                controller  : 'Example'
-            })
+            // .state('instagram',{
+            //     url:'/instagram',
+            //     templateUrl : 'app/instagram/instagram.html',
+            //     controller  : 'Example'
+            // })
             .state('todo',{
                 url:'/todo',
                 templateUrl : 'app/todo/todo.html',
@@ -272,11 +272,10 @@ angular.module('cmiApp')
                 templateUrl : 'app/gallery/gallery.html'
                 //controller: 'galleryCtrl'
             })
-            .state('insta',{
-                url:'/insta',
-                templateUrl : 'app/angular-instagram/views/index.html',
-                data: {pageTitle: 'Instagram', pageSubTitle: ''},
-                controller: "IndexController"
+            .state('instagram',{
+                url:'/instagram',
+                templateUrl : 'app/angular-instagram/index.html',
+                controller: "searchCtrl"
             })
             .state('home',{
                 url:'/',

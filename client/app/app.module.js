@@ -18,7 +18,7 @@
     "iso-3166-country-codes",
     "mdapp",
     "todoApp",
-    "instagramApp",
+    // "instagramApp",
     "bloggerApp",
     "ngMaterial",
     "MyApp",
@@ -30,7 +30,7 @@
     "ba3-angularmaterial-googlemaps-location",
     "ngMdIcons",
     "ngMap",
-    "instagramApp"
+    "instagram"
     ]);
 
      app.constant('config', {
