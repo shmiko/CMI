@@ -269,8 +269,14 @@ angular.module('cmiApp')
             })
             .state('gallery',{
                 url:'/gallery',
-                templateUrl : 'app/gallery/gallery.html',
-                controller: 'galleryCtrl'
+                templateUrl : 'app/gallery/gallery.html'
+                //controller: 'galleryCtrl'
+            })
+            .state('insta',{
+                url:'/insta',
+                templateUrl : 'app/angular-instagram/views/index.html',
+                data: {pageTitle: 'Instagram', pageSubTitle: ''},
+                controller: "IndexController"
             })
             .state('home',{
                 url:'/',

@@ -56,9 +56,9 @@
                 longitude: parseFloat(vm.formData.longitude),
                 latitude: parseFloat(vm.formData.latitude),
                 distance: parseFloat(vm.formData.distance),
-                business: vm.formData.business,
-                family: vm.formData.family,
-                other: vm.formData.other,
+                accomodation: vm.formData.accomodation,
+                themepark: vm.formData.themepark,
+                city: vm.formData.city,
                 minDuration: vm.formData.minDuration,
                 maxDuration: vm.formData.maxDuration,
                 mustdo: vm.formData.mustdo,
@@ -70,7 +70,7 @@
 
                 // Store the filtered results in queryResults
                 .success(function(queryResults){
-
+                    console.log('Map Query Success ' + queryResults);
                     // Pass the filtered results to the Google Map Service and refresh the map
                     gservice.refresh(queryBody.latitude, queryBody.longitude, queryResults);
 
@@ -78,7 +78,7 @@
                     $scope.queryCount = queryResults.length;
                 })
                 .error(function(queryResults){
-                    console.log('Error ' + queryResults);
+                    console.log('Map Query Error ' + queryResults);
                 });
         };
        

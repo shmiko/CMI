@@ -29,7 +29,8 @@
     "gamesApp",
     "ba3-angularmaterial-googlemaps-location",
     "ngMdIcons",
-    "ngMap"
+    "ngMap",
+    "instagramApp"
     ]);
 
      app.constant('config', {

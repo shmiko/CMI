@@ -91,6 +91,7 @@
 
                     // Refresh the map with new data
                     gservice.refresh(vm.formData.latitude, vm.formData.longitude);
+                    console.log('DB Event OK: ' + vm.formData.latitude, vm.formData.longitude);
                 })
                 .error(function (data) {
                     console.log('DB Event Error: ' + data);
@@ -105,9 +106,9 @@
                 longitude: parseFloat($scope.formData.longitude),
                 latitude: parseFloat($scope.formData.latitude),
                 distance: parseFloat($scope.formData.distance),
-                business: $scope.formData.business,
-                family: $scope.formData.family,
-                other: $scope.formData.other,
+                eventtype: $scope.formData.eventtype,
+                // themepark: $scope.formData.themepark,
+                // city: $scope.formData.city,
                 minDuration: $scope.formData.minDuration,
                 maxDuration: $scope.formData.maxDuration,
                 mustdo: $scope.formData.mustdo,
@@ -119,7 +120,7 @@
 
                 // Store the filtered results in queryResults
                 .success(function(queryResults){
-
+                    console.log('Success ' + queryResults);
                     // Pass the filtered results to the Google Map Service and refresh the map
                     gservice.refresh(queryBody.latitude, queryBody.longitude, queryResults);
 
