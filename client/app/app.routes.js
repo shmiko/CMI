@@ -274,7 +274,7 @@ angular.module('cmiApp')
             })
             .state('instagram',{
                 url:'/instagram',
-                templateUrl : 'app/angular-instagram/index.html',
+                templateUrl : 'app/instagram/index.html',
                 controller: "searchCtrl"
             })
             .state('home',{
