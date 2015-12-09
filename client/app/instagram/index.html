@@ -1,6 +1,7 @@
 <!-- <body ng-controller="searchCtrl"> -->
     <img ng-src="../../content/images/ng-instagram.jpg" alt="Instagram Searcher" ng-style="padding-left: 150px;">
-    <form name="searchForm" ng-submit="searchInstagram(data.search_text)" ng-style="padding-left: 150px;">
+    <span style="float:left;"> You can search for any instgram tag, however if you enter "calmapit" you will see all the photos from our trip which were uploaded to Instagram.</span>
+    <form name="searchForm" ng-submit="searchInstagram(data.search_text)" style="padding-left: 150px;">
         <input type="text" name="search_text" ng-model="data.search_text" required placeholder="calmapit"  ng-style="padding-left: 150px;">
         <button type="submit" ng-style="padding-left: 150px;">Submit</button>
     </form>
