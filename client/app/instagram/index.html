@@ -1,19 +1,19 @@
 <!-- <body ng-controller="searchCtrl"> -->
-    <img ng-src="../../content/images/ng-instagram.png" alt="Instagram Searcher" style="margin-left: auto; margin-right: auto; padding-left: 150px;">
+    <img ng-src="../../content/images/ng-instagram.png" alt="Instagram Searcher" style="margin-left: auto; margin-right: auto; padding-left: 50px;">
     <h2 style="font-weight: bolder; position: relative;color: #FFEF00;"> You can search for any instgram tag, however if you enter <strong style="color:red;">"calmapit" </strong><br>you will see all the photos from our trip which were uploaded to Instagram.</h2>
-    <form name="searchForm" ng-submit="searchInstagram(data.search_text)" style="padding-left: 150px;">
-        <input type="text" name="search_text" ng-model="data.search_text" required placeholder="Type Here..Try calmapit."  ng-style="padding-left: 150px;">
-        <button type="submit" ng-style="padding-left: 150px;">Submit</button>
+    <form name="searchForm" ng-submit="searchInstagram(data.search_text)" style="margin-left: auto; margin-right: auto;padding: 10px;">
+        <input type="text" name="search_text" ng-model="data.search_text" required placeholder="Type Here..Try calmapit."  ng-style="margin-left: auto; margin-right: auto;padding: 10px;">
+        <button type="submit" >Submit</button>
     </form>
     <div ng-if="loadMsg" class="progress">
         <div class="indeterminate"></div>
     </div>
-    <span class="statusMsg" ng-show="loadMsg" style="padding-left: 150px;">Searching Instagram for photos tagged with "{{data.queryValue}}"</span>
-    <span class="statusMsg" ng-show="imageData.imageUrl.length>0" style="padding-left: 150px;">We found {{imageData.imageUrl.length}} results for "{{data.queryValue}}"</span>
-    <span class="statusMsg" ng-show="errorMsg" style="padding-left: 150px;">We were unable to complete your search, please enter another tag.</span>
-    <section class="gallery" style="padding-left: 50px;">
+    <span class="statusMsg" ng-show="loadMsg" style="margin-left: auto; margin-right: auto; padding-left: 10px;">Searching Instagram for photos tagged with "{{data.queryValue}}"</span>
+    <span class="statusMsg" ng-show="imageData.imageUrl.length>0" style="margin-left: auto; margin-right: auto; padding-left: 10px;">We found {{imageData.imageUrl.length}} results for "{{data.queryValue}}"</span>
+    <span class="statusMsg" ng-show="errorMsg" style="margin-left: auto; margin-right: auto; padding-left: 10px;">We were unable to complete your search, please enter another tag.</span>
+    <section class="gallery" style="padding-left: 10px;">
         <ul>
-            <li class="img-container" ng-repeat="imageItem in imageData.imageUrl" ng-style="padding-left: 50px;">
+            <li class="img-container" ng-repeat="imageItem in imageData.imageUrl" style="padding-left: 10px;">
                 <a href="{{imageData.instagramUrl[$index]}}">
                     <img ng-src="{{imageItem}}" alt="" />
                 </a>

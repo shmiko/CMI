@@ -27,7 +27,17 @@ table img {
 .side-b {
 	background: black;
 }
-
+select, button, textarea, input {
+    margin: 0;
+    font-size: 2em;
+    font-family: inherit;
+    font-weight: bolder;
+    margin-left: auto;
+    margin-right: auto;
+    color: #2BE2B2;
+    vertical-align: baseline;
+    background: blueviolet;
+}
 
 
 
