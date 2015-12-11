@@ -8,7 +8,7 @@
 <section>
 <div class="container-fluid blog-holder">
     <input class="blogSearch" type="text" ng-model="dataFilter" placeholder="Search..."/></td>
-    <div class="row postItem text-center" ng-repeat="(key, post) in posts.items | filter: dataFilter" ng-if="posts.items[key].title && posts.items[key].labels[0] == 'USA' ">
+    <div class="row postItem text-center" ng-repeat="(key, post) in posts.items | filter: dataFilter" ng-if="posts.items[key].title ">
         <span class="blog-holder-title">Posted on {{posts.items[key].published | date:'fullDate'}}</span>
         <a class="" href="#/post/{{ key }}">
         <p class="blog-holder-catagory" ng-if="posts.items[key].labels[0]">Tagged as: {{ posts.items[key].labels[0] }}</p>
