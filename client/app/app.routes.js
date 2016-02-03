@@ -137,6 +137,12 @@ angular.module('cmiApp')
                 config:{
                     templateUrl: 'app/introduction/intro.html'
                 }
+            },
+            {
+                url: '/cart',
+                config:{
+                    templateUrl: 'app/cart/cart.html'
+                }
             }
   
         ];
@@ -286,6 +292,10 @@ angular.module('cmiApp')
             .state('home',{
                 url:'/',
                 templateUrl : 'app/introduction/intro.html'
+            })
+            .state('cart',{
+                url:'/cart',
+                templateUrl : 'app/cart/cart.html'
             })
             ;
        
