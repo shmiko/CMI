@@ -131,6 +131,12 @@ angular.module('cmiApp')
                     templateUrl: 'app/instagram/instagram.html',
                     controller: 'Example'
                 }
+            },
+            {
+                url: '/',
+                config:{
+                    templateUrl: 'app/introduction/intro.html'
+                }
             }
   
         ];

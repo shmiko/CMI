@@ -5,7 +5,7 @@ module.exports = {
     mongolab:
     {
         name: "calmapit-mongolab-ec2",
-        url: "mongodb://tripstomp:shmikcom@ds031641.mongolab.com:31641/calmapit",
+        url1: "mongodb://tripstomp:waxnepke@ds031641.mongolab.com:31641/calmapit",
         port: 27017
     },
     aws:

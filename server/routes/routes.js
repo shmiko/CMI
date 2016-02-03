@@ -3,7 +3,7 @@
  */
 // Dependencies
 var mongoose        = require('mongoose');
-//var User            = require('../models/user.js');
+var User            = require('../models/user.js');
 var Event            = require('../models/event.js');
 // define model =================
 var Todo = mongoose.model('Todo', {
@@ -72,22 +72,27 @@ module.exports = function(app) {
         //var parseBody = JSON.parse(req.body);
         // Creates a new Event based on the Mongoose schema and the post bo.dy
         //var newevent = new Event(JSON.parse(req.body));
-        var newevent = new Event(req.body);
-         //var newevent2 = new Event({
-         //    eventname: req.body.eventname,
-         //    eventtype: req.body.eventtype,
-         //    duration: req.body.duration,
-         //    mustdo: req.body.mustdo,
-         //    location: req.body.location
-         //});
-         console.log("newevent parsed data is ", newevent);
+        //var newevent = new Event(req.body);
+         var newevent = new Event({
+            eventname: req.body.eventname,
+            eventtype: req.body.eventtype,
+            duration: req.body.duration,
+            mustdo: req.body.mustdo,
+            location: req.body.location
+         });
+         console.log("newevent parsed data is ", req.body);
         // New Event is saved in the db.
-        newevent.save(function(err){
-            if(err)
-                res.send(err);
-
-            // If no errors are found, it responds with a JSON of the new user
-            res.json(req.body);
+        newevent.save(function(err,resp){
+            if (err) { 
+                console.log(err)
+                res.send({
+                    message: 'something went wrong'
+                });
+            } else {
+                res.send({
+                    message:'Successfully created a new event'
+                });
+            }
         });
     });
 
@@ -172,6 +177,33 @@ module.exports = function(app) {
                 res.send(err);
             res.json(req.body);
         });
+    });
+
+    //User routes
+    app.post('/create-user', function(req,res) {
+        var user = new User({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password});
+        // another way
+        user.save(function(err){
+            if (err) return next(err);
+            res.json('successfully created a new user');
+        });
+
+
+        // user.save(function(err,resp){
+        //     if (err) { 
+        //         console.log(err)
+        //         res.send({
+        //             message: 'something went wrong'
+        //         });
+        //     } else {
+        //         res.send({
+        //             message:'Successfully created a new user'
+        //         });
+        //     }
+        // });
     });
 
 // --------------------------------------------------------
