@@ -6,146 +6,174 @@
 
 angular.module('cmiApp')
     .config(['$stateProvider','$httpProvider','$routeProvider','$urlRouterProvider', function ($stateProvider,$httpProvider,$routeProvider,$urlRouterProvider) {
-        $urlRouterProvider.otherwise('/intro');
+        // $urlRouterProvider.otherwise('/intro');
 
-        var routes = [
-            {
-               url: '/calendar',
-               config: {
-                   controller: 'calendarController',
-                   templateUrl: '/app/calendar/calendar.html'
-               }
-            },
-            {
-               url: '/findevent',
-               config: {
-                    controller: 'queryController',
-                    templateUrl: '/app/events/findEvent.html'
-               }
-            },
-            {
-                url: '/addevent',
-                config: {
-                    controller: 'eventController',
-                    templateUrl: '/app/events/addEvent.html'
+        // var routes = [
+        //     {
+        //        url: '/calendar',
+        //        config: {
+        //            controller: 'calendarController',
+        //            templateUrl: '/app/calendar/calendar.html'
+        //        }
+        //     },
+        //     {
+        //        url: '/findevent',
+        //        config: {
+        //             controller: 'queryController',
+        //             templateUrl: '/app/events/findEvent.html'
+        //        }
+        //     },
+        //     {
+        //         url: '/addevent',
+        //         config: {
+        //             controller: 'eventController',
+        //             templateUrl: '/app/events/addEvent.html'
 
-                }
-            },
-            {
-                url: '/introduction',
-                config: {
-                    // controller: 'IntroductionController',
-                    templateUrl: '/app/introduction/introduction.tmpl.html'
-                    // controllerAs: 'vm'
+        //         }
+        //     },
+        //     {
+        //         url: '/introduction',
+        //         config: {
+        //             // controller: 'IntroductionController',
+        //             templateUrl: '/app/introduction/introduction.tmpl.html'
+        //             // controllerAs: 'vm'
 
-                }
-            },
-            {
-                url: '/intro',
-                config: {
-                    // controller: 'IntroductionController',
-                    templateUrl: '/app/introduction/intro.html'
-                    // controllerAs: 'vm'
+        //         }
+        //     },
+        //     {
+        //         url: '/intro',
+        //         config: {
+        //             // controller: 'IntroductionController',
+        //             templateUrl: '/app/introduction/intro.html'
+        //             // controllerAs: 'vm'
 
-                }
-            },
-            {
-                url: '/itinerary',
-                config: {
-                    // controller: 'IntroductionController',
-                    templateUrl: '/app/itinerary/itinerary.html'
-                    // controllerAs: 'vm'
+        //         }
+        //     },
+        //     {
+        //         url: '/itinerary',
+        //         config: {
+        //             // controller: 'IntroductionController',
+        //             templateUrl: '/app/itinerary/itinerary.html'
+        //             // controllerAs: 'vm'
 
-                }
-            },
-            {
-                url: '/travel',
-                config: {
-                    // controller: 'IntroductionController',
-                    templateUrl: '/app/travel/travel-cmi.html'
-                    // controllerAs: 'vm'
+        //         }
+        //     },
+        //     {
+        //         url: '/travel',
+        //         config: {
+        //             // controller: 'IntroductionController',
+        //             templateUrl: '/app/travel/travel-cmi.html'
+        //             // controllerAs: 'vm'
 
-                }
-            },
-            {
-                url: '/form',
-                config: {
-                    // controller: 'IntroductionController',
-                    templateUrl: '/app/form/form.html'
-                    // controllerAs: 'vm'
-                }
-            },
-            {
-                url: '/form_md',
-                config: {
-                    // controller: 'IntroductionController',
-                    templateUrl: '/app/form/form_md.html',
-                    controller: 'AppController'
-                }
-            },
-            {
-                url: '/calmap',
-                config:{
-                    templateUrl: 'app/calmap/calmap.html',
-                    controller: 'CalendarCtrl'
-                }
-            },
-            {
-                url: '/calmap/:eventId',
-                config:{
-                    templateUrl: 'app/calmap/event.html',
-                    controller: 'EventCtrl'
-                }
-            },
-            {
-                url: '/forecast',
-                config:{
-                    templateUrl: 'app/weather/forecast.html',
-                    controller: 'OpenWeatherCtrl'
-                }
-            },
-            {
-                url: '/storm',
-                config:{
-                    templateUrl: 'app/weather/storm.html',
-                    controller: 'OpenWeatherCtrl'
-                }
-            },
-            {
-                url: '/blog',
-                config:{
-                    templateUrl: 'app/blog/blog.html',
-                    controller: 'BlogController'
-                }
-            },
-            {
-                url: '/todo',
-                config:{
-                    templateUrl: 'app/todo/todo.html',
-                    controller: 'todoController'
-                }
-            },
-            {
-                url: '/instagram',
-                config:{
-                    templateUrl: 'app/instagram/instagram.html',
-                    controller: 'Example'
-                }
-            },
-            {
-                url: '/',
-                config:{
-                    templateUrl: 'app/introduction/intro.html'
-                }
-            },
-            {
-                url: '/cart',
-                config:{
-                    templateUrl: 'app/cart/cart.html'
-                }
-            }
+        //         }
+        //     },
+        //     {
+        //         url: '/form',
+        //         config: {
+        //             // controller: 'IntroductionController',
+        //             templateUrl: '/app/form/form.html'
+        //             // controllerAs: 'vm'
+        //         }
+        //     },
+        //     {
+        //         url: '/form_md',
+        //         config: {
+        //             // controller: 'IntroductionController',
+        //             templateUrl: '/app/form/form_md.html',
+        //             controller: 'AppController'
+        //         }
+        //     },
+        //     {
+        //         url: '/calmap',
+        //         config:{
+        //             templateUrl: 'app/calmap/calmap.html',
+        //             controller: 'CalendarCtrl'
+        //         }
+        //     },
+        //     {
+        //         url: '/calmap/:eventId',
+        //         config:{
+        //             templateUrl: 'app/calmap/event.html',
+        //             controller: 'EventCtrl'
+        //         }
+        //     },
+        //     {
+        //         url: '/forecast',
+        //         config:{
+        //             templateUrl: 'app/weather/forecast.html',
+        //             controller: 'OpenWeatherCtrl'
+        //         }
+        //     },
+        //     {
+        //         url: '/storm',
+        //         config:{
+        //             templateUrl: 'app/weather/storm.html',
+        //             controller: 'OpenWeatherCtrl'
+        //         }
+        //     },
+        //     {
+        //         url: '/blog',
+        //         config:{
+        //             templateUrl: 'app/blog/blog.html',
+        //             controller: 'BlogController'
+        //         }
+        //     },
+        //     {
+        //         url: '/todo',
+        //         config:{
+        //             templateUrl: 'app/todo/todo.html',
+        //             controller: 'todoController'
+        //         }
+        //     },
+        //     {
+        //         url: '/instagram',
+        //         config:{
+        //             templateUrl: 'app/instagram/instagram.html',
+        //             controller: 'Example'
+        //         }
+        //     },
+        //     {
+        //         url: '/',
+        //         config:{
+        //             templateUrl: 'app/introduction/intro.html'
+        //         }
+        //     },
+        //     {
+        //         url: '/cart',
+        //         config:{
+        //             templateUrl: 'app/cart/cart.html'
+        //         }
+        //     },
+        //     {
+        //         url: '/signup',
+        //         config:{
+        //             templateUrl: 'app/signup/signup.html',
+        //             controller: 'signupCtrl'
+        //         }
+        //     },
+        //     {
+        //         url: '/login',
+        //         config:{
+        //             templateUrl: 'app/accounts/login.html',
+        //             controller: 'loginController'
+        //         }
+        //     },
+        //     {
+        //         url: '/logout',
+        //         config:{
+        //             templateUrl: 'app/accounts/logout.html',
+        //             controller: 'logoutController'
+        //         }
+        //     },
+        //     {
+        //         url: '/register',
+        //         config:{
+        //             templateUrl: 'app/accounts/register.html',
+        //             controller: 'registerController'
+        //         }
+        //     }
   
-        ];
+        // ];
         $stateProvider
 
             .state('posts',{
@@ -297,14 +325,33 @@ angular.module('cmiApp')
                 url:'/cart',
                 templateUrl : 'app/cart/cart.html'
             })
+            .state('signup',{
+                url:'/signup',
+                templateUrl : 'app/signup/signup.html',
+                controller: 'signupCtrl'
+            })
+            .state('/login', {
+              templateUrl: 'accounts/login.html',
+              controller: 'loginController'
+            })
+            .state('/logout', {
+              templateUrl: 'accounts/logout.html',
+              controller: 'logoutController'
+            })
+            .state('/register', {
+              templateUrl: 'accounts/register.html',
+              controller: 'registerController'
+            })
             ;
        
-        routes.forEach(function (route) {
-            $routeProvider.when(route.url, route.config);
-        });
+        // routes.forEach(function (route) {
+        //     $routeProvider.when(route.url, route.config);
+        // });
 
-        $routeProvider.otherwise({ redirectTo: '/travel' });
-    }]);
+        // $routeProvider.otherwise({ redirectTo: '/travel' });
+        $stateProvider
+            .state("otherwise", { url : '/intro'})
+            }]);
     
    
 

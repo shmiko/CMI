@@ -4,7 +4,11 @@
 // Dependencies
 var mongoose        = require('mongoose');
 var User            = require('../models/user.js');
-var Event            = require('../models/event.js');
+var Event           = require('../models/event.js');
+var Account           = require('../models/account.js');
+// Load the module dependencies
+// var users = require('../controllers/users.server.controller');
+var passport        = require('passport');
 // define model =================
 var Todo = mongoose.model('Todo', {
     text: String,
@@ -13,6 +17,8 @@ var Todo = mongoose.model('Todo', {
     createdAt: Date,  
     updatedAt: Date,
 });
+
+
 
 
 // var Schema = mongoose.Schema;
@@ -50,6 +56,14 @@ small.save(function (err) {
 
 // Opens App Routes
 module.exports = function(app) {
+
+    // Load the 'index' controller
+    // var index = require('../controllers/index.server.controller');
+
+    // Mount the 'index' controller's 'render' method
+    // app.get('/', index.render);
+
+
 // --------------------------------------------------------
 // --------------------------------------------------------
 //          Start of Event Routes
@@ -179,19 +193,118 @@ module.exports = function(app) {
         });
     });
 
-    //User routes
-    app.post('/create-user', function(req,res) {
-        var user = new User({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password});
-        // another way
-        user.save(function(err){
-            if (err) return next(err);
-            res.json('successfully created a new user');
+
+    app.get('/', function (req, res) {
+        res.render('index', { user : req.user });
+    });
+
+    app.get('/register2', function(req, res) {
+        res.render('register', { });
+    });
+
+    app.post('/register2', function(req, res) {
+        Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account) {
+            if (err) {
+                return res.render('register', { account : account });
+            }
+
+            passport.authenticate('local')(req, res, function () {
+                res.redirect('/');
+            });
         });
+    });
 
 
+    app.post('/register', function(req, res) {
+      User.register(new User({ username: req.body.username }), req.body.password, function(err, account) {
+        if (err) {
+          return res.status(500).json({err: err});
+        }
+        passport.authenticate('local')(req, res, function () {
+          return res.status(200).json({status: 'Registration successful!'});
+        });
+      });
+    });
+
+    // app.post('/login', function(req, res, next) {
+    //   passport.authenticate('local', function(err, user, info) {
+    //     if (err) {
+    //       return res.status(500).json({err: err});
+    //     }
+    //     if (!user) {
+    //       return res.status(401).json({err: info});
+    //     }
+    //     req.logIn(user, function(err) {
+    //       if (err) {
+    //         return res.status(500).json({err: 'Could not log in user'});
+    //       }
+    //       res.status(200).json({status: 'Login successful!'});
+    //     });
+    //   })(req, res, next);
+    // });
+
+    app.get('/logout', function(req, res) {
+      req.logout();
+      res.status(200).json({status: 'Bye!'});
+    });
+
+
+    //User routes
+    // app.get('/signup', function(req,res,next){
+    //     res.render('signup/signup');
+    // })
+
+
+    // app.post('/signup', function(req,res,next) {
+    //     var user = new User({
+    //     username: req.body.username,
+    //     email: req.body.email,
+    //     password: req.body.password});
+
+    //     User.findOne({ email: req.body.email }, function(err, existingUser){
+    //         if (existingUser){
+    //             console.log(req.body.email + " already exists");
+    //             return res.redirect('/signup');
+    //         } else {
+    //             // another way
+    //             user.save(function(err){
+    //                 if (err) return next(err);
+    //                 res.json('successfully created a new user');
+    //             });
+    //         }
+    //         });
+    //    }); 
+
+    // Retrieve records for all users in the db
+    app.get('/users', function(req, res){
+        // Uses Mongoose schema to run the search (empty conditions)
+        var query = User.find({});
+        query.exec(function(err, users){
+            if(err)
+                res.send(err);
+            // If no errors are found, it responds with a JSON of all events
+            res.json(users);
+        });
+    });    
+
+    app.get('/login', function(req, res) {
+        res.render('login', { user : req.user });
+    });
+
+    app.post('/login',
+      passport.authenticate('local', { successRedirect: '/',
+                                       failureRedirect: '/login',
+                                       failureFlash: true })
+    );
+
+    app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
+
+    app.get('/ping', function(req, res){
+        res.status(200).send("pong!");
+    });
         // user.save(function(err,resp){
         //     if (err) { 
         //         console.log(err)
@@ -204,7 +317,7 @@ module.exports = function(app) {
         //         });
         //     }
         // });
-    });
+    //});
 
 // --------------------------------------------------------
 // --------------------------------------------------------
@@ -263,5 +376,54 @@ module.exports = function(app) {
             });
         });
     });
+
+    // Set up the 'signup' routes 
+    // app.route('/signup')
+    //    .get(User.renderSignup)
+    //    .post(User.signup);
+
+    // Set up the 'signin' routes 
+    // app.route('/signin')
+    //    .get(User.renderSignin)
+    //    .post(passport.authenticate('local', {
+    //         successRedirect: '/',
+    //         failureRedirect: '/signin',
+    //         failureFlash: true
+    //    }));
+
+    // Set up the Facebook OAuth routes 
+    // app.get('/oauth/facebook', passport.authenticate('facebook', {
+    //     failureRedirect: '/signin',
+    //     scope: ['email']
+    // }));
+    // app.get('/oauth/facebook/callback', passport.authenticate('facebook', {
+    //     failureRedirect: '/signin',
+    //     successRedirect: '/'
+    // }));
+
+    // Set up the Twitter OAuth routes 
+    // app.get('/oauth/twitter', passport.authenticate('twitter', {
+    //     failureRedirect: '/signin'
+    // }));
+    // app.get('/oauth/twitter/callback', passport.authenticate('twitter', {
+    //     failureRedirect: '/signin',
+    //     successRedirect: '/'
+    // }));
+
+    // Set up the Google OAuth routes 
+    // app.get('/oauth/google', passport.authenticate('google', {
+    //     scope: [
+    //         'https://www.googleapis.com/auth/userinfo.profile',
+    //         'https://www.googleapis.com/auth/userinfo.email'
+    //     ],
+    //     failureRedirect: '/signin'
+    // }));
+    // app.get('/oauth/google/callback', passport.authenticate('google', {
+    //     failureRedirect: '/signin',
+    //     successRedirect: '/'
+    // }));
+
+    // Set up the 'signout' route
+    // app.get('/signout', users.signout);
 
 };

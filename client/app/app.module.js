@@ -2,6 +2,7 @@
  * Created by pauljones on 12/11/15.
  */
 (function () {
+  'use strict';
     // Declares the initial angular module. Module grabs other controllers and services.
     var app = angular.module('cmiApp', [
 		'ngRoute',
@@ -31,8 +32,14 @@
     "ngMdIcons",
     "ngMap",
     "instagram"
-    ]);
+    // "signupApp",
+    // "registerApp"
+    // "loginApp",
+    // "logoutApp"
+    ])
+    ;
 
+    
      app.constant('config', {
         'calendars': [
           {
@@ -123,6 +130,14 @@
           }
         }
       });
+
+      // app.run(function ($rootScope, $location, $route, AuthService) {
+      //   $rootScope.$on('$routeChangeStart', function (event, next, current) {
+      //     if (AuthService.isLoggedIn() === false) { //next.access.restricted && 
+      //       $location.path('/login');
+      //     }
+      //   });
+      // });
 
 }());
 

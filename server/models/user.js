@@ -5,14 +5,12 @@
 var mongoose    = require('mongoose');
 var bcrypt      = require('bcrypt-nodejs');
 var Schema      = mongoose.Schema;
+var passportLocalMongoose = require('passport-local-mongoose');
 
 // Creates a User Schema. This will be the basis of how user data is stored in the db
 var UserSchema = new mongoose.Schema({
-    username: {type: String, required: true},
-    email: { type: String, 
-        unique: true, 
-        lowercase: true,
-        required: true},
+    username: String,
+    email: String,
     password: String,
     // gender: {type: String, required: true},
     // age: {type: Number, required: true},
@@ -68,6 +66,8 @@ UserSchema.index({location: '2dsphere'});
 UserSchema.methods.comparePassword = function(password) {
     return bcrypt.compareSync(password, this.password);
 }
+
+UserSchema.plugin(passportLocalMongoose);
 
 // Exports the UserSchema for use elsewhere. Sets the MongoDB collection to be used as: "cmi-users"
 module.exports = mongoose.model('user', UserSchema);

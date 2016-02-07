@@ -1,6 +1,6 @@
 {
   "name": "cmi",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "author": {
     "name": "Paul Jones"
   },
@@ -23,13 +23,19 @@
     "angular-cookies": "~1.4.6",
     "angular-strap": "~2.0.1",
     "angular-motion": "~0.3.2",
+    "json3": "~3.3.1",
+    "es5-shim": "~3.3.1",
     "jquery": "~2.1.4",
     "fullcalendar": "~2.3.2",
+    "lodash": "~2.4.1",
+    "angular-socket-io": "~0.7.0",
     "moment": "~2.10.3",
     "angular-ui-calendar": "~1.0.1",
     "modernizr": "~3.2.0",
     "ngmap": "1.13.x",
     "angular-ui-router": "ui-router#~0.2.15",
+    "ng-file-upload": "~9.0.9",
+    "ngInfiniteScroll": "~1.2.1",
     "angular-material": "~0.11.4"
   },
   "devDependencies": {
