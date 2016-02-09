@@ -1,0 +1,54 @@
+<body ng-app="cmiApp" > 
+	<div class="row"> 
+		<div class="col-md-6 col-md-offset-3"> 
+			<div class="page-header"> 
+				<h1>CMI News</h1> 
+			</div> 
+			<a ng-show="post.link" href="{{post.link}}">
+	            {{post.title}}
+	          </a>
+	          <span ng-hide="post.link">
+	            {{post.title}}
+	          </span>
+			<div ng-repeat="blog in blogs | orderBy:'-upvotes'" ng-controller="blogController"> 
+				<span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span> 
+				{{blog.upvotes}} 
+				<span style="font-size:20px; margin-left:10px;"> 
+					<a ng-show="blog.link" href="{{blog.link}}"> {{blog.title}} </a> 
+					<span ng-hide="blog.link"> {{blog.title}} </span> 
+				</span> 
+			</div> 
+			<form ng-submit="addBlog()" style="margin-top:30px; width:75%;margin-left:60px;"> 
+				<h3>Add a new blog</h3> 
+				<div class="form-group"> 
+					<input type="text" class="form-control" placeholder="Title" ng-model="title"></input> 
+				</div> 
+				<div class="form-group"> 
+					<input type="text" class="form-control" placeholder="Link" ng-model="link"></input> 
+				</div> 
+				<button type="submit" class="btn btn-primary">Post</button> 
+			</form> 
+			<div ng-repeat="comment in blog.comments | orderBy:'-upvotes'" ng-controller="PostsCtrl">
+	        <span class="glyphicon glyphicon-thumbs-up"
+	          ng-click="incrementUpvotes(comment)"></span>
+	        {{comment.upvotes}} - by {{comment.author}}
+	        <span style="font-size:20px; margin-left:10px;">
+	          {{comment.body}}
+	        </span>
+	      </div>
+	      <form ng-submit="addComment()"
+	        style="margin-top:30px; width:75%;margin-left:60px;">
+	        <h3>Add a new comment</h3>
+
+	        <div class="form-group">
+	          <input type="text"
+	          class="form-control"
+	          placeholder="Comment"
+	          ng-model="body"></input>
+	        </div>
+	        <button type="submit" class="btn btn-primary">Post</button>
+	      </form>
+		</div> 
+	</div> 
+</body>
+

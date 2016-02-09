@@ -31,8 +31,8 @@
     "ba3-angularmaterial-googlemaps-location",
     "ngMdIcons",
     "ngMap",
-    "instagram"
-    // "signupApp",
+    "instagram",
+    "blog",
     // "registerApp"
     // "loginApp",
     // "logoutApp"
