@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="app/core/layout/footer.css"/>
     <!-- <link rel="stylesheet" href="app/main/main.css"/> -->
     <link rel="stylesheet" href="app/core/layout/style.css"/>
-<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.0-rc4/angular-material.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.0-rc4/angular-material.css"> -->
     <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
-<link rel="stylesheet" href="app/calendar/calendarDemo.css" />
+    <link rel="stylesheet" href="app/calendar/calendarDemo.css" />
     <link rel="stylesheet" href="app/itinerary/itinerary.css" />
     <!-- <link rel="stylesheet" href="//codepen.io/assets/reset/normalize.css"> -->
     <link rel="stylesheet" href="app/travel/travel-cmi.css" />
@@ -28,10 +28,10 @@
     <link rel="stylesheet" href="app/signup/signup.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
 
-<!-- <link rel="stylesheet" href="app/atlas/atlas.css"> -->
+    <!-- <link rel="stylesheet" href="app/atlas/atlas.css"> -->
      <link rel="stylesheet" href="app/core/sidebar/sidebar-right.css">
      <!-- <link rel="stylesheet" href="app/core/sidebar/sidebar-left.css">   -->
-<!-- <link rel="stylesheet" type="text/css" href="https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.0-rc4/angular-material.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.0-rc4/angular-material.css"> -->
      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="app/todo/todo3.css">
     <link rel="stylesheet" href="app/instagram/instagram.css">
@@ -42,15 +42,15 @@
     <!-- <link rel="stylesheet" href="http://cdn.jsdelivr.net/foundation/4.3.1/css/foundation.min.css"> -->
     <link rel="stylesheet" href="app/blogger/blogger.css">
     <link rel="stylesheet" href="app/wikipedia/wikipedia.css">
-<!-- <link rel="stylesheet" href="app/wikipedia/angular-szn-autocomplete.css"> -->
+    <!-- <link rel="stylesheet" href="app/wikipedia/angular-szn-autocomplete.css"> -->
     <link rel="stylesheet" href="app/twitter/twitter2.css">
-<!-- <link rel="stylesheet" href="app/gallery/gallery.css"> -->
+    <!-- <link rel="stylesheet" href="app/gallery/gallery.css"> -->
     <!-- <link rel="stylesheet" href="app/maps/maps.css"> -->
     <script type="../bower_components/fullcalendar/dist/fullcalendar.css"></script>
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
 </head>
-   
+
     <body data-ng-cloak="" >
 
         <nav data-ng-include="'app/core/layout/navtop.html'"></nav>
@@ -59,7 +59,7 @@
             <nav data-ng-include="'app/core/sidebar/sidebar-left.html'" ></nav>
         <!-- <md-content layout="row" flex md-theme="calmapit"> -->
         <!-- <div layout="row" flex> -->
-   <!--          <md-sidenav md-theme="altTheme" layout="column" class="md-sidenav-left md-whiteframe-4dp md-padding" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+        <!--          <md-sidenav md-theme="altTheme" layout="column" class="md-sidenav-left md-whiteframe-4dp md-padding" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
               <md-button class="md-accent">Map Ranges</md-button>
               <md-button class="md-accent">vCenter Deployment</md-button>
               <md-button class="md-accent">Computer Monitor</md-button>
@@ -76,11 +76,15 @@
                 <!-- <div data-ng-include="'app/events/addEvent.html'"></div> -->
             <!-- </div> -->
             <!-- <div data-ng-view></div> -->
-            
-                <div data-ui-view class=""></div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div data-ui-view class=""></div>
+                </div>
+            </div>
+                
             <!-- </md-content> -->
             <!-- </div> -->
-<!--             <div class="col-md-4">
+            <!--             <div class="col-md-4">
             <nav data-ng-include="'app/core/layout/sideright.html'"></nav>
             </div> -->
             <!-- </md-content>  -->
