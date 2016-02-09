@@ -4,29 +4,20 @@
 // Load the module dependencies
 var passport = require('passport'),
 	mongoose = require('mongoose');
+var User = mongoose.model('User');
+var LocalStrategy = require('passport-local').Strategy;
 
-// Define the Passport configuration method
-module.exports = function() {
-	// Load the 'User' model
-	var User = mongoose.model('User');
-	
-	// Use Passport's 'serializeUser' method to serialize the user id
-	passport.serializeUser(function(user, done) {
-		done(null, user.id);
-	});
-
-	// Use Passport's 'deserializeUser' method to load the user document
-	passport.deserializeUser(function(id, done) {
-		User.findOne({
-			_id: id
-		}, '-password -salt', function(err, user) {
-			done(err, user);
+passport.use(new LocalStrategy(
+	function(username, password, done) {
+		User.findOne({username: username.toLowerCase()}, function(err, user) {
+			if(err) { return done(err); }
+			if(!user) {
+				return done(null, false, {message: 'Incorrect username or password.'});
+			}
+			if(!user.validPassword(password)) {
+				return done(null, false, {message: 'Incorrect username or password.'});
+			}
+			return done(null, user);
 		});
-	});
-
-	// Load Passport's strategies configuration files
-	require('./strategies/local.js')();
-	// require('./strategies/twitter.js')();
-	// require('./strategies/facebook.js')();
-	// require('./strategies/google.js')();
-};
+	}
+));

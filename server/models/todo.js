@@ -2,11 +2,11 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 var TodoSchema = new Schema({
-	text: {
-		type: String,
-		default: '',
-		trim: true,
-		required: "Title can't be blank"
-	}
+    text: String,
+    category: String,
+    completed: Boolean,
+    createdAt: Date,  
+    updatedAt: Date,
 });
-mongoose.model('todo', TodoSchema);
+
+module.exports = mongoose.model('todo', TodoSchema);

@@ -1,5 +1,5 @@
 
-<md-toolbar md-theme="altTheme" md-scroll-shrink="" ng-if="true" ng-controller="navbarController">
+<md-toolbar md-theme="altTheme" md-scroll-shrink="" ng-if="true" ng-controller="NavCtrl">
     <!-- <div class="md-toolbar-tools nav-text" ng-click="openMenu()"> -->
     <div class="md-toolbar-tools">
       <h3 class="appTitle text-muted"><a href="#/travel"><img src="../../content/images/calmapit_icon_55.png"><img hide-sm="" hide-md="" src="../../content/images/calmapit_logo1.png" alt="calmapit"/></a></h3>
@@ -9,7 +9,11 @@
                 <span hide-sm=""  class="cli" active><a href="#/calmap">CalMap  </a></span>
                 <span hide-sm="" class="cli" active><a href="#/forecast">Weather  </a></span>
                 <!-- <span class="cli" active><a href="#/travel">Travel  </a></span> -->
-                <span class="cli" active><a href="#/logout" >Logout</a></span>
+                <span class="cli" ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></span>
+                <span class="cli" ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></span>
+                <span class="cli" ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></span>
+                <span class="cli" ng-hide="isLoggedIn()"><a href="/#/register">Register</a></span>
+                <!--<span class="cli" active><a href="#/logout" >Logout</a></span>-->
                 <span class="cli" active><a href="#/instagram">Photos  </a></span> 
                 <span class="cli" active><a href="#/posts">Blog  </a></span>
                 <span hide-sm=""  class="cli" active><a href="#/todo">ToDo  </a></span>

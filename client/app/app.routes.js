@@ -13,14 +13,14 @@ angular.module('cmiApp')
         function ($stateProvider,$httpProvider,$routeProvider,$urlRouterProvider) {
         
         $stateProvider
-            .state('posts',{
-                url:'/posts',
+            .state('blogs',{
+                url:'/blogs',
                 templateUrl : 'app/blogger/pages/blog.html',
                 controller  : 'bloggerController'
             })
 
-            .state('post',{
-                url:'/post/:id',
+            .state('blog',{
+                url:'/blog/:id',
                 templateUrl : 'app/blogger/pages/post.html',
                 controller  : 'postsController'
             })
@@ -154,10 +154,10 @@ angular.module('cmiApp')
                 templateUrl : 'app/instagram/index.html',
                 controller: "searchCtrl"
             })
-            .state('home',{
-                url:'/',
-                templateUrl : 'app/introduction/intro.html'
-            })
+            // .state('home',{
+            //     url:'/',
+            //     templateUrl : 'app/introduction/intro.html'
+            // })
             .state('cart',{
                 url:'/cart',
                 templateUrl : 'app/cart/cart.html'
@@ -167,25 +167,48 @@ angular.module('cmiApp')
                 templateUrl : 'app/signup/signup.html',
                 controller: 'signupCtrl'
             })
-            .state('login', {
-              url:'/login',  
-              templateUrl: 'app/accounts/login.html',
-              controller: 'loginController'
+            .state('home', {
+                url: '/home',
+                templateUrl: '/home.html',
+                controller: 'MainCtrl',
+                resolve: {
+                    postPromise: ['posts', function(posts) {
+                        return posts.getAll();
+                    }]
+                }
             })
-            .state('logout', {
-              url:'/logout',  
-              templateUrl: 'app/accounts/logout.html',
-              controller: 'logoutController'
+
+            .state('posts', {
+                url: '/posts/{id}',
+                templateUrl: 'posts.html',
+                controller: 'PostsCtrl',
+                resolve: {
+                    post: ['$stateParams', 'posts', function($stateParams, posts){
+                        return posts.get($stateParams.id);
+                    }]
+                }
             })
+
             .state('register', {
-              url:'/register',  
-              templateUrl: 'app/accounts/register.html',
-              controller: 'registerController'
+                url: '/register',
+                templateUrl: '/register.html',
+                controller: 'AuthCtrl',
+                onEnter: ['$state', 'auth', function($state, auth) {
+                    if(auth.isLoggedIn()) {
+                        $state.go('home');
+                    }
+                }]
             })
-            .state('blog', {
-              url:'/blog/:id',  
-              templateUrl: 'app/blog/blog.html',
-              controller: 'blogController'
+
+            .state('login', {
+                url: '/login',
+                templateUrl: '/login.html',
+                controller: 'AuthCtrl',
+                onEnter: ['$state', 'auth', function($state, auth) {
+                    if(auth.isLoggedIn()) {
+                        $state.go('home');
+                    }
+                }]
             });
        
         // routes.forEach(function (route) {
@@ -196,7 +219,8 @@ angular.module('cmiApp')
         // $stateProvider
         //     .state("otherwise", { url : '/intro'})
         //     }]);
-        $urlRouterProvider.otherwise('intro');
+        // $urlRouterProvider.otherwise('intro');
+        $urlRouterProvider.otherwise('home');
     }])
    
 

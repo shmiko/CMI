@@ -3,24 +3,31 @@
  */
 // Dependencies
 var mongoose        = require('mongoose');
-var User            = require('../models/user.js');
+var User            = require('../models/Users.js');
 var Event           = require('../models/event.js');
-var Account           = require('../models/account.js');
+var Account         = require('../models/account.js');
+var Todo            = require('../models/todo.js');
+var express         = require('express');
+var router = express.Router();
 // Load the module dependencies
 // var users = require('../controllers/users.server.controller');
 var passport        = require('passport');
-// define model =================
-var Todo = mongoose.model('Todo', {
-    text: String,
-    category: String,
-    completed: Boolean,
-    createdAt: Date,  
-    updatedAt: Date,
+var jwt = require('express-jwt');
+var auth = jwt({secret: 'SECRET', userProperty: 'payload'});
+
+// // define model =================
+// var Todo = mongoose.model('Todo', {
+//     text: String,
+//     category: String,
+//     completed: Boolean,
+//     createdAt: Date,  
+//     updatedAt: Date,
+// });
+
+
+router.get('/', function(req, res, next) {
+  res.render('index');
 });
-
-
-
-
 // var Schema = mongoose.Schema;
 var schema = new mongoose.Schema({ name: 'string', size: 'string' });    
 /**
@@ -55,7 +62,7 @@ small.save(function (err) {
 
 
 // Opens App Routes
-module.exports = function(app) {
+//module.exports = function(router) {
 
     // Load the 'index' controller
     // var index = require('../controllers/index.server.controller');
@@ -70,7 +77,7 @@ module.exports = function(app) {
 // --------------------------------------------------------
 // --------------------------------------------------------
     // Retrieve records for all events in the db
-    app.get('/events', function(req, res){
+    router.get('/events', function(req, res,next){
         // Uses Mongoose schema to run the search (empty conditions)
         var query = Event.find({});
         query.exec(function(err, events){
@@ -82,7 +89,7 @@ module.exports = function(app) {
     });
 
     // Provides method for saving new events in the db
-    app.post('/events', function(req, res){
+    router.post('/events', function(req, res){
         //var parseBody = JSON.parse(req.body);
         // Creates a new Event based on the Mongoose schema and the post bo.dy
         //var newevent = new Event(JSON.parse(req.body));
@@ -117,7 +124,7 @@ module.exports = function(app) {
     // });
     
     // Retrieves JSON records for all users who meet a certain set of query conditions
-    app.post('/query/', function(req, res){
+    router.post('/query/', function(req, res){
 
         // Grab all of the query parameters from the body.
         var lat             = req.body.latitude;
@@ -182,7 +189,7 @@ module.exports = function(app) {
     // DELETE Routes (Dev Only)
     // --------------------------------------------------------
     // Delete a User off the Map based on objID
-    app.delete('/events/:objID', function(req, res){
+    router.delete('/events/:objID', function(req, res){
         var objID = req.params.objID;
         var update = req.body;
 
@@ -194,15 +201,16 @@ module.exports = function(app) {
     });
 
 
-    app.get('/', function (req, res) {
+    router.get('/', function (req, res, next) {
         res.render('index', { user : req.user });
+        res.send('respond with a resource');
     });
 
-    app.get('/register2', function(req, res) {
+    router.get('/register2', function(req, res) {
         res.render('register', { });
     });
 
-    app.post('/register2', function(req, res) {
+    router.post('/register2', function(req, res) {
         Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account) {
             if (err) {
                 return res.render('register', { account : account });
@@ -215,16 +223,16 @@ module.exports = function(app) {
     });
 
 
-    app.post('/register', function(req, res) {
-      User.register(new User({ username: req.body.username }), req.body.password, function(err, account) {
-        if (err) {
-          return res.status(500).json({err: err});
-        }
-        passport.authenticate('local')(req, res, function () {
-          return res.status(200).json({status: 'Registration successful!'});
-        });
-      });
-    });
+    // app.post('/register', function(req, res) {
+    //   User.register(new User({ username: req.body.username }), req.body.password, function(err, account) {
+    //     if (err) {
+    //       return res.status(500).json({err: err});
+    //     }
+    //     passport.authenticate('local')(req, res, function () {
+    //       return res.status(200).json({status: 'Registration successful!'});
+    //     });
+    //   });
+    // });
 
     // app.post('/login', function(req, res, next) {
     //   passport.authenticate('local', function(err, user, info) {
@@ -243,7 +251,7 @@ module.exports = function(app) {
     //   })(req, res, next);
     // });
 
-    app.get('/logout', function(req, res) {
+    router.get('/logout', function(req, res) {
       req.logout();
       res.status(200).json({status: 'Bye!'});
     });
@@ -276,7 +284,7 @@ module.exports = function(app) {
     //    }); 
 
     // Retrieve records for all users in the db
-    app.get('/users', function(req, res){
+    router.get('/users', function(req, res){
         // Uses Mongoose schema to run the search (empty conditions)
         var query = User.find({});
         query.exec(function(err, users){
@@ -287,22 +295,22 @@ module.exports = function(app) {
         });
     });    
 
-    app.get('/login', function(req, res) {
-        res.render('login', { user : req.user });
-    });
+    // app.get('/login', function(req, res) {
+    //     res.render('login', { user : req.user });
+    // });
 
-    app.post('/login',
-      passport.authenticate('local', { successRedirect: '/',
-                                       failureRedirect: '/login',
-                                       failureFlash: true })
-    );
+    // app.post('/login',
+    //   passport.authenticate('local', { successRedirect: '/',
+    //                                    failureRedirect: '/login',
+    //                                    failureFlash: true })
+    // );
 
-    app.get('/logout', function(req, res) {
+    router.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/');
     });
 
-    app.get('/ping', function(req, res){
+    router.get('/ping', function(req, res){
         res.status(200).send("pong!");
     });
         // user.save(function(err,resp){
@@ -318,14 +326,137 @@ module.exports = function(app) {
         //     }
         // });
     //});
+    
+/* Preload post object */
+router.param('post', function(req, res, next, id){
+    var query = Post.findById(id);
 
+    query.exec(function(err, post){
+        if(err) { return next(err); }
+        if(!post) { return next(new Error('Cannot find post')); }
+
+        req.post = post;
+        return next();
+    });
+});
+
+
+/* Preload comment object */
+router.param('comment', function(req, res, next, id){
+    var query = Comment.findById(id);
+
+    query.exec(function(err, comment){
+        if(err) { return next(err); }
+        if(!comment) { return next(new Error('Cannot find comment')); }
+
+        req.comment = comment;
+        return next();
+    });
+});
+
+
+/* GET all posts */ 
+router.get('/posts', function(req, res, next){
+    Post.find(function(err, posts){
+        if(err) { return next(err); };
+        res.json(posts);
+    });
+});
+
+
+/* POST a new post */
+router.post('/posts', auth, function(req, res, next){
+    var post = new Post(req.body);
+    post.author = req.payload.username;
+    post.save(function(err, post) {
+        if(err) { return next(err); }
+        res.json(post);
+    });
+});
+
+
+/* GET a post by id */
+router.get('/posts/:post', function(req, res, next){
+    req.post.populate('comments', function(err, post){
+        if(err) { return next(err); }
+        res.json(post);
+    });
+});
+
+
+/* PUT an upvote on a post */
+router.put('/posts/:post/upvote', auth, function(req, res, next){
+    req.post.upvote(function(err, post){
+        if(err) { return next(err); }
+        res.json(post);
+    });
+});
+
+
+/* POST a new comment to a post */
+router.post('/posts/:post/comments', auth, function(req, res, next){
+    var comment = new Comment(req.body);
+    comment.post = req.post;
+    comment.author = req.payload.username;
+    comment.save(function(err, comment){
+        if(err) { return next(err); }
+        req.post.comments.push(comment);
+        req.post.save(function(err, post){
+            if(err) { return next(err); }
+            res.json(comment);
+        });
+    });
+});
+
+
+/* PUT an upvote to a comment */
+router.put('/posts/:post/comments/:comment/upvote', auth, function(req, res, next) {
+    req.comment.upvote(function(err, comment){
+        if(err) { return next(err); }
+        res.json(comment);
+    });
+});
+
+
+/* Register a new user */
+router.post('/register', function(req, res, next){
+    if(!req.body.username || !req.body.password) {
+        return res.status(400).json({message: 'Please fill out all fields.'});
+    }
+
+    var user = new User();
+    user.username = req.body.username;
+    user.setPassword(req.body.password);
+    user.save(function(err) {
+        if(err) { return next(err); }
+        return res.json({token: user.generateJWT()});
+    });
+});
+
+/* Authenticate and Log in a user */
+router.post('/login', function(req, res, next) {
+    if(!req.body.username || !req.body.password) {
+        return res.status(400).json({message: 'Please fill out all fields.'});
+    }
+
+    passport.authenticate('local', function(err, user, info) {
+        if(err) { return next(err); }
+        
+        if(user) {
+            return res.json({token: user.generateJWT()});
+        } else {
+            return res.status(401).json(info);
+        }
+
+    })(req, res, next);
+});
 // --------------------------------------------------------
 // --------------------------------------------------------
 //          Start of Todo Routes
 // --------------------------------------------------------
 // --------------------------------------------------------
                 // get all todos
-    app.get('/api/todos', function(req, res) {
+    router.get('/api/todos', function(req, res) {
 
         // use mongoose to get all todos in the database
         Todo.find(function(err, todos) {
@@ -339,7 +470,7 @@ module.exports = function(app) {
     });
 
     // create todo and send back all todos after creation
-    app.post('/api/todos', function(req, res) {
+    router.post('/api/todos', function(req, res) {
 
         // create a todo, information comes from AJAX request from Angular
         Todo.create({
@@ -361,7 +492,7 @@ module.exports = function(app) {
     });
 
     // delete a todo
-    app.delete('/api/todos/:todo_id', function(req, res) {
+    router.delete('/api/todos/:todo_id', function(req, res) {
         Todo.remove({
             _id : req.params.todo_id
         }, function(err, todo) {
@@ -426,4 +557,7 @@ module.exports = function(app) {
     // Set up the 'signout' route
     // app.get('/signout', users.signout);
 
-};
+// };
+
+module.exports = router;
+
