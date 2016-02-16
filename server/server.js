@@ -17,7 +17,10 @@ var app             = express();
 // Sets the connection to MongoDB
 mongoose.connect(database.aws.url1);
 //mongoose.connect("mongodb://localhost/calmapit");
-
+mongoose.connection.on('error', function (err) {
+ 	console.log("\nError connecting to MongoDB. See the README.md for details.");
+ 	console.log('Did you remember to start the server? "$sudo mongod"\n');
+});
 // Logging and Parsing
 app.use(express.static(__dirname + '/../client'));                 // sets the static files location to public
 app.use('/bower_components',  express.static(__dirname + '/../bower_components')); // Use BowerComponents
