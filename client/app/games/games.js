@@ -205,9 +205,9 @@
     }
 
     var emptySide=function() {
-                    //alert("emptyside");
-                    
-                    
+                  //alert("emptyside");
+
+
       if (movesLeft.indexOf(1) !==-1) {
         $scope.board[1]=$scope.comp;
         compMoves.push(1);

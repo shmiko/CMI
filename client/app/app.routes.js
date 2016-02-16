@@ -1,26 +1,149 @@
 /**
  * Created by pauljones on 13/11/15.
  */
- (function () {
+(function () {
 "use strict";
 
 angular.module('cmiApp')
-    .config([
-        '$stateProvider',
-        '$httpProvider',
-        '$routeProvider',
-        '$urlRouterProvider', 
-        function ($stateProvider,$httpProvider,$routeProvider,$urlRouterProvider) {
-        
+    .config(['$stateProvider','$httpProvider','$routeProvider','$urlRouterProvider', function ($stateProvider,$httpProvider,$routeProvider,$urlRouterProvider) {
+        $urlRouterProvider.otherwise('/intro');
+
+        var routes = [
+            {
+               url: '/calendar',
+               config: {
+                   controller: 'calendarController',
+                   templateUrl: '/app/calendar/calendar.html'
+               }
+            },
+            {
+               url: '/findevent',
+               config: {
+                    controller: 'queryController',
+                    templateUrl: '/app/events/findEvent.html'
+               }
+            },
+            {
+                url: '/addevent',
+                config: {
+                    controller: 'eventController',
+                    templateUrl: '/app/events/addEvent.html'
+
+                }
+            },
+            {
+                url: '/introduction',
+                config: {
+                    // controller: 'IntroductionController',
+                    templateUrl: '/app/introduction/introduction.tmpl.html'
+                    // controllerAs: 'vm'
+
+                }
+            },
+            {
+                url: '/intro',
+                config: {
+                    // controller: 'IntroductionController',
+                    templateUrl: '/app/introduction/intro.html'
+                    // controllerAs: 'vm'
+
+                }
+            },
+            {
+                url: '/itinerary',
+                config: {
+                    // controller: 'IntroductionController',
+                    templateUrl: '/app/itinerary/itinerary.html'
+                    // controllerAs: 'vm'
+
+                }
+            },
+            {
+                url: '/travel',
+                config: {
+                    // controller: 'IntroductionController',
+                    templateUrl: '/app/travel/travel-cmi.html'
+                    // controllerAs: 'vm'
+
+                }
+            },
+            {
+                url: '/form',
+                config: {
+                    // controller: 'IntroductionController',
+                    templateUrl: '/app/form/form.html'
+                    // controllerAs: 'vm'
+                }
+            },
+            {
+                url: '/form_md',
+                config: {
+                    // controller: 'IntroductionController',
+                    templateUrl: '/app/form/form_md.html',
+                    controller: 'AppController'
+                }
+            },
+            {
+                url: '/calmap',
+                config:{
+                    templateUrl: 'app/calmap/calmap.html',
+                    controller: 'CalendarCtrl'
+                }
+            },
+            {
+                url: '/calmap/:eventId',
+                config:{
+                    templateUrl: 'app/calmap/event.html',
+                    controller: 'EventCtrl'
+                }
+            },
+            {
+                url: '/forecast',
+                config:{
+                    templateUrl: 'app/weather/forecast.html',
+                    controller: 'OpenWeatherCtrl'
+                }
+            },
+            {
+                url: '/storm',
+                config:{
+                    templateUrl: 'app/weather/storm.html',
+                    controller: 'OpenWeatherCtrl'
+                }
+            },
+            {
+                url: '/blog',
+                config:{
+                    templateUrl: 'app/blog/blog.html',
+                    controller: 'BlogController'
+                }
+            },
+            {
+                url: '/todo',
+                config:{
+                    templateUrl: 'app/todo/todo.html',
+                    controller: 'todoController'
+                }
+            },
+            {
+                url: '/instagram',
+                config:{
+                    templateUrl: 'app/instagram/instagram.html',
+                    controller: 'Example'
+                }
+            }
+  
+        ];
         $stateProvider
-            .state('blogs',{
-                url:'/blogs',
+
+            .state('posts',{
+                url:'/posts',
                 templateUrl : 'app/blogger/pages/blog.html',
                 controller  : 'bloggerController'
             })
 
-            .state('blog',{
-                url:'/blog/:id',
+            .state('post',{
+                url:'/post/:id',
                 templateUrl : 'app/blogger/pages/post.html',
                 controller  : 'postsController'
             })
@@ -154,78 +277,19 @@ angular.module('cmiApp')
                 templateUrl : 'app/instagram/index.html',
                 controller: "searchCtrl"
             })
-            // .state('home',{
-            //     url:'/',
-            //     templateUrl : 'app/introduction/intro.html'
-            // })
-            .state('cart',{
-                url:'/cart',
-                templateUrl : 'app/cart/cart.html'
+            .state('home',{
+                url:'/',
+                templateUrl : 'app/introduction/intro.html'
             })
-            .state('signup',{
-                url:'/signup',
-                templateUrl : 'app/signup/signup.html',
-                controller: 'signupCtrl'
-            })
-            .state('home', {
-                url: '/home',
-                templateUrl: '/home.html',
-                controller: 'MainCtrl',
-                resolve: {
-                    postPromise: ['posts', function(posts) {
-                        return posts.getAll();
-                    }]
-                }
-            })
-
-            .state('posts', {
-                url: '/posts/{id}',
-                templateUrl: 'posts.html',
-                controller: 'PostsCtrl',
-                resolve: {
-                    post: ['$stateParams', 'posts', function($stateParams, posts){
-                        return posts.get($stateParams.id);
-                    }]
-                }
-            })
-
-            .state('register', {
-                url: '/register',
-                templateUrl: '/register.html',
-                controller: 'AuthCtrl',
-                onEnter: ['$state', 'auth', function($state, auth) {
-                    if(auth.isLoggedIn()) {
-                        $state.go('home');
-                    }
-                }]
-            })
-
-            .state('login', {
-                url: '/login',
-                templateUrl: '/login.html',
-                controller: 'AuthCtrl',
-                onEnter: ['$state', 'auth', function($state, auth) {
-                    if(auth.isLoggedIn()) {
-                        $state.go('home');
-                    }
-                }]
-            });
+            ;
        
-        // routes.forEach(function (route) {
-        //     $routeProvider.when(route.url, route.config);
-        // });
+        routes.forEach(function (route) {
+            $routeProvider.when(route.url, route.config);
+        });
 
-         //$routeProvider.otherwise({ redirectTo: '/intro' });
-        // $stateProvider
-        //     .state("otherwise", { url : '/intro'})
-        //     }]);
-        // $urlRouterProvider.otherwise('intro');
-        $urlRouterProvider.otherwise('home');
-    }])
+        $routeProvider.otherwise({ redirectTo: '/travel' });
+    }]);
+    
    
 
 })();
-
-
-
-

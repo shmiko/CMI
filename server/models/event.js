@@ -12,13 +12,6 @@ var EventSchema = new Schema({
     duration: {type: Number, required: true},
     mustdo: {type: String, required: true},
     location: {type: [Number], required: true}, // [Long, Lat]
-
-    // eventname: {type: String},
-    // eventtype: {type: String},
-    // duration: {type: Number},
-    // mustdo: {type: String},
-    // location: {type: [Number]}, // [Long, Lat]
-
     htmlverified: String,
     created_at: {type: Date, default: Date.now},
     updated_at: {type: Date, default: Date.now}

@@ -1,16 +1,11 @@
 // Sets the MongoDB Database options
-// Invoke 'strict' JavaScript mode
-'use strict';
 
-// Load the correct configuration file according to the 'NODE_ENV' variable
-// module.exports = require('./environment/' + process.env.NODE_ENV + '.js');
-// emitter.setMaxListeners(15);
 module.exports = {
 
     mongolab:
     {
         name: "calmapit-mongolab-ec2",
-        url1: "mongodb://tripstomp:waxnepke@ds031641.mongolab.com:31641/calmapit",
+        url: "mongodb://tripstomp:shmikcom@ds031641.mongolab.com:31641/calmapit",
         port: 27017
     },
     aws:
