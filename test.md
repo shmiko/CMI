@@ -8,4 +8,4 @@
 
 ---
 
-#Things I'll *Blog* About now and then
+#Things I'll *Blog* About now and then.
